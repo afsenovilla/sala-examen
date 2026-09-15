@@ -9,7 +9,7 @@ assets/app.js              motor: práctica, simulacro, resultados, listado
 data/exams.json            catálogo de exámenes
 data/mc-next-consultant.json   banco de 116 preguntas
 manifest.webmanifest, sw.js, assets/icon*   PWA + caché offline
-CNAME                      dominio para GitHub Pages
+CNAME                      sfmc.asuntosimportant.es (dominio de GitHub Pages)
 ```
 
 Importante: **tiene que servirse por HTTP(S)**. Si abres `index.html` con doble clic (`file://`) el navegador bloquea la lectura de los JSON y verás un aviso. Para probar en local:
@@ -24,8 +24,8 @@ cd sala-examen && python3 -m http.server 8000   # http://localhost:8000
 
 1. Crea el repo y sube el contenido de esta carpeta a la raíz de `main`.
 2. Settings → Pages → Source: *Deploy from a branch*, rama `main`, carpeta `/ (root)`.
-3. Settings → Pages → Custom domain: escribe `sfmc.tudominio.es`. Eso crea/actualiza el archivo `CNAME` (ya va uno de ejemplo, edítalo con tu subdominio real).
-4. En tu DNS, añade un registro **CNAME**: `sfmc` → `TUUSUARIO.github.io.` (con el punto final si tu panel lo pide). Nada de registro A.
+3. Settings → Pages → Custom domain: escribe `sfmc.asuntosimportant.es`. Eso crea/actualiza el archivo `CNAME`, que ya viene con `sfmc.asuntosimportant.es`.
+4. En tu DNS, añade un registro **CNAME**: `sfmc` → `afsenovilla.github.io.` (con el punto final si tu panel lo pide). Nada de registro A.
 5. Espera a la validación del dominio y marca **Enforce HTTPS**.
 
 Tarda unos minutos en propagar. Si cambias archivos, el despliegue es automático con cada push.
@@ -43,15 +43,15 @@ O sea: en GitHub, repo privado ≠ web privada. Si lo que te preocupa es que nad
 Cualquier hosting estático sirve (Apache, nginx, Caddy, Netlify, Cloudflare Pages, un VPS...):
 
 1. Copia la carpeta al directorio del vhost, por ejemplo `/var/www/sfmc`.
-2. Apunta el subdominio `sfmc.tudominio.es` a la IP del servidor con un registro **A** (o un CNAME al host que te dé el proveedor).
-3. Certificado con Let's Encrypt (`certbot --nginx -d sfmc.tudominio.es`).
+2. Apunta el subdominio `sfmc.asuntosimportant.es` a la IP del servidor con un registro **A** (o un CNAME al host que te dé el proveedor).
+3. Certificado con Let's Encrypt (`certbot --nginx -d sfmc.asuntosimportant.es`).
 4. Si quieres restringir el acceso, ahí sí puedes: `.htpasswd` en Apache, `auth_basic` en nginx, o Cloudflare Access delante.
 
 Ejemplo mínimo de nginx:
 
 ```nginx
 server {
-  server_name sfmc.tudominio.es;
+  server_name sfmc.asuntosimportant.es;
   root /var/www/sfmc;
   index index.html;
   location / { try_files $uri $uri/ /index.html; }
