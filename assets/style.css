@@ -7,8 +7,8 @@
   --good:#3ED598; --good-soft:#0C2A1F; --bad:#FF6B6B; --bad-soft:#2C1111;
   --warn:#FFC24B; --warn-soft:#2A2110;
   --r:12px; --r-sm:8px;
-  --f-display:"Archivo","Helvetica Neue",system-ui,sans-serif;
-  --f-body:"Archivo","Helvetica Neue",system-ui,sans-serif;
+  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
 }
 @media (prefers-color-scheme:light){
@@ -26,9 +26,9 @@ body{background:var(--bg);color:var(--text);font-family:var(--f-body);font-size:
   -webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1240px;margin:0 auto;padding-inline:clamp(18px,4vw,48px);padding-block:clamp(24px,3vw,40px) 48px}
 .wrap.has-bar{padding-bottom:104px}
-h1,h2,h3{font-family:var(--f-display);font-weight:800;text-wrap:balance;margin:0;letter-spacing:-.03em;line-height:1.04}
+h1,h2,h3{font-family:var(--f-display);font-weight:800;text-wrap:balance;margin:0;letter-spacing:-.015em;line-height:1.05}
 h1{font-size:clamp(30px,4.6vw + 10px,68px)}
-h2{font-size:clamp(19px,.7vw + 16px,26px);letter-spacing:-.015em}
+h2{font-size:clamp(19px,.7vw + 16px,26px);letter-spacing:-.01em}
 h3{font-size:15px;font-weight:700;font-family:var(--f-display)}
 p{margin:0}
 a{color:var(--accent);text-decoration:none}
@@ -70,12 +70,12 @@ img{max-width:100%}
 .strip div{background:var(--surface);padding:16px 18px;border-right:1px solid var(--line)}
 .strip div:last-child{border-right:0}
 .strip .k{font-family:var(--f-display);font-weight:800;font-size:clamp(24px,2vw,32px);
-  font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+  font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 .strip .l{font-family:var(--f-mono);font-size:10.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-top:6px}
 
 /* ---- portada ---- */
 .hero{display:grid;gap:16px;grid-template-columns:1fr;align-items:end}
-.hero h1{text-transform:uppercase;letter-spacing:-.02em}
+.hero h1{text-transform:uppercase;letter-spacing:-.01em}
 .hero-lede{color:var(--muted);max-width:60ch}
 @media(min-width:900px){
   .hero{grid-template-columns:minmax(0,auto) minmax(420px,1fr);gap:clamp(36px,5vw,80px);
@@ -90,7 +90,7 @@ img{max-width:100%}
   padding-inline:18px;margin-inline:-18px;border-color:var(--accent-line)}
 .exam-row:hover .er-go{color:var(--accent)}
 .exam-row .name{font-family:var(--f-display);font-weight:800;font-size:clamp(21px,1.4vw + 16px,30px);
-  letter-spacing:-.03em;margin-top:8px;line-height:1.05}
+  letter-spacing:-.015em;margin-top:8px;line-height:1.05}
 .exam-row .blurb{color:var(--muted);font-size:13.5px;margin-top:8px;line-height:1.5;max-width:52ch}
 .er-facts{display:flex;gap:clamp(18px,2.4vw,36px);flex-wrap:wrap}
 .er-facts div{display:flex;flex-direction:column;gap:3px}
@@ -147,7 +147,7 @@ img{max-width:100%}
   display:flex;flex-direction:column;gap:8px;transition:border-color .15s,background .15s}
 .mode:hover:not(:disabled){border-color:var(--accent-line);background:var(--surface-2)}
 .mode:disabled{opacity:.4;cursor:default}
-.mode .t{font-family:var(--f-display);font-weight:800;font-size:18px;letter-spacing:-.015em}
+.mode .t{font-family:var(--f-display);font-weight:800;font-size:18px;letter-spacing:-.01em}
 .mode .d{font-size:13px;color:var(--muted);line-height:1.5}
 .mode .meta{font-family:var(--f-mono);font-size:10.5px;color:var(--accent);letter-spacing:.12em;text-transform:uppercase}
 
@@ -251,7 +251,7 @@ button.rowitem:hover .go{color:var(--accent)}
 .score{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;
   display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between}
 .score .big{white-space:nowrap;display:flex;align-items:baseline;gap:4px;font-family:var(--f-display);font-weight:800;font-feature-settings:"tnum";
-  font-size:clamp(52px,6vw,76px);line-height:.9;font-variant-numeric:tabular-nums;letter-spacing:-.045em}
+  font-size:clamp(52px,6vw,76px);line-height:.92;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
 .score .unit{font-size:.4em;color:var(--muted);font-weight:700}
 .verdict-pill{display:inline-block;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
   padding:6px 12px;border-radius:999px;margin-top:14px}
