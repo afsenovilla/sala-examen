@@ -1,0 +1,18 @@
+{
+ "updated": "2026-09-15",
+ "exams": [
+  {
+   "id": "mc-next-consultant",
+   "file": "data/mc-next-consultant.json",
+   "name": "Marketing Cloud Next Consultant",
+   "code": "MC-Con-201",
+   "vendor": "Salesforce",
+   "questions": 116,
+   "pass": 72,
+   "minutes": 105,
+   "scored": 60,
+   "blurb": "Consent, Data 360, flows, contenido y Agentforce sobre la nueva Marketing Cloud.",
+   "accent": "indigo"
+  }
+ ]
+}
