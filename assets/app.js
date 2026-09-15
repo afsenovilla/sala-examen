@@ -165,7 +165,7 @@
         '<div class="foot-col">' +
           '<p class="eyebrow">Tu progreso</p>' +
           '<p>Se guarda en este navegador y no sale de tu dispositivo. Para seguir en otro, expórtalo y pégalo allí.</p>' +
-          '<p><button class="linkbtn" id="expBtn">Exportar</button> · <button class="linkbtn" id="impBtn">Importar</button></p>' +
+          '<p><button class="linkbtn" id="expBtn">Exportar</button> · <button class="linkbtn" id="impBtn">Importar</button> · <button class="linkbtn" id="clrBtn">Borrar</button></p>' +
         '</div>' +
         '<div class="foot-col">' +
           '<p class="eyebrow">Atajos</p>' +
@@ -179,9 +179,10 @@
   }
 
   function bindFooter() {
-    var e = document.getElementById("expBtn"), i = document.getElementById("impBtn");
+    var e = document.getElementById("expBtn"), i = document.getElementById("impBtn"), c = document.getElementById("clrBtn");
     if (e) e.onclick = function () { togglePanel("exp"); };
     if (i) i.onclick = function () { togglePanel("imp"); };
+    if (c) c.onclick = function () { togglePanel("clr"); };
   }
 
   var openPanel = null;
@@ -190,7 +191,9 @@
     if (openPanel === which) { panel.hidden = true; panel.innerHTML = ""; openPanel = null; return; }
     openPanel = which;
     panel.hidden = false;
-    if (which === "exp") exportPanel(panel); else importPanel(panel);
+    if (which === "exp") exportPanel(panel);
+    else if (which === "imp") importPanel(panel);
+    else clearPanel(panel);
   }
 
   function exportPanel(panel) {
@@ -244,6 +247,47 @@
         msg.textContent = "Ese texto no es un progreso válido.";
       }
     };
+  }
+
+  function clearPanel(panel) {
+    panel.innerHTML = '<div class="io"><p><b>Se borra todo y no hay vuelta atrás:</b> aciertos, fallos, preguntas marcadas y el historial de simulacros de todos los exámenes. ' +
+      'También se vacía la copia que el navegador guarda para funcionar sin conexión, así que al volver a entrar se descarga la versión más reciente de la web. ' +
+      'Si quieres conservar tu progreso, expórtalo antes.</p>' +
+      '<div class="row"><button class="btn" id="doClr">Borrar todo</button>' +
+      '<button class="btn quiet" id="noClr">Cancelar</button>' +
+      '<span id="clrMsg"></span></div></div>';
+    document.getElementById("noClr").onclick = function () { togglePanel("clr"); };
+    document.getElementById("doClr").onclick = function () {
+      var msg = document.getElementById("clrMsg");
+      msg.textContent = "Borrando…";
+      wipeEverything().then(function () {
+        msg.textContent = "Listo. Recargando…";
+        setTimeout(function () { location.replace(location.pathname); }, 500);
+      });
+    };
+  }
+
+  function wipeEverything() {
+    DB = { exams: {} };
+    var jobs = [];
+
+    try {
+      localStorage.removeItem(KEY);
+      ["mcnext_v1", "mcnext_theme", "examtrainer.v1"].forEach(function (k) { localStorage.removeItem(k); });
+    } catch (e) {}
+    try { sessionStorage.clear(); } catch (e) {}
+
+    if (window.caches && caches.keys) {
+      jobs.push(caches.keys().then(function (keys) {
+        return Promise.all(keys.map(function (k) { return caches.delete(k); }));
+      }).catch(function () {}));
+    }
+    if (navigator.serviceWorker && navigator.serviceWorker.getRegistrations) {
+      jobs.push(navigator.serviceWorker.getRegistrations().then(function (regs) {
+        return Promise.all(regs.map(function (r) { return r.unregister(); }));
+      }).catch(function () {}));
+    }
+    return Promise.all(jobs).catch(function () {});
   }
 
   /* ---------------- estadística ---------------- */

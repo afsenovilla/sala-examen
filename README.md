@@ -109,7 +109,8 @@ Dos cosas a tener en cuenta:
 
 - **Safari en iOS borra el almacenamiento de webs que no visitas en 7 días.** Por eso la web es instalable: desde Safari, *Compartir → Añadir a pantalla de inicio*. Instalada queda exenta de esa limpieza, funciona offline y se abre a pantalla completa. En Android/Chrome sale el aviso de instalar solo.
 - Además se pide `navigator.storage.persist()` al cargar, que en Chrome y Firefox marca el almacenamiento como persistente.
-- Para cambiar de dispositivo: **Exportar progreso** en la portada da un texto (o un archivo `.json`) que se pega en **Importar progreso** en el otro. Al importar se suman los intentos, no se pisan.
+- Para cambiar de dispositivo: **Exportar** en el pie da un texto (o un archivo `.json`) que se pega en **Importar** en el otro. Al importar se suman los intentos, no se pisan.
+- **Borrar** (en el mismo pie) vacía el progreso de todos los exámenes *y* las cachés del service worker, además de desregistrarlo, y recarga. Sirve también para forzar que un dispositivo se traiga la versión más reciente de la web.
 
 ## Datos del examen MC-Con-201
 
