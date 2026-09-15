@@ -84,11 +84,17 @@ img{max-width:100%}
 }
 
 .exam-list{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
-.exam-row{display:grid;gap:16px;grid-template-columns:1fr;color:var(--text);
-  background:none;border-bottom:1px solid var(--line);padding:24px 0;transition:background .15s,padding .15s}
-.exam-row:hover{text-decoration:none;background:var(--surface);
-  padding-inline:18px;margin-inline:-18px;border-color:var(--accent-line)}
-.exam-row:hover .er-go{color:var(--accent)}
+.exam-row{position:relative;display:grid;gap:16px;grid-template-columns:1fr;color:var(--text);
+  background:none;border-bottom:1px solid var(--line);padding:24px 0;
+  transition:border-color .2s ease}
+/* el resalte es un fondo detrás del contenido: no mueve el layout, así que no rebota */
+.exam-row::before{content:"";position:absolute;inset:0 calc(clamp(10px,1.4vw,18px) * -1);z-index:0;
+  background:var(--surface);border-radius:var(--r-sm);opacity:0;transition:opacity .2s ease}
+.exam-row > *{position:relative;z-index:1}
+.exam-row:hover{text-decoration:none;border-bottom-color:var(--accent-line)}
+.exam-row:hover::before{opacity:1}
+.exam-row:hover .er-go{color:var(--accent);transform:translateX(3px)}
+.exam-row:active::before{opacity:.7}
 .exam-row .name{font-family:var(--f-display);font-weight:800;font-size:clamp(21px,1.4vw + 16px,30px);
   letter-spacing:-.015em;margin-top:8px;line-height:1.05}
 .exam-row .blurb{color:var(--muted);font-size:13.5px;margin-top:8px;line-height:1.5;max-width:52ch}
@@ -96,7 +102,8 @@ img{max-width:100%}
 .er-facts div{display:flex;flex-direction:column;gap:3px}
 .er-facts b{font-family:var(--f-mono);font-weight:500;font-size:17px;font-variant-numeric:tabular-nums;white-space:nowrap}
 .er-facts span{font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
-.er-go{color:var(--muted);font-weight:600;font-size:13.5px;white-space:nowrap;transition:color .15s}
+.er-go{color:var(--muted);font-weight:600;font-size:13.5px;white-space:nowrap;
+  transition:color .2s ease,transform .2s ease}
 .er-bar{display:flex;flex-direction:column;gap:7px}
 .mini{height:3px;border-radius:0;background:var(--surface-2);overflow:hidden}
 .mini i{display:block;height:100%;background:var(--accent)}
