@@ -1,0 +1,892 @@
+{
+ "id": "mc-administrator",
+ "code": "MC Administrator",
+ "name": "Marketing Cloud Administrator",
+ "vendor": "Salesforce",
+ "release": "Pruebas de nov 2026",
+ "date": "2026-11",
+ "format": {
+  "scored": 60,
+  "unscored": 0,
+  "minutes": 105,
+  "pass": 67,
+  "choices": 3
+ },
+ "sections": [
+  {
+   "id": "setup",
+   "name": "Setup",
+   "weight": 38
+  },
+  {
+   "id": "data",
+   "name": "Subscriber Data Management",
+   "weight": 18
+  },
+  {
+   "id": "chan",
+   "name": "Channel Management",
+   "weight": 16
+  },
+  {
+   "id": "maint",
+   "name": "Maintenance",
+   "weight": 15
+  },
+  {
+   "id": "dmp",
+   "name": "Digital Marketing Proficiency",
+   "weight": 13
+  }
+ ],
+ "notes": "Banco de 60 preguntas de una prueba real de Marketing Cloud Administrator (Set 1), con 3 opciones por pregunta. Las capturas eran de baja resolución, así que algún enunciado puede tener erratas menores. Las respuestas son las marcadas por quien hizo la prueba; tres dudosas están corregidas y llevan una nota visible. Los pesos por área son los de la guía oficial; el 67 % de aprobado y los 105 min vienen de una fuente de terceros (no de Salesforce), así que tómalos como orientativos.",
+ "logo": "assets/logos/salesforce.png",
+ "logoClass": "cloud",
+ "isNew": true,
+ "questions": [
+  {
+   "id": "m001",
+   "sec": "maint",
+   "t": "Descifrar archivos importados",
+   "q": "Northern Trail Outfitters requires all subscriber files placed on the SFTP for import to be encrypted. Which activity in Automation Studio could be used to decrypt the file to prepare for importing?",
+   "o": [
+    "Decryption Activity",
+    "Data Extract Activity",
+    "File Transfer Activity"
+   ],
+   "a": 2,
+   "e": "La actividad File Transfer permite descifrar el archivo cifrado del SFTP antes de la importación.",
+   "src": "MC Admin Set 1 · pregunta 1",
+   "note": "En la captura estaba marcada la B (Data Extract), pero Data Extract genera archivos, no los descifra; la actividad de Automation Studio que descifra el archivo antes de importar es File Transfer (C). Respuesta corregida: revísala si tienes la solución oficial."
+  },
+  {
+   "id": "m002",
+   "sec": "setup",
+   "t": "Restricciones de permisos",
+   "q": "Northern Trail Outfitters wants to have specific permission restrictions applied to all users in a business unit. How should they accomplish this?",
+   "o": [
+    "Set default permissions with the restrictions on the business unit.",
+    "Assign a role to the business unit.",
+    "Deny the permissions directly within the business unit."
+   ],
+   "a": 1,
+   "e": "Se asigna un rol a la unidad de negocio, de modo que sus restricciones de permisos se apliquen a todos sus usuarios.",
+   "src": "MC Admin Set 1 · pregunta 2"
+  },
+  {
+   "id": "m003",
+   "sec": "setup",
+   "t": "Cabecera y pie por defecto",
+   "q": "A Marketing Cloud admin is asked by the marketing team to ensure a default Header and Footer be added to emails. Where under Setup could this be created?",
+   "o": [
+    "Account Settings",
+    "Content Builder Settings",
+    "Email Static Settings"
+   ],
+   "a": 0,
+   "e": "La cabecera y el pie predeterminados de los correos se configuran en los ajustes de la cuenta (Account Settings), en Setup.",
+   "src": "MC Admin Set 1 · pregunta 3"
+  },
+  {
+   "id": "m004",
+   "sec": "data",
+   "t": "Objetos de Sales Cloud sincronizados",
+   "q": "Northern Trail Outfitters wants to segment audiences based on Sales Cloud data. Where would their Marketing Cloud admin configure Sales Cloud Objects to be synced and leveraged in Marketing Cloud?",
+   "o": [
+    "Setup > Data Management > Synchronized Data Extensions",
+    "Contact Builder > Data Extensions > Synchronized Data Extensions",
+    "Contact Builder > Data Sources"
+   ],
+   "a": 2,
+   "e": "Los objetos de Sales Cloud a sincronizar se configuran en Contact Builder > Data Sources.",
+   "src": "MC Admin Set 1 · pregunta 4"
+  },
+  {
+   "id": "m005",
+   "sec": "maint",
+   "t": "Contraseña SFTP",
+   "q": "A Marketing Cloud admin has been asked to update their account's SFTP user password. Where in Setup could they accomplish this task?",
+   "o": [
+    "Data Management",
+    "Security",
+    "Users"
+   ],
+   "a": 0,
+   "e": "Las cuentas FTP, incluido el cambio de contraseña, se gestionan en Setup > Data Management.",
+   "src": "MC Admin Set 1 · pregunta 5"
+  },
+  {
+   "id": "m006",
+   "sec": "setup",
+   "t": "Verificar el SAP",
+   "q": "Northern Trail Outfitters (NTO) hired a new Marketing Cloud admin, who was told all emails come from info@email.nto.com. The previous admin did not leave any documentation. What should confirm a Sender Authentication Package (SAP) has been set up on the account?",
+   "o": [
+    "Upon receiving an email, all tracked links start with click.email.nto.com.",
+    "Users receive Marketing Cloud password reset emails from help@email.nto.com.",
+    "The login page for Marketing Cloud Users is login.email.nto.com and is branded with NTO colors."
+   ],
+   "a": 0,
+   "e": "Con un SAP configurado, los enlaces rastreados del correo usan el dominio de marca (por ejemplo click.email.nto.com).",
+   "src": "MC Admin Set 1 · pregunta 6"
+  },
+  {
+   "id": "m007",
+   "sec": "setup",
+   "t": "Multi-Org y centros de preferencias",
+   "q": "A Marketing Cloud admin is tasked with requesting Marketing Cloud Connect Multi-Org enablement. What consideration should be given to the preference/profile centers for this integration?",
+   "o": [
+    "Profile/preference centers are automatically created for each business unit connected through Multi-Org.",
+    "Branding for each business units' profile centers will be inherited from the default business unit setup.",
+    "Multi-Org does not support the standard profile/preference center for the business units."
+   ],
+   "a": 2,
+   "e": "Multi-Org no admite el centro de perfil o preferencias estándar de las unidades de negocio.",
+   "src": "MC Admin Set 1 · pregunta 7"
+  },
+  {
+   "id": "m008",
+   "sec": "chan",
+   "t": "Informe de contenido en Triggered Send",
+   "q": "A Marketing Cloud admin is asked to understand how a certain content area within a Triggered Send Email is performing. Which report should be used?",
+   "o": [
+    "Impression Tracking for Triggered Sends",
+    "Account Send Summary",
+    "Dynamic Content for Triggered Sends"
+   ],
+   "a": 0,
+   "e": "Impression Tracking for Triggered Sends muestra el rendimiento de las áreas de contenido de un correo de envío disparado.",
+   "src": "MC Admin Set 1 · pregunta 8"
+  },
+  {
+   "id": "m009",
+   "sec": "maint",
+   "t": "Rebotes duros",
+   "q": "A Marketing Cloud admin wants to create a suppression list for hard-bounced email addresses. Where could the details be found?",
+   "o": [
+    "Email Studio Tracking Tab",
+    "Bounce Data View",
+    "Recent Email Sending Summary"
+   ],
+   "a": 1,
+   "e": "La vista de datos de rebotes (Bounce Data View) detalla las direcciones rebotadas y permite construir la lista de supresión.",
+   "src": "MC Admin Set 1 · pregunta 9"
+  },
+  {
+   "id": "m010",
+   "sec": "data",
+   "t": "Modelo de datos en Data Designer",
+   "q": "A Marketing Cloud admin is configuring the Marketing Cloud data model for the first time. Journey Builder will be used to personalize the type of messages being sent to customers, based on if there has been an order or not. There are two existing data extensions: Customers and Orders. Customers contains information about subscribers including Email Address, First Name, Last Name, Address, and Customer ID. Orders contains information about the orders and includes the unique identifier of the customer. How should Data Designer be configured to allow this data to be used within a Journey decision split?",
+   "o": [
+    "Link the Customers data extension to the data model using Email Address.",
+    "Link the Customers data extension to the data model using a Many-to-One relationship.",
+    "Link the Customers data extension to the data model using Customer ID."
+   ],
+   "a": 2,
+   "e": "Customers se vincula al modelo de datos por Customer ID, que es el identificador común con Orders y permite usar esos datos en el decision split.",
+   "src": "MC Admin Set 1 · pregunta 10"
+  },
+  {
+   "id": "m011",
+   "sec": "dmp",
+   "t": "Lookalike audiences",
+   "q": "The Marketing Cloud admin for Northern Trails Outfitters wants to build an audience with Advertising Studio which mimics the traits of their most valuable customers. Which network supports lookalike audiences directly from Advertising Studio?",
+   "o": [
+    "Google",
+    "Facebook",
+    "Twitter"
+   ],
+   "a": 1,
+   "e": "Advertising Studio permite crear audiencias similares (lookalike) directamente en Facebook.",
+   "src": "MC Admin Set 1 · pregunta 11"
+  },
+  {
+   "id": "m012",
+   "sec": "setup",
+   "t": "Licencias de paquetes instalados",
+   "q": "A Marketing Cloud admin installed Query Studio for Marketing Cloud, however, users are reporting they do NOT have access. How should the Marketing Cloud admin ensure users have access?",
+   "o": [
+    "Allow access package access on appropriate Roles",
+    "Configure the API Integration to allow all users access",
+    "License all appropriate users within the installed package"
+   ],
+   "a": 2,
+   "e": "Los usuarios deben tener licencia dentro del paquete instalado para poder usar la aplicación.",
+   "src": "MC Admin Set 1 · pregunta 12"
+  },
+  {
+   "id": "m013",
+   "sec": "chan",
+   "t": "Journey con versiones aleatorias",
+   "q": "Northern Trail Outfitters (NTO) is building a journey which randomly sends five different versions of an initial welcome email to new subscribers; however, subscribers receive the same follow-up email two weeks later. To improve maintainability of their email content, NTO wants to use five completely different emails, rather than having one email with dynamic content. Which activity would allow them to build the journey with the lowest activities possible?",
+   "o": [
+    "Path Optimizer Activity",
+    "Join Activity",
+    "Engagement Split"
+   ],
+   "a": 1,
+   "e": "Con una actividad Join, las cinco ramas del reparto aleatorio confluyen en un único correo de seguimiento, sin duplicar actividades.",
+   "src": "MC Admin Set 1 · pregunta 13"
+  },
+  {
+   "id": "m014",
+   "sec": "setup",
+   "t": "Dominios privados y CloudPages",
+   "q": "Northern Trail Outfitters (NTO) uses Sender Authentication Package (SAP) for branding purposes. Their German business unit is configured with the SAP domain de.ntomarketing.com. The new German team is preparing for a campaign and wants to use customized CloudPages with the domain de-special.ntomarketing.com. How could the Marketing Cloud admin meet this requirement?",
+   "o": [
+    "Purchase a new SAP for de-special.ntomarketing.com.",
+    "CloudPages must use the SAP domain.",
+    "Purchase a new Private Domain for use in CloudPages."
+   ],
+   "a": 2,
+   "e": "Para usar un dominio propio distinto en CloudPages no hace falta otro SAP: se compra un dominio privado (Private Domain) para esas páginas.",
+   "src": "MC Admin Set 1 · pregunta 14"
+  },
+  {
+   "id": "m015",
+   "sec": "dmp",
+   "t": "Calentamiento de IP",
+   "q": "A Marketing Cloud admin needs to warm their account's Dedicated IP. What option for segmentation aligns with the IP Warming process?",
+   "o": [
+    "Segment by domain to limit number of sends to each email provider.",
+    "Segment subscribers by subscriber opt-in date.",
+    "Segment subscribers with soft bounces in their own dedicated seed."
+   ],
+   "a": 0,
+   "e": "Durante el calentamiento de IP se segmenta por dominio para limitar el volumen enviado a cada proveedor de correo.",
+   "src": "MC Admin Set 1 · pregunta 15"
+  },
+  {
+   "id": "m016",
+   "sec": "data",
+   "t": "Datos de Sales Cloud en queries",
+   "q": "A Marketing Cloud admin has been asked to include Sales Cloud data in their queries. Which feature would allow this functionality?",
+   "o": [
+    "Journey Builder",
+    "Query Studio",
+    "Synchronized Data Sources"
+   ],
+   "a": 2,
+   "e": "Los orígenes de datos sincronizados traen los datos de Sales Cloud a Marketing Cloud para poder usarlos en queries.",
+   "src": "MC Admin Set 1 · pregunta 16"
+  },
+  {
+   "id": "m017",
+   "sec": "maint",
+   "t": "Usuario SFTP",
+   "q": "A Marketing Cloud admin wants to create an SFTP User for the first time. Which consideration should be taken when configuring an SFTP User?",
+   "o": [
+    "By default, the username is the MID for the current Marketing Cloud MID.",
+    "Once created, the user will need to be activated to use the SFTP.",
+    "Once created, the password can only be updated by admin."
+   ],
+   "a": 1,
+   "e": "Tras crear el usuario SFTP hay que activarlo antes de poder usar el servidor SFTP.",
+   "src": "MC Admin Set 1 · pregunta 17"
+  },
+  {
+   "id": "m018",
+   "sec": "setup",
+   "t": "Tiempo de sesión",
+   "q": "A user asks a Marketing Cloud admin to update and increase their session timeout setting. Which consideration should the admin review before making this update?",
+   "o": [
+    "Frustration of users upon timeouts",
+    "Change impacts all users",
+    "Typical length of time users spend in Marketing Cloud"
+   ],
+   "a": 1,
+   "e": "El tiempo de espera de sesión es un ajuste de cuenta, así que el cambio afecta a todos los usuarios.",
+   "src": "MC Admin Set 1 · pregunta 18"
+  },
+  {
+   "id": "m019",
+   "sec": "data",
+   "t": "Prioridad de All Subscribers",
+   "q": "Northern Trail Outfitters (NTO) uses data extensions for all of their email audiences. A customer reports they updated their email address weeks ago but continues to receive the NTO Daily Digest email at their old address. The Marketing Cloud admin has confirmed the new email address is present in the appropriate data extension. What consideration could account for this behavior?",
+   "o": [
+    "The email address in All Subscribers is prioritized.",
+    "The data extension was not configured as sendable.",
+    "Contact Builder was not configured properly."
+   ],
+   "a": 0,
+   "e": "Si en All Subscribers consta la dirección antigua, esa dirección tiene prioridad en el envío frente a la de la extensión de datos.",
+   "src": "MC Admin Set 1 · pregunta 19"
+  },
+  {
+   "id": "m020",
+   "sec": "setup",
+   "t": "Cuándo crear unidades de negocio",
+   "q": "A Marketing Cloud admin at Northern Trail Outfitters (NTO) is exploring whether they need to separate their brands into separate business units. When should the admin create separate business units for each of NTO's brands?",
+   "o": [
+    "A new sender profile is needed for sending transactional emails.",
+    "Brand-specific private domains are required for images and links.",
+    "Multiple FTP users must be accommodated."
+   ],
+   "a": 1,
+   "e": "Hacen falta unidades de negocio separadas cuando cada marca necesita sus propios dominios privados para imágenes y enlaces.",
+   "src": "MC Admin Set 1 · pregunta 20"
+  },
+  {
+   "id": "m021",
+   "sec": "setup",
+   "t": "Autenticación en la interfaz",
+   "q": "What does Marketing Cloud authenticate when a user logs in through the user interface?",
+   "o": [
+    "If the user is assigned a role in the parent business unit",
+    "If the user is logging in within defined Business Hours",
+    "If the user is logging in from an allowlisted IP address"
+   ],
+   "a": 2,
+   "e": "Marketing Cloud puede comprobar si el usuario accede desde una dirección IP incluida en la lista de permitidas.",
+   "src": "MC Admin Set 1 · pregunta 21"
+  },
+  {
+   "id": "m022",
+   "sec": "setup",
+   "t": "Separación de datos por región",
+   "q": "Security and Legal teams determine subscriber data available to EMEA teams should NOT be available to AMER teams. How could the Marketing Cloud admin ensure distinct data integrity across the regions?",
+   "o": [
+    "Filter data view permissions at the subscriber level.",
+    "Deploy Multi-Org with a single Marketing Cloud Account.",
+    "Separate regions into business units and apply Subscriber Filters."
+   ],
+   "a": 2,
+   "e": "Se separan las regiones en unidades de negocio distintas y se aplican filtros de suscriptor para aislar los datos.",
+   "src": "MC Admin Set 1 · pregunta 22"
+  },
+  {
+   "id": "m023",
+   "sec": "setup",
+   "t": "Políticas de contraseña",
+   "q": "Northern Trail Outfitters' security team has password policies they want enforced within Marketing Cloud. Which password policies could the Marketing Cloud admin configure in Setup?",
+   "o": [
+    "Maximum Password Length, Password Complexity, Unique Password, Expiration Period",
+    "Minimum Password Length, Use Strong Passphrases, Password History, Number of Security Questions",
+    "Minimum Password Length, Password Complexity, Password History, Expiration Period"
+   ],
+   "a": 2,
+   "e": "En Setup se pueden configurar la longitud mínima, la complejidad, el historial de contraseñas y el periodo de caducidad.",
+   "src": "MC Admin Set 1 · pregunta 23"
+  },
+  {
+   "id": "m024",
+   "sec": "dmp",
+   "t": "Gasto publicitario",
+   "q": "Northern Trail Outfitters uses DoubleClick Bid Manager, Facebook Ads, and Google Analytics to manage advertising spend. They want to combine these data sources with Marketing Cloud's API to identify their most effective campaigns. What feature should be recommended?",
+   "o": [
+    "Interaction Studio",
+    "Einstein AI",
+    "Datorama"
+   ],
+   "a": 2,
+   "e": "Datorama integra datos de plataformas publicitarias y de analítica para medir qué campañas son más eficaces.",
+   "src": "MC Admin Set 1 · pregunta 24"
+  },
+  {
+   "id": "m025",
+   "sec": "setup",
+   "t": "Permisos de administrador",
+   "q": "A Marketing Cloud admin has been asked to grant full administrator permissions to a new user. Which two standard roles should be selected for the new user?",
+   "o": [
+    "Administrator and Marketing Cloud Administrator",
+    "Data Manager and Marketing Cloud Administrator",
+    "Marketing Cloud Security Administrator and Administrator"
+   ],
+   "a": 0,
+   "e": "Los permisos completos de administrador se conceden con los roles Administrator y Marketing Cloud Administrator.",
+   "src": "MC Admin Set 1 · pregunta 25"
+  },
+  {
+   "id": "m026",
+   "sec": "maint",
+   "t": "File Drop con nombres variables",
+   "q": "A Marketing Cloud admin has noticed a File Drop Automation has been failing on the Import File activity. The automation is configured with a filename pattern, so the filename is expected to begin with customer_import_. The import is configured to look for a file named customer_import_%%Year%%%%Month%%%%Day%%.csv, however, the admin notices the filenames include seconds and milliseconds. How should the admin fix the issue?",
+   "o": [
+    "Use %%Filename_From_Trigger%% in the Import File Activity",
+    "Use %%_DataSourceName%% in the Import File Activity",
+    "Use the exact filename used for the trigger in the Import File Activity"
+   ],
+   "a": 0,
+   "e": "%%Filename_From_Trigger%% usa el nombre real del archivo que disparó la automatización, sea cual sea su sufijo de fecha y hora.",
+   "src": "MC Admin Set 1 · pregunta 26"
+  },
+  {
+   "id": "m027",
+   "sec": "chan",
+   "t": "Direcciones verificadas",
+   "q": "Where would a Marketing Cloud admin view all verified email addresses?",
+   "o": [
+    "Sender Profiles",
+    "Identity Verification Log",
+    "From Address Management"
+   ],
+   "a": 2,
+   "e": "En From Address Management se consultan todas las direcciones de correo verificadas.",
+   "src": "MC Admin Set 1 · pregunta 27"
+  },
+  {
+   "id": "m028",
+   "sec": "chan",
+   "t": "Parámetros en enlaces",
+   "q": "A Marketing Cloud admin is asked to add a set of four query strings automatically to all the links in an email sent via Email Studio. Which solution should the admin suggest?",
+   "o": [
+    "Parameter Manager",
+    "AMPscript for Marketing Cloud",
+    "Google Analytics 360"
+   ],
+   "a": 0,
+   "e": "Parameter Manager añade automáticamente cadenas de consulta a todos los enlaces del email.",
+   "src": "MC Admin Set 1 · pregunta 28"
+  },
+  {
+   "id": "m029",
+   "sec": "chan",
+   "t": "Copiar journeys entre unidades",
+   "q": "Northern Trail Outfitters wants to copy journeys across business units. What could be used to replicate journey structure so it can be easily recreated in another account?",
+   "o": [
+    "Package Manager",
+    "Journey Extracts",
+    "Journey Templates"
+   ],
+   "a": 0,
+   "e": "Package Manager empaqueta la estructura del journey para recrearla en otra unidad de negocio o cuenta.",
+   "src": "MC Admin Set 1 · pregunta 29"
+  },
+  {
+   "id": "m030",
+   "sec": "chan",
+   "t": "Orígenes de entrada de Journey Builder",
+   "q": "What are entry source types for Journey Builder?",
+   "o": [
+    "Data Extension, CloudPages, Email List, API Event",
+    "Data Extension, Audience Studio, API Event, Date Based Event",
+    "Data Extension, Email List, API Event, Date Based Event"
+   ],
+   "a": 1,
+   "e": "Entre los orígenes de entrada de Journey Builder están las extensiones de datos, Audience Studio y los eventos de API y de fecha.",
+   "src": "MC Admin Set 1 · pregunta 30"
+  },
+  {
+   "id": "m031",
+   "sec": "data",
+   "t": "Orígenes de datos",
+   "q": "Northern Trail Outfitters uses Marketing Cloud Connect to leverage Sales Cloud data in their Journeys. A user recently reported the data coming from Sales Cloud is NOT up to date. Where should the Marketing Cloud admin begin troubleshooting?",
+   "o": [
+    "Setup > Synchronized Data Extensions",
+    "Contact Builder > Data Sources",
+    "Contact Builder > Synchronized Data Extensions"
+   ],
+   "a": 1,
+   "e": "La sincronización se revisa en Contact Builder > Data Sources, donde se ve el estado de los orígenes de datos conectados.",
+   "src": "MC Admin Set 1 · pregunta 31"
+  },
+  {
+   "id": "m032",
+   "sec": "data",
+   "t": "Tipos de importación",
+   "q": "A Marketing Cloud admin is using the Import Wizard to import data into a non-sendable data extension, but receives an error indicating the import type being used requires a primary key. Which import type could the admin use instead?",
+   "o": [
+    "Overwrite",
+    "Add Only",
+    "Add and Update"
+   ],
+   "a": 0,
+   "e": "Add and Update y Add Only requieren clave primaria; Overwrite no, así que sirve para una extensión sin ella.",
+   "src": "MC Admin Set 1 · pregunta 32"
+  },
+  {
+   "id": "m033",
+   "sec": "setup",
+   "t": "Autenticación REST",
+   "q": "Northern Trail Outfitters wants to leverage the REST API for an external application they plan to build. Where should their Marketing Cloud admin set up permissions to allow REST authentication?",
+   "o": [
+    "Installed Packages",
+    "Data Management",
+    "Salesforce Integration"
+   ],
+   "a": 0,
+   "e": "Los permisos de autenticación para la API REST se configuran creando un paquete instalado (Installed Package) en Setup.",
+   "src": "MC Admin Set 1 · pregunta 33"
+  },
+  {
+   "id": "m034",
+   "sec": "data",
+   "t": "Contact Key",
+   "q": "Northern Trail Outfitters wants a data model in Marketing Cloud which will prevent them from duplicating, or even triplicating, records. How should the unique identifier of the data model be set up if the MobilePush and Email channels are used within the same account?",
+   "o": [
+    "Use the auto-generated keys supplied by Marketing Cloud at time of record creation for each channel used.",
+    "Use a third-party system to identify and delete duplicate Contact Keys.",
+    "Strategically control the Contact Key values and tie records together across channels using this key."
+   ],
+   "a": 2,
+   "e": "Se controlan los valores de Contact Key y se usa esa clave para unir los registros de todos los canales en un único contacto.",
+   "src": "MC Admin Set 1 · pregunta 34"
+  },
+  {
+   "id": "m035",
+   "sec": "maint",
+   "t": "Datos de rebotes",
+   "q": "A Marketing Cloud admin has been asked to get the last 30 days of Bounce data from their account. What should the admin use to get granular bounce data in bulk in a pre-defined format?",
+   "o": [
+    "CSV download of bounce data in My Tracking",
+    "Sent Data View Query",
+    "Automation Studio Tracking Extract"
+   ],
+   "a": 2,
+   "e": "El Tracking Extract de Automation Studio entrega datos de seguimiento detallados y masivos en un formato predefinido.",
+   "src": "MC Admin Set 1 · pregunta 35"
+  },
+  {
+   "id": "m036",
+   "sec": "setup",
+   "t": "Roles de usuario",
+   "q": "Northern Trail Outfitters wants a business analyst to import contact lists. The analyst has the following Marketing Cloud roles: Marketing Cloud Channel Manager and Marketing Cloud Viewer. The analyst logged in but is unable to import contact lists. How should the user be updated to allow the analyst the appropriate access?",
+   "o": [
+    "Remove Marketing Cloud Viewer",
+    "Add Distributed Sending User",
+    "Add Marketing Cloud Security Administrator"
+   ],
+   "a": 0,
+   "e": "El rol Viewer es de solo lectura y limita los permisos del Channel Manager; quitándolo, el analista puede importar.",
+   "src": "MC Admin Set 1 · pregunta 36"
+  },
+  {
+   "id": "m037",
+   "sec": "chan",
+   "t": "Palabras clave SMS",
+   "q": "A Marketing Cloud admin wants to configure a new keyword for an upcoming SMS campaign. After entering the desired keyword (CELEBRATE) the admin notices the keyword is unavailable. What issue could the admin be facing?",
+   "o": [
+    "Keyword is used within another business unit",
+    "Keyword fails to meet content standards",
+    "Keyword is a reserved word"
+   ],
+   "a": 0,
+   "e": "Una palabra clave de SMS debe ser única para el código corto; si ya la usa otra unidad de negocio, no está disponible.",
+   "src": "MC Admin Set 1 · pregunta 37"
+  },
+  {
+   "id": "m038",
+   "sec": "maint",
+   "t": "Tracking Extract y codificación",
+   "q": "A Marketing Cloud admin has configured a Tracking Extract which includes all subscriber attributes for their global regions. However, the admin notices accented characters in the customers' names appear jumbled in the extracted file. Which setting could solve this issue?",
+   "o": [
+    "Change Column Delimiter to |",
+    "Change Format to xml",
+    "Change Character Encoding to UTF-8"
+   ],
+   "a": 2,
+   "e": "Los caracteres acentuados se corrompen por la codificación; cambiarla a UTF-8 los conserva en el archivo extraído.",
+   "src": "MC Admin Set 1 · pregunta 38"
+  },
+  {
+   "id": "m039",
+   "sec": "chan",
+   "t": "Velocidad de envío",
+   "q": "A Marketing Cloud admin discovers large sends are not meeting send speed goals set by the organization. What functionality would get messages out the door faster?",
+   "o": [
+    "Send Throttling",
+    "Journey Builder",
+    "Burst Sending"
+   ],
+   "a": 2,
+   "e": "Burst Sending acelera los envíos grandes, mientras que el Send Throttling ralentiza el ritmo.",
+   "src": "MC Admin Set 1 · pregunta 39"
+  },
+  {
+   "id": "m040",
+   "sec": "data",
+   "t": "Errores de importación",
+   "q": "Northern Trail Outfitters has imported a file into All Subscribers. They then received a results file stating an example.com address could NOT be imported. Which error code would the file contain for this record?",
+   "o": [
+    "List Detective",
+    "Skipped Records",
+    "Restricted Values"
+   ],
+   "a": 0,
+   "e": "List Detective bloquea direcciones que se consideran inválidas o de riesgo, como las de dominios de ejemplo, y lo indica en el archivo de resultados.",
+   "src": "MC Admin Set 1 · pregunta 40"
+  },
+  {
+   "id": "m041",
+   "sec": "data",
+   "t": "Marketing Cloud Connect",
+   "q": "A Marketing Cloud admin notices Individual Email Results are NOT being pushed back to Sales Cloud for a particular send. The admin confirms Marketing Cloud Connect is functioning properly. What should the admin confirm about the data extension?",
+   "o": [
+    "The data extension is located in the Salesforce Data Extensions folder.",
+    "The send relationship links SubscriberKey to Subscribers on EmailAddress.",
+    "The data extension is located in the Synchronized Data Extensions folder."
+   ],
+   "a": 0,
+   "e": "Para devolver los resultados individuales a Sales Cloud, la extensión de datos debe estar en la carpeta Salesforce Data Extensions.",
+   "src": "MC Admin Set 1 · pregunta 41"
+  },
+  {
+   "id": "m042",
+   "sec": "setup",
+   "t": "Datos personales fuera de Marketing Cloud",
+   "q": "Northern Trail Outfitters does NOT want to store email addresses or phone numbers within Marketing Cloud. Which feature should they use?",
+   "o": [
+    "Field Level Encryption",
+    "Lookup reference to Contact Object",
+    "Tokenized Sending"
+   ],
+   "a": 2,
+   "e": "Tokenized Sending evita almacenar direcciones de correo o teléfonos en Marketing Cloud: se envían con un token y la dirección real se resuelve fuera.",
+   "src": "MC Admin Set 1 · pregunta 42"
+  },
+  {
+   "id": "m043",
+   "sec": "maint",
+   "t": "Notificación de queries",
+   "q": "A Marketing Cloud admin has scheduled a query on a daily basis. They notice the query sometimes fails to execute. How would the admin ensure a notification is received when the query fails?",
+   "o": [
+    "Configure the \"Event Notification Service\" in Setup with their Email Address",
+    "Verify their Email Address in Alert Manager within the Setup app",
+    "Add their Email Address in the automation notification settings"
+   ],
+   "a": 2,
+   "e": "Las notificaciones de error de una query programada se configuran en los ajustes de notificación de la automatización.",
+   "src": "MC Admin Set 1 · pregunta 43"
+  },
+  {
+   "id": "m044",
+   "sec": "data",
+   "t": "Retención de datos",
+   "q": "To prevent retention of stagnant data, Northern Trail Outfitters wants any inactive data stored in data extensions to be cleared after 12 months. What action should be taken?",
+   "o": [
+    "Set inactive data to be automatically cleared after one year, but is recoverable",
+    "Configure the business unit data retention setting to 12 months",
+    "Apply a Row Based Retention to each data extension as it is created, set to 12 months"
+   ],
+   "a": 2,
+   "e": "La retención por filas se define en cada extensión de datos al crearla, por ejemplo a 12 meses, y elimina los registros antiguos.",
+   "src": "MC Admin Set 1 · pregunta 44"
+  },
+  {
+   "id": "m045",
+   "sec": "chan",
+   "t": "Goals en Journey Builder",
+   "q": "Which statement should be considered before using Goals in Journey Builder?",
+   "o": [
+    "Contacts are evaluated against the goal after each wait activity.",
+    "Goal target statistics are stored in a data extension.",
+    "Each contact can be assigned an individual goal."
+   ],
+   "a": 0,
+   "e": "Los contactos se evalúan contra el objetivo (Goal) después de cada actividad de espera, y esto condiciona cómo se diseña el journey.",
+   "src": "MC Admin Set 1 · pregunta 45"
+  },
+  {
+   "id": "m046",
+   "sec": "setup",
+   "t": "Protección de datos sensibles",
+   "q": "A Marketing Cloud admin wants to ensure sensitive information needed for email sends is NOT imported and stored in Marketing Cloud. What solution might they implement?",
+   "o": [
+    "Data At Rest Encryption",
+    "Field Level Encryption",
+    "Tokenized Sending"
+   ],
+   "a": 2,
+   "e": "Con Tokenized Sending los datos sensibles (como el correo o el teléfono) se quedan en el sistema del cliente y Marketing Cloud solo gestiona un token.",
+   "src": "MC Admin Set 1 · pregunta 46"
+  },
+  {
+   "id": "m047",
+   "sec": "chan",
+   "t": "Prefijo de pruebas",
+   "q": "A Marketing Cloud admin wants to ensure email sends exclude their testing prefix of [PREVIEW] in the subject line when deploying from Email Studio. What should the admin do to prevent the prefix from deploying in live sends?",
+   "o": [
+    "Wrap the subject line with AMPscript",
+    "Use Proof instead of [PREVIEW]",
+    "Add [PREVIEW] to the subject line validation list"
+   ],
+   "a": 2,
+   "e": "Añadir [PREVIEW] a la lista de validación del asunto hace que Email Studio bloquee los envíos que lo contengan.",
+   "src": "MC Admin Set 1 · pregunta 47"
+  },
+  {
+   "id": "m048",
+   "sec": "data",
+   "t": "Extensión sendable",
+   "q": "Northern Trail Outfitters is preparing to send a promotional email. The audience file was loaded into a data extension but it does not display for the Marketing Cloud admin when scheduling the send. What should the admin confirm to resolve the issue?",
+   "o": [
+    "The data extension is linked using the Contact Key.",
+    "The data extension is marked as Sendable.",
+    "The data extension is marked as Sendable and Testable."
+   ],
+   "a": 1,
+   "e": "Para aparecer como audiencia en un envío, la extensión de datos debe estar marcada como Sendable.",
+   "src": "MC Admin Set 1 · pregunta 48"
+  },
+  {
+   "id": "m049",
+   "sec": "chan",
+   "t": "Parameter Manager",
+   "q": "Northern Trail Outfitters uses Parameter Manager to automatically tag links. They want to include a Campaign Identifier to the links within a specific campaign message. At which level should the utm_campaign value be configured?",
+   "o": [
+    "Account",
+    "Email",
+    "Link"
+   ],
+   "a": 1,
+   "e": "Para que el identificador de campaña afecte a los enlaces de un mensaje concreto, el valor utm_campaign se configura a nivel de email.",
+   "src": "MC Admin Set 1 · pregunta 49"
+  },
+  {
+   "id": "m050",
+   "sec": "chan",
+   "t": "Centro de suscripciones",
+   "q": "Which data structure could be configured to appear in the out-of-the-box Subscription Center?",
+   "o": [
+    "Data Extensions",
+    "Publication Lists",
+    "Groups"
+   ],
+   "a": 1,
+   "e": "El Subscription Center predeterminado muestra las listas de publicación, para que cada suscriptor gestione a cuáles está suscrito.",
+   "src": "MC Admin Set 1 · pregunta 50",
+   "note": "En la captura estaba marcada la A (Data Extensions), pero el centro de suscripciones predeterminado muestra las listas de publicación (B). Respuesta corregida: revísala si tienes la solución oficial."
+  },
+  {
+   "id": "m051",
+   "sec": "dmp",
+   "t": "CAN-SPAM",
+   "q": "What elements of CAN-SPAM should the Marketing Cloud admin ensure are present for each Commercial send?",
+   "o": [
+    "Preference Center link and physical mailing address",
+    "Preference Center link and a link to the business website",
+    "Business name and physical mailing address"
+   ],
+   "a": 0,
+   "e": "Todo envío comercial debe incluir un mecanismo de baja (enlace al centro de preferencias) y una dirección postal física.",
+   "src": "MC Admin Set 1 · pregunta 51"
+  },
+  {
+   "id": "m052",
+   "sec": "chan",
+   "t": "Encuestas",
+   "q": "Northern Trail Outfitters wants to send a custom survey to customers asking about their experience following a recent purchase. Which feature should be used to create a survey form?",
+   "o": [
+    "Smart Capture",
+    "Interaction Studio",
+    "Analytics Builder"
+   ],
+   "a": 0,
+   "e": "Smart Capture permite crear formularios, como una encuesta, que guardan las respuestas en una extensión de datos.",
+   "src": "MC Admin Set 1 · pregunta 52"
+  },
+  {
+   "id": "m053",
+   "sec": "chan",
+   "t": "Sender Authentication Package",
+   "q": "Northern Trail Outfitters (NTO) purchased one Sender Authentication Package (SAP) to ensure their branding is on every marketing communication. What would be achieved with SAP?",
+   "o": [
+    "A Dedicated IP is automatically warmed up",
+    "The out-of-the-box profile center will display NTO branding",
+    "Image URLs are wrapped with the appropriate brand URL"
+   ],
+   "a": 2,
+   "e": "El SAP permite usar dominios propios, de modo que las URL de imágenes y enlaces llevan la marca del cliente.",
+   "src": "MC Admin Set 1 · pregunta 53"
+  },
+  {
+   "id": "m054",
+   "sec": "chan",
+   "t": "Notificaciones push",
+   "q": "Northern Trail Outfitters has a mobile app. Which product would allow them to send push notifications to customers with their mobile app?",
+   "o": [
+    "Journey Builder",
+    "Group Connect",
+    "Content Builder"
+   ],
+   "a": 0,
+   "e": "Journey Builder, junto con MobilePush, permite orquestar el envío de notificaciones push a la app móvil.",
+   "src": "MC Admin Set 1 · pregunta 54"
+  },
+  {
+   "id": "m055",
+   "sec": "data",
+   "t": "Fuentes sincronizadas",
+   "q": "Northern Trail Outfitters wants to use Synchronized Data Sources to sync Contact data from Salesforce CRM. However, they only want to sync records they would be able to send to to reduce the amount of data brought over. Which filtering option could be used when configuring the Contact synced object?",
+   "o": [
+    "Select all records which are active in All Subscribers",
+    "Select all records where HasOptedOutOfEmail is FALSE",
+    "Select all records where EmailOptInStatus is 'ACTIVE'"
+   ],
+   "a": 1,
+   "e": "El filtro de la fuente sincronizada se define con campos del objeto de Salesforce; HasOptedOutOfEmail = FALSE deja fuera a quienes no se les puede enviar.",
+   "src": "MC Admin Set 1 · pregunta 55",
+   "note": "En la captura estaba marcada la A, pero el filtro de un objeto sincronizado se aplica sobre campos del objeto de Salesforce, no sobre All Subscribers; lo coherente es HasOptedOutOfEmail = FALSE (B). Respuesta corregida: revísala si tienes la solución oficial."
+  },
+  {
+   "id": "m056",
+   "sec": "maint",
+   "t": "Errores de importación",
+   "q": "Northern Trail Outfitters runs a nightly automation consisting of a File Transfer and a File Import. Following an update from the engineering team, the automation began failing. The Marketing Cloud admin suspects the CSV file now has an invalid format. How could the admin receive a file of the bad data rows to confirm this theory?",
+   "o": [
+    "Update the Import definition to include a notification email address.",
+    "Move the Import definition to its own automation and include a notification email address.",
+    "Move the File Transfer to its own automation and include a notification email address."
+   ],
+   "a": 0,
+   "e": "Añadiendo un correo de notificación a la definición de importación, la plataforma envía el archivo con las filas erróneas.",
+   "src": "MC Admin Set 1 · pregunta 56"
+  },
+  {
+   "id": "m057",
+   "sec": "setup",
+   "t": "Business Units",
+   "q": "Northern Trail Outfitters (NTO) is a global brand that includes many subsidiary brands under the parent umbrella. NTO is the Enterprise business unit and also has a child business unit used for sending promotional emails. How should the rest of the business unit be organized?",
+   "o": [
+    "Create a single child business unit for the other brands to share and standardized naming conventions.",
+    "Create child business units for each brand and next another level of child business units for GEOs.",
+    "Create new Enterprise business units for each brand and child business units for each of the brand's GEOs."
+   ],
+   "a": 0,
+   "e": "Se crea una única unidad de negocio hija que compartan las demás marcas y se estandarizan las convenciones de nombres.",
+   "src": "MC Admin Set 1 · pregunta 57"
+  },
+  {
+   "id": "m058",
+   "sec": "setup",
+   "t": "Seguridad de exportación",
+   "q": "Northern Trail Outfitters was given a set of requirements from their governance team to protect against misuse of customer data. One item mandated Marketing Cloud users should NOT be able to export data without approval from the governance team, however, users should still be able to view data within the system. Which feature would allow compliance with this requirement?",
+   "o": [
+    "Export Email Allowlist",
+    "IP Allowlist",
+    "Audit Trail"
+   ],
+   "a": 0,
+   "e": "La lista de correos permitidos para exportación (Export Email Allowlist) restringe a quién se pueden enviar las exportaciones, sin impedir que los usuarios vean los datos.",
+   "src": "MC Admin Set 1 · pregunta 58"
+  },
+  {
+   "id": "m059",
+   "sec": "setup",
+   "t": "Setup Assistant",
+   "q": "Northern Trail Outfitters just purchased Marketing Cloud. Which task would the Marketing Cloud admin be guided through in Setup Assistant?",
+   "o": [
+    "Building the data structure used to store audience information",
+    "Importing data into contacts using the Data Loader",
+    "Creating a SMS message and sending a mobile campaign"
+   ],
+   "a": 0,
+   "e": "El Setup Assistant guía en la configuración inicial de la cuenta, incluida la estructura de datos que almacenará la información de la audiencia.",
+   "src": "MC Admin Set 1 · pregunta 59"
+  },
+  {
+   "id": "m060",
+   "sec": "setup",
+   "t": "Licencias de usuario",
+   "q": "Northern Trail Outfitters only has enough licenses for their staff. A campaign manager is out on parental leave. How should they create a new user to fill in?",
+   "o": [
+    "Clone the campaign manager's user to a new user.",
+    "Disable the campaign manager's user and create a new user.",
+    "Deactivate the campaign manager's license and assign it to a new user."
+   ],
+   "a": 1,
+   "e": "Como no hay licencias de sobra, se deshabilita el usuario del gestor ausente para liberar su licencia y se crea un usuario nuevo.",
+   "src": "MC Admin Set 1 · pregunta 60"
+  }
+ ],
+ "unofficial": true
+}

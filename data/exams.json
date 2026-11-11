@@ -52,13 +52,20 @@
   },
   {
    "id": "mc-administrator",
-   "soon": true,
    "name": "Marketing Cloud Administrator",
    "code": "MC Administrator",
    "vendor": "Salesforce",
-   "blurb": "Banco de preguntas en preparación.",
+   "blurb": "Setup, usuarios y Business Units, datos de suscriptores, canales, automatizaciones y mantenimiento de Marketing Cloud.",
    "logo": "assets/logos/salesforce.png",
-   "logoClass": "cloud"
+   "logoClass": "cloud",
+   "file": "data/mc-administrator.json",
+   "questions": 60,
+   "pass": 67,
+   "minutes": 105,
+   "scored": 60,
+   "date": "2026-11",
+   "accent": "blue",
+   "isNew": true
   },
   {
    "id": "braze-marketer",
