@@ -1,1 +1,853 @@
-{"id":"braze-marketer","code":"Braze Certified Marketer","name":"🔥 Braze Certified Marketer","vendor":"Braze","release":"Pruebas de oct 2025","date":"2025-10","format":{"scored":50,"unscored":0,"minutes":60,"pass":65,"choices":4},"unofficial":true,"sections":[{"id":"ab","name":"Testing y optimización","weight":26},{"id":"can","name":"Campañas, Canvas y frecuencia","weight":22},{"id":"pers","name":"Personalización, Liquid e IA","weight":18},{"id":"ana","name":"Analítica y exportación","weight":18},{"id":"con","name":"Suscripción y consentimiento","weight":10},{"id":"seg","name":"Segmentación y datos","weight":6}],"notes":"Banco de 50 preguntas de un examen real hecho en oct 2025 (capturas fotografiadas). Las respuestas son las marcadas por quien hizo la prueba; en 9 se han corregido por criterio propio o con la documentación de Braze y llevan nota, igual que las que generan duda. Braze no publica pesos por área: los de aquí son el reparto de estas 50 preguntas. Los 60 min salen del cronómetro de las capturas y el 65 % de corte de una fuente de terceros, ambos sin contrastar con Braze.","questions":[{"id":"b001","sec":"con","t":"Subscription groups","q":"What is the primary benefit of using subscription groups for email in Braze?","o":["To allow users to choose specific categories of emails they want to receive","To ensure that all users receive the same promotional emails","To increase the overall number of emails sent to users","To automatically subscribe users to all email communications"],"a":0,"e":"Los subscription groups permiten que cada usuario elija qué categorías de email quiere recibir, en lugar de un todo o nada.","src":"Examen real · P1 de 50 · oct 2025"},{"id":"b002","sec":"can","t":"Frequency capping","q":"When creating a new campaign or Canvas in Braze, frequency capping can be used to: (Select 2)","o":["Adjust the timing of messages based on a user's location","Automatically adjust the message frequency every 24 hours based on the number of messages sent in previous campaigns","Determine how many times each user should receive a campaign or Canvas message by tag within a specific time frame","Limit how often you send messages through a specific channel"],"a":[2,3],"e":"El frequency capping limita cuántos mensajes recibe cada usuario en una ventana de tiempo, por canal, por tipo de mensaje o por tag. No ajusta horarios ni se autorregula.","src":"Examen real · P2 de 50 · oct 2025"},{"id":"b003","sec":"ab","t":"Intelligent Timing","q":"A quick service restaurant wants to re-engage their lapsing users and encourage them to return to the app to make a purchase. In Braze, they are building a Canvas that leverages multivariate testing to test the performance of a message on different channels. They want users to receive these messages when they are most likely to engage. What feature in Braze can they use to achieve this?","o":["Audience Sync","Winning Variant","Intelligent Timing","Intelligent Channel"],"a":2,"e":"Intelligent Timing envía a cada usuario en el momento en que es más probable que interactúe. Intelligent Channel elige el canal, no la hora.","src":"Examen real · P3 de 50 · oct 2025"},{"id":"b004","sec":"ana","t":"Analytics","q":"To analyze revenue data for your segments, which of the following steps should you follow? (Select 2)","o":["Access the Home page and view the Performance Over Time section.","Navigate to Analytics > Custom Event Report and select your desired segments to view your segment revenue data.","Navigate to Analytics > Revenue Report and select \"Break Down by Segment\" to view your segment revenue data","Enable the Analytics Tracking toggle for each segment you wish to track."],"a":[2,3],"e":"Hay que activar Analytics Tracking en cada segmento y luego usar el Revenue Report desglosado por segmento.","src":"Examen real · P4 de 50 · oct 2025"},{"id":"b005","sec":"pers","t":"Liquid","q":"What is one of the primary advantages of using Liquid in your personalization strategy within Braze?","o":["It enables you to create dynamic content based on individual user attributes and behaviors.","It allows you to send the same message to all users without any customization.","It limits your ability to use external data sources for personalization.","It requires extensive coding knowledge to implement effectively."],"a":0,"e":"Liquid permite contenido dinámico según atributos y comportamiento de cada usuario.","src":"Examen real · P5 de 50 · oct 2025"},{"id":"b006","sec":"seg","t":"Segmentation","q":"A health and wellness brand wants to target users who logged at least one yoga session in the past month to send a personalized campaign recommending additional yoga content. Which Braze feature can be used to accomplish this?","o":["Segmentation with nested custom attributes","Segmentation using the filter: \"Yoga Session Logged Exactly 1 Time\"","Segment Funnels","Segment Extensions"],"a":0,"e":"Respuesta marcada por quien hizo la prueba. \"Exactly 1 time\" no sirve para \"al menos una\" y los funnels miden pasos, no frecuencia.","src":"Examen real · P6 de 50 · oct 2025","note":"Duda: Segment Extensions también podría encajar (eventos personalizados con ventana temporal). Se deja la opción marcada en el examen."},{"id":"b007","sec":"ana","t":"Attribution","q":"Which attribution method counts conversions that occur after an email is opened, excluding machine opens, and is calculated as conversions divided by opens per user?","o":["Upon Click","Upon Receipt","Upon Last-Touch","Upon Open"],"a":3,"e":"Upon Open cuenta las conversiones tras la apertura del email, sin aperturas de máquina.","src":"Examen real · P7 de 50 · oct 2025"},{"id":"b008","sec":"ab","t":"A/B testing","q":"You're performing an A/B test on your next recurring email campaign. What are two ways to maximize the number of users that are sent to the winning variant?","o":["Use the Winning Variant optimization.","Create two separate campaigns for each variant.","Wait until the campaign is complete and then compare variant results.","Turn on Intelligent Selection."],"a":[0,2],"e":"Respuesta marcada por quien hizo la prueba: Winning Variant más esperar a los resultados y comparar.","src":"Examen real · P8 de 50 · oct 2025","note":"Duda: Intelligent Selection (opción D) también reparte más usuarios a la variante ganadora; la pregunta 9 trata exactamente ese caso."},{"id":"b009","sec":"ab","t":"Intelligent Selection","q":"You are running a multivariate test on a continually-sending email campaign. You want to automate the process of redistributing users among the variants of your message to prioritize sending users to the winning variant. What feature can you use in Braze to achieve this?","o":["Experiment paths","Intelligent Channel","Predictive events","Intelligent Selection"],"a":3,"e":"Intelligent Selection redistribuye de forma continua a los usuarios hacia la variante que mejor rinde en campañas continuas.","src":"Examen real · P9 de 50 · oct 2025"},{"id":"b010","sec":"pers","t":"Connected Content","q":"You want to personalize a message by using data from your backend system that is accessible via API but not stored in Braze. Which option allows you to pull this data into your message without needing to store it in Braze first?","o":["Catalogs","Custom event properties","Connected Content","Content Cards"],"a":2,"e":"Connected Content hace una llamada a una API externa en el momento del envío y usa la respuesta en el mensaje sin guardarla en Braze.","src":"Examen real · P10 de 50 · oct 2025","note":"En la captura estaba marcada Custom event properties, pero esa opción exige que el dato ya esté en Braze. Corregida a Connected Content."},{"id":"b011","sec":"con","t":"Canvas opt-in","q":"You are building a new Canvas targeting email and push channels. You want to limit your Canvas so that only the users who are explicitly opted in will receive the message. If a user is opted-in to email but is not push enabled, which messages will they receive from the Canvas?","o":["The user will not receive the email but will receive the push notification","The user will receive both the email and the push notification","The user will receive the email but will not receive the push notification","The user will not receive both the email and the push notification"],"a":2,"e":"El filtro de opt-in se evalúa por canal: recibe el email porque está suscrito, pero no el push porque no está habilitado.","src":"Examen real · P11 de 50 · oct 2025"},{"id":"b012","sec":"ab","t":"Experiment Paths","q":"A retail brand is launching a multivariate test in their welcome journey in Canvas. They want to test different channel combinations and message cadence to determine which is most effective at engaging new users. They want to automate this process in Braze to run an initial test and then send users the journey that they are most likely to engage with based on their similarity to previously converted users from the initial test. What feature in Braze should they use to achieve this?","o":["Winning Variant","Winning Path","Personalized Path","Personalized Variant"],"a":2,"e":"Personalized Path (Experiment Paths) usa los resultados del test para enviar a cada usuario el camino con más probabilidad de conversión según su parecido con quienes ya convirtieron.","src":"Examen real · P12 de 50 · oct 2025","note":"En la captura estaba marcada Winning Variant, que es de campañas y no de Canvas, y envía a todos la ganadora sin personalizar. Corregida a Personalized Path."},{"id":"b013","sec":"ab","t":"A/B testing","q":"What variables can you test in a campaign in Braze? (Select 2)","o":["Channel combinations","Cadence","Subject lines","Deep links"],"a":[0,2],"e":"Respuesta marcada por quien hizo la prueba: combinaciones de canal y líneas de asunto.","src":"Examen real · P13 de 50 · oct 2025","note":"Respuesta tomada de la selección del candidato, sin contrastar."},{"id":"b014","sec":"ab","t":"Canvas experiments","q":"You want to perform an A/B test on a message step partway through your Canvas. Users should be randomly assigned, and you plan to analyze the results within the Braze dashboard. Which component should you use?","o":["Decision Split","Experiment Paths","Audience Paths","Action Paths"],"a":1,"e":"Experiment Paths reparte aleatoriamente a los usuarios en caminos del Canvas y muestra los resultados en el dashboard. Decision Split, Audience Paths y Action Paths segmentan por criterio, no al azar.","src":"Examen real · P14 de 50 · oct 2025"},{"id":"b015","sec":"ana","t":"Reporting","q":"Which of the following are required steps to set up a conversion dashboard report? (Select 3)","o":["Choose a breakdown layer for the report","Filter your results by selecting a tag","Specify a date range for your report","Enable custom events to track conversions for non-conversion events","Select an attribution model."],"a":[1,2,3],"e":"Respuesta marcada por quien hizo la prueba: tag, rango de fechas y activar los eventos personalizados como conversión.","src":"Examen real · P15 de 50 · oct 2025","note":"Respuesta tomada de la selección del candidato, sin contrastar."},{"id":"b016","sec":"ana","t":"Segment export","q":"What is one key difference between exporting segment data using \"CSV Export User Data\" versus \"CSV Export Email Addresses\"?","o":["\"CSV Export Email Addresses\" indicates when users in the segment opted in or unsubscribed from your emails, while \"CSV Export User Data\" does not provide this information.","\"CSV Export Email Addresses\" allows you to select up to 50 events or attributes for export, while \"CSV Export User Data\" permits a maximum of 25.","\"CSV Export User Data\" provides information on when users in the segment opted in or unsubscribed from your emails, while \"CSV Export Email Addresses\" does not.","\"CSV Export Email Addresses\" offers detailed information on selected events and attributes of your segment, whereas \"CSV Export User Data\" does not."],"a":0,"e":"El export de direcciones de email incluye las fechas de opt-in y de baja del email. El de User Data trae el perfil completo (dispositivos, sesiones, compras, eventos y atributos) y las fechas de push.","src":"Examen real · P16 de 50 · oct 2025","note":"En la captura estaba marcada la opción C. Corregida a la A según la documentación de Braze (exportar datos de segmento a CSV)."},{"id":"b017","sec":"ana","t":"Conversion events","q":"You are launching a Canvas to create an early-win back campaign to engage users who are at risk of churning. You plan to leverage multivariate testing to test channel combinations and message cadence to determine which combination is most effective. To do this, you plan to track the number of conversions each test results in. What is the primary benefit of using conversion events in this early-win back campaign?","o":["It allows you to analyze user demographics without linking them to specific actions taken by users","It tracks the number of times a message is displayed to users, rather than their subsequent actions","It helps you to track user interactions without measuring any specific outcomes","It helps you determine which messaging combination effectively drives conversions"],"a":3,"e":"Los eventos de conversión miden el resultado deseado y permiten saber qué combinación de mensajes lo consigue.","src":"Examen real · P17 de 50 · oct 2025"},{"id":"b018","sec":"seg","t":"Custom events","q":"A news media brand seeks to develop an in-app message campaign to re-engage users by offering a 20% discount on their monthly subscription when they request to opt out of the service. Which of the following is necessary to execute this use case?","o":["A custom event that records the last time a user made a purchase","A custom event that tracks when a user cancels their subscription","A custom attribute that captures the date the user first signed up for the app","A custom attribute indicating the user's favorite brand"],"a":1,"e":"Hace falta un evento personalizado que registre la cancelación para lanzar el in-app en ese momento.","src":"Examen real · P18 de 50 · oct 2025"},{"id":"b019","sec":"ab","t":"Global control group","q":"A retail brand with a 100,000-member user base is implementing a global control group to assess the effectiveness of its marketing strategies by comparing the behavior of users who receive marketing messages with those who do not. What is the best approach to ensure the effectiveness of their global control group?","o":["Limit the global control group to no more than 10% of users.","Increase the designated percentage of the global control group to 12%.","Consider that implementing a global control group may not be necessary, as the member base is too small.","Include all 100,000 users in the global control group to achieve comprehensive results."],"a":0,"e":"El grupo de control global debe ser una fracción pequeña de la base, con un máximo del 10 %, para medir el efecto sin dejar sin mensajes a demasiados usuarios.","src":"Examen real · P19 de 50 · oct 2025"},{"id":"b020","sec":"ab","t":"Control group","q":"Which of the following statements best describes the role of a control group in multivariate testing?","o":["A control group is never necessary for multivariate tests, regardless of the sample size.","A control group is used as a baseline that does not receive the test to evaluate the impact of the variables being tested.","A control group receives all variations of a message to compare effectiveness of the variables being tested.","A control group is only useful if the test is run for a minimum of two weeks."],"a":1,"e":"El grupo de control no recibe el mensaje y sirve de referencia para medir el impacto de las variables probadas.","src":"Examen real · P20 de 50 · oct 2025"},{"id":"b021","sec":"con","t":"Subscription states","q":"What feature in Braze can you use to ensure that users only receive messages through channels they have opted-in to?","o":["Recent devices","Subscription States","Global Control Groups","Custom attributes"],"a":1,"e":"Los subscription states (suscrito, opt-in, baja) controlan por canal a qué usuarios se puede enviar.","src":"Examen real · P21 de 50 · oct 2025"},{"id":"b022","sec":"ana","t":"Email analytics","q":"In the Email Performance section of the Analytics tab, which email reporting feature allows you to visually compare the number of bounces to the number of confirmed deliveries over the past year?","o":["Email Insights","Engagement by Device","Deliverability Center","Overview"],"a":0,"e":"Respuesta marcada por quien hizo la prueba: Email Insights.","src":"Examen real · P22 de 50 · oct 2025","note":"Respuesta tomada de la selección del candidato, sin contrastar."},{"id":"b023","sec":"can","t":"Canvas components","q":"You are creating a Canvas to encourage free subscription members to upgrade to premium. When users first enter the Canvas, they will receive an email highlighting the benefits of premium. You want to hold users for a 24-hour evaluation period; if they upgrade during this time, they will exit the Canvas. After 24 hours, users who did not upgrade will receive an in-app message nudging them to sign up. Which Canvas component is best for creating these two paths?","o":["Action Path","Decision Split","Audience Path","Experiment Path"],"a":0,"e":"Action Paths espera una ventana de tiempo y separa a quien hace la acción (mejorar a premium) de quien no la hace.","src":"Examen real · P23 de 50 · oct 2025"},{"id":"b024","sec":"ana","t":"SMS analytics","q":"Which of the following metrics can you view results for on the SMS/MMS/RCS Performance page in Braze? (Select 2)","o":["Total Clicks","Unique Opens","Bounces","Rejections"],"a":[0,3],"e":"En SMS/MMS/RCS se ven clics y rechazos. Las aperturas y los rebotes son métricas de email.","src":"Examen real · P24 de 50 · oct 2025","note":"En la captura estaban marcadas Total Clicks y Unique Opens. Corregida: los SMS no tienen aperturas, y los rechazos sí aparecen en esa página."},{"id":"b025","sec":"ab","t":"Personalized Variant","q":"How does the Personalized Variant feature work in Braze?","o":["Personalized Variant sends an initial test to train a look-alike model, after the test, users are sent the message that is most likely to result in a conversion based on their similarity to previously converted users from the initial test.","Personalized Variant does not require any initial testing; it simply sends a random message to all users in the target segment.","Personalized Variant uses machine learning to continuously adapt messaging strategies based on real-time user behavior, ensuring that each individual user receives the most relevant content over time.","Personalized Variant sends an initial test to train a look-alike model, once the test is complete, Braze will automatically send everyone else the best performing variant."],"a":0,"e":"Personalized Variant entrena un modelo look-alike con un test inicial y después envía a cada usuario la variante con más probabilidad de convertir según su parecido con quienes ya convirtieron. Enviar la mejor variante a todos es Winning Variant.","src":"Examen real · P25 de 50 · oct 2025","note":"En la captura estaba marcada la opción C. Corregida a la A, que coincide con la descripción de Personalized Variant y con la pregunta 12."},{"id":"b026","sec":"pers","t":"AI tools","q":"You are composing a push notification that you want to personalize using Liquid. What tools can you use in Braze to help you generate Liquid for your message? (Select 2)","o":["Content QA with AI","Personalization Tool (\"+\" icon)","Liquid AI Assistant","AI Copywriting Assistant"],"a":[1,2],"e":"La herramienta de personalización (icono +) y el Liquid AI Assistant generan código Liquid. El AI Copywriting Assistant redacta texto, no Liquid.","src":"Examen real · P26 de 50 · oct 2025"},{"id":"b027","sec":"can","t":"Push opt-in","q":"What is an effective strategy for priming users to opt-in to push notifications?","o":["Automatically sending system-level mobile or web prompts the first time a user opens your app","Sending multiple unsolicited notifications to create urgency for users to accept system-level mobile or web prompts","Offering a discount only after users have opted in, without any prior information","Using an in-app message to communicate the value of receiving push notifications before sending system-level mobile or web prompts"],"a":3,"e":"Un push primer o in-app previo explica el valor de las notificaciones antes del aviso del sistema, que solo se puede mostrar una vez.","src":"Examen real · P27 de 50 · oct 2025"},{"id":"b028","sec":"can","t":"In-app messages","q":"In what scenario would a re-engagement in-app campaign be most appropriate?","o":["An eCommerce brand wants to thank a loyal user for consistently purchasing items from the site.","A news subscription service seeks to capture a user's attention after they have renewed their subscription for the upcoming year.","A fitness brand aims to re-engage users who have not started a session in the app in the last 60 days.","A movie streaming service notices a subset of users who frequently start a session but never watch a movie."],"a":3,"e":"Un in-app solo se muestra con la app abierta, así que sirve para reactivar a quien entra pero no completa la acción clave.","src":"Examen real · P28 de 50 · oct 2025","note":"En la captura estaba marcada la opción C. Corregida a la D: usuarios sin sesión en 60 días no verían un in-app, para ellos haría falta push o email."},{"id":"b029","sec":"can","t":"Push opt-in","q":"A financial services brand wants to expand their messaging channels to include push notifications. They know that all push-enabled platforms—iOS, Web, and Android—require explicit opt-in from users via a native system prompt. What can this brand do to improve the chance of getting users to opt-in?","o":["Send push notifications to users who have not opted in, encouraging them to opt in by highlighting exclusive offers","Use a countdown timer in the app to tell users when they will receive the native system prompt","Create a push primer that educates users on the value of push before sending the native system prompts","Automatically send the native system prompt the next time the user opens the open"],"a":2,"e":"Un push primer explica el valor de las notificaciones antes del aviso nativo del sistema. No se puede enviar push a quien no ha dado el opt-in.","src":"Examen real · P29 de 50 · oct 2025"},{"id":"b030","sec":"pers","t":"Liquid","q":"Where can you use Liquid in Braze?","o":["In any channel message composer, HTML editor, or drag-and-drop editor","In the conversions dashboard to track success metrics","In a user profile to update user preferences","In the Braze API for data retrieval"],"a":0,"e":"Liquid se usa en los compositores de mensajes de cualquier canal, tanto en el editor HTML como en el de arrastrar y soltar.","src":"Examen real · P30 de 50 · oct 2025"},{"id":"b031","sec":"can","t":"Lapsing users","q":"Which of the following statements accurately describes lapsing users? (Select 2)","o":["Lapsing users are guaranteed to return after receiving a discount offer.","Lapsing users can fluctuate between being active and inactive.","Lapsing users are defined as individuals who have never used the app or service.","The definition of a lapsing user depends on the brand's specific criteria."],"a":[1,3],"e":"Un usuario en riesgo de abandono puede alternar entre activo e inactivo, y cada marca define sus propios criterios para considerarlo así.","src":"Examen real · P31 de 50 · oct 2025"},{"id":"b032","sec":"can","t":"Frequency","q":"Which of the following statements about message send frequency is true?","o":["All brands within a specific industry share the same frequency capping baselines.","An incorrect send frequency can lead to decreased engagement, purchases, and subscriber rates.","Message frequency does not affect user engagement.","Frequency capping applies only to brands with physical storefronts, not those with an online presence."],"a":1,"e":"Una frecuencia de envío mal calibrada reduce el engagement, las compras y las suscripciones. Cada marca debe encontrar la suya.","src":"Examen real · P32 de 50 · oct 2025"},{"id":"b033","sec":"ana","t":"Analytics","q":"What type of data can you access about segments from the Home Page of the Braze dashboard?","o":["Session data","Custom event data","User device data","Revenue data"],"a":0,"e":"Respuesta marcada por quien hizo la prueba: datos de sesión.","src":"Examen real · P33 de 50 · oct 2025","note":"Respuesta tomada de la selección del candidato, sin contrastar."},{"id":"b034","sec":"ab","t":"Intelligent Timing","q":"When is the best time to use Intelligent Timing?","o":["When sending recurring campaigns that are not time sensitive","When sending messages to brand-new users","When sending action-based or API-triggered campaigns","During IP warming"],"a":0,"e":"Intelligent Timing necesita historial de cada usuario y un envío sin urgencia, por eso encaja en campañas recurrentes. No sirve para envíos disparados por acción o API.","src":"Examen real · P34 de 50 · oct 2025"},{"id":"b035","sec":"con","t":"Subscription states","q":"What occurs when a user is \"unsubscribed\" from push notifications in Braze?","o":["They continue to receive push notifications until the app is deleted","They are automatically moved to the \"Subscribed\" state after a period of time","They should no longer receive push notifications but may still get messages on other channels that they have opted-in to","They receive a confirmation email to re-subscribe"],"a":2,"e":"La baja de push es por canal: deja de recibir push pero conserva el resto de canales en los que sigue suscrito.","src":"Examen real · P35 de 50 · oct 2025"},{"id":"b036","sec":"can","t":"Canvas survey","q":"An eCommerce brand wants to create a preference survey for their mobile app using Canvas and In-App Messages. The Canvas includes the following steps: 1. Target users who have registered an account and used the app within the last week. 2. Send an in-app message survey asking which products they are most interested in. 3. After a delay, send a second personalized in-app message with deals based on their survey responses to users who completed the survey. 4. Exit users who did not complete the survey from the Canvas. Which of the following is necessary to execute this use case? (Select 3)","o":["Connected Content","Email","The Braze SDK","A custom attribute","A custom event"],"a":[2,3,4],"e":"Hace falta el SDK para mostrar el in-app, un atributo personalizado que guarde las respuestas y un evento personalizado que marque que completó la encuesta.","src":"Examen real · P36 de 50 · oct 2025"},{"id":"b037","sec":"ana","t":"Segment export","q":"Which of the following statements about exporting segment data as a CSV is true? (Select 2)","o":["Downloading a CSV export of email addresses provides information on when users opted in or unsubscribed.","You can select up to 50 custom events and attributes for export.","To export segment data, navigate to a previously created Canvas, select Segment Details, then choose User Data.","You can export segment data using Currents."],"a":[0,1],"e":"El export de direcciones de email incluye cuándo se hizo opt-in o baja. La exportación se lanza desde la página Segments (no desde un Canvas) y Currents es streaming de eventos, no un export de segmento.","src":"Examen real · P37 de 50 · oct 2025","note":"En la captura estaban marcadas B y C. Corregida a A y B: la C habla de un Canvas, pero el export parte de Segments. El límite de 50 eventos y atributos no se ha podido contrastar."},{"id":"b038","sec":"pers","t":"Liquid","q":"You're creating an API-triggered campaign to send an email to users when they have earned more than 500 loyalty points. In your campaign copy, you want to include the exact number of loyalty points the user has at that time. Which Liquid statement is the most appropriate to use?","o":["{{campaign_entry_properties.${loyalty_points_balance}}}","{{event_properties.${loyalty_points_balance}}}","{{api_trigger_properties.${loyalty_points_balance}}}","{{canvas_entry_properties.${loyalty_points_balance}}}"],"a":2,"e":"En campañas disparadas por API, las propiedades enviadas en la llamada se leen con api_trigger_properties.","src":"Examen real · P38 de 50 · oct 2025"},{"id":"b039","sec":"can","t":"Frequency capping","q":"Which of the following statements about frequency cap rules is true?","o":["Frequency caps can be adjusted based on user engagement levels.","You can set multiple caps for the same message type.","Frequency cap rules can be applied to promotional messages, but not to transactional ones.","You can establish up to 25 frequency capping rules per workspace."],"a":1,"e":"Respuesta marcada por quien hizo la prueba: se pueden definir varias reglas de límite para el mismo tipo de mensaje.","src":"Examen real · P39 de 50 · oct 2025","note":"Respuesta tomada de la selección del candidato, sin contrastar."},{"id":"b040","sec":"can","t":"Lapsing users","q":"A beauty brand aims to re-engage lapsing users and encourage them to return to the app to make a purchase. What step should they take to create an effective lapsing user campaign?","o":["Create a segment that includes all users to maximize the potential audience size","Define the brand's criteria for identifying lapsing users","Implement a campaign that focuses solely on discounts without considering user preferences","Analyze only the most recent purchases of users to assess their engagement level"],"a":1,"e":"Lo primero es definir qué significa estar en riesgo de abandono para la marca (por ejemplo, días sin sesión o sin compra) y segmentar con ese criterio.","src":"Examen real · P40 de 50 · oct 2025","note":"En la captura estaba marcada la opción D. Corregida a la B, coherente con la pregunta 31 (el criterio depende de la marca)."},{"id":"b041","sec":"ab","t":"Multivariate testing","q":"Which of the following strategies is recommended when running follow-up tests based on insights from previous multivariate tests?","o":["Change the sample size to be smaller than the initial test to reduce costs.","Test different segments of users to understand how various groups respond to the same messaging strategy.","Avoid using insights from previous tests, as they may lead to biased conclusions.","Always use the same messaging channel for follow-up tests, regardless of previous results."],"a":1,"e":"Los tests de seguimiento deben aprovechar lo aprendido y probar con otros segmentos para ver cómo responden a la misma estrategia.","src":"Examen real · P41 de 50 · oct 2025"},{"id":"b042","sec":"pers","t":"Liquid","q":"You want to use Liquid to personalize a message with a user's first name. However, if the first name field is missing from their profile, you want to assign a fallback value of \"Friend\" in place of the first name. Which Liquid snippet should you use to personalize this message?","o":["{{${first_name} | assign: 'Friend'}}","{{${first_name} | default: 'Friend'}}","{{${first_name} | replace: 'Friend'}}","{{${first_name} | uniq: 'Friend'}}"],"a":1,"e":"El filtro default de Liquid aplica un valor alternativo cuando el campo está vacío o no existe.","src":"Examen real · P42 de 50 · oct 2025"},{"id":"b043","sec":"ab","t":"Experiment Paths","q":"A quick service restaurant (QSR) app is noticing a decline in app engagement from some of their users who have not made a purchase in a while. To re-engage these lapsing users, they want to identify the most effective channels, personalization strategies, and incentives that will encourage users to return to the app. They decide to utilize multivariate testing and experiment paths in Braze to optimize their approach. Which strategy should the QSR marketing team implement to effectively use multivariate testing and experiment paths for re-engaging lapsing users?","o":["Send a single generic message to all lapsing users, regardless of their previous interactions or preferences, to save time","Create multiple variants of a message on email, and test different subject lines, message copy, and incentive offers to see which message drives the most engagement","Run the tests for a very short period to quickly determine the best strategy without overwhelming users","Create multiple variants of messages that include different incentives, personalized content, and various channels to see which combination drives the most engagement"],"a":3,"e":"El multivariante debe combinar incentivos, personalización y canales para saber qué combinación funciona mejor, no limitarse a un solo canal.","src":"Examen real · P43 de 50 · oct 2025"},{"id":"b044","sec":"pers","t":"AI tools","q":"What is the primary function of the AI Liquid Assistant in Braze?","o":["It automatically sends messages without user intervention","It generates personalized messaging templates by providing suggestions and examples","It generates random user attributes for testing purposes","It manages user segmentation and targeting strategies"],"a":1,"e":"El asistente de Liquid con IA ayuda a escribir código de personalización proponiendo sugerencias y ejemplos.","src":"Examen real · P44 de 50 · oct 2025"},{"id":"b045","sec":"seg","t":"Lapsing users","q":"You are creating a Canvas to target lapsing users and encourage them to return to your app for a purchase. Your brand defines a lapsed user as someone who has not made a purchase in over 60 days. Which of the following options correctly targets this audience?","o":["Audience = Users who last made a purchase less than 59 days ago","Audience = Users who last made a purchase more than 60 days ago","Audience = Users who last made a purchase more than 59 days ago","Audience = Users who last made a purchase less than 60 days ago"],"a":1,"e":"Sin compra en más de 60 días equivale a que la última compra fue hace más de 60 días. Menos de 60 días serían usuarios activos.","src":"Examen real · P45 de 50 · oct 2025","note":"En la captura estaba marcada la opción D (menos de 60 días), que selecciona a los usuarios activos. Corregida a la B."},{"id":"b046","sec":"pers","t":"Liquid","q":"In the following message containing Liquid, what string filter is being used? Don't know where to start? Since you enjoy {{custom_attribute.${favorite_workout} | capitalize | default: \"trying new workouts\"}}, check out our {{custom_attribute.${favorite_workout_type} | default: \"Recently Added\" }} workout catalog!","o":["Default","Capitalize","${favorite_workout_type}","${favorite_workout}"],"a":1,"e":"capitalize es el filtro de cadena que pone en mayúscula la primera letra. default solo define un valor alternativo.","src":"Examen real · P46 de 50 · oct 2025"},{"id":"b047","sec":"ab","t":"Personalized Paths","q":"In Braze, what is the purpose of a Delay Group when using Personalized Paths?","o":["A Delay Group allows you to increase the frequency of messages sent to users.","A Delay Group holds a percentage of users while everyone else will enter the Experiment Path to train a look-alike model.","A Delay Group is used to segment users into different categories based on their custom attributes.","A Delay Group ensures that all users receive the same message simultaneously, regardless of their individual behaviors."],"a":1,"e":"El Delay Group retiene a un porcentaje de usuarios mientras el resto entra al Experiment Path para entrenar el modelo look-alike. Después los retenidos reciben el camino personalizado.","src":"Examen real · P47 de 50 · oct 2025"},{"id":"b048","sec":"pers","t":"Liquid","q":"In the following message, what content is being personalized using Liquid? Your subscription expires on January 19, renew by the end of the month.","o":["The subscription expiration date","The calendar month","The membership tier","The user's first name"],"a":0,"e":"La fecha de caducidad (January 19) es el dato que cambia por usuario. El mes de fin de plazo es texto fijo.","src":"Examen real · P48 de 50 · oct 2025"},{"id":"b049","sec":"can","t":"Frequency","q":"The term \"send frequency\" refers to:","o":["The number of messages a brand sends to a specific user within a set timeframe.","The number of different channels utilized in a single canvas.","The total number of users who receive a message in a campaign.","The maximum number of messages that can be sent in a single campaign."],"a":0,"e":"La frecuencia de envío es cuántos mensajes recibe un usuario concreto en un periodo de tiempo.","src":"Examen real · P49 de 50 · oct 2025"},{"id":"b050","sec":"con","t":"Consent","q":"Which of the following statements best describes the principle of consent for marketing messaging?","o":["Consent can be obtained through purchased email lists, as long as the emails are valid.","Consent should always be an opt-in process, allowing users to choose and control the messages they receive.","Consent can be transferred between brands, allowing for shared marketing lists.","Consent is optional and can be implied through user engagement with your brand."],"a":1,"e":"El consentimiento debe ser siempre opt-in, y el usuario decide y controla qué mensajes recibe.","src":"Examen real · P50 de 50 · oct 2025"}]}
+{
+ "id": "braze-marketer",
+ "code": "Braze Certified Marketer",
+ "name": "🔥 Braze Certified Marketer",
+ "vendor": "Braze",
+ "release": "Pruebas de oct 2025",
+ "date": "2025-10",
+ "format": {
+  "scored": 50,
+  "unscored": 0,
+  "minutes": 60,
+  "pass": 65,
+  "choices": 4
+ },
+ "unofficial": true,
+ "sections": [
+  {
+   "id": "ab",
+   "name": "Testing y optimización",
+   "weight": 26
+  },
+  {
+   "id": "can",
+   "name": "Campañas, Canvas y frecuencia",
+   "weight": 22
+  },
+  {
+   "id": "pers",
+   "name": "Personalización, Liquid e IA",
+   "weight": 18
+  },
+  {
+   "id": "ana",
+   "name": "Analítica y exportación",
+   "weight": 18
+  },
+  {
+   "id": "con",
+   "name": "Suscripción y consentimiento",
+   "weight": 10
+  },
+  {
+   "id": "seg",
+   "name": "Segmentación y datos",
+   "weight": 6
+  }
+ ],
+ "notes": "Banco de 50 preguntas de un examen real hecho en oct 2025 (capturas fotografiadas). Las respuestas son las marcadas por quien hizo la prueba; en 9 se han corregido por criterio propio o con la documentación de Braze y llevan nota, igual que las que generan duda. Braze no publica pesos por área: los de aquí son el reparto de estas 50 preguntas. Los 60 min salen del cronómetro de las capturas y el 65 % de corte de una fuente de terceros, ambos sin contrastar con Braze.",
+ "questions": [
+  {
+   "id": "b001",
+   "sec": "con",
+   "t": "Subscription groups",
+   "q": "What is the primary benefit of using subscription groups for email in Braze?",
+   "o": [
+    "To allow users to choose specific categories of emails they want to receive",
+    "To ensure that all users receive the same promotional emails",
+    "To increase the overall number of emails sent to users",
+    "To automatically subscribe users to all email communications"
+   ],
+   "a": 0,
+   "e": "Los subscription groups permiten que cada usuario elija qué categorías de email quiere recibir, en lugar de un todo o nada.",
+   "src": "Examen real · P1 de 50 · oct 2025"
+  },
+  {
+   "id": "b002",
+   "sec": "can",
+   "t": "Frequency capping",
+   "q": "When creating a new campaign or Canvas in Braze, frequency capping can be used to: (Select 2)",
+   "o": [
+    "Adjust the timing of messages based on a user's location",
+    "Automatically adjust the message frequency every 24 hours based on the number of messages sent in previous campaigns",
+    "Determine how many times each user should receive a campaign or Canvas message by tag within a specific time frame",
+    "Limit how often you send messages through a specific channel"
+   ],
+   "a": [
+    2,
+    3
+   ],
+   "e": "El frequency capping limita cuántos mensajes recibe cada usuario en una ventana de tiempo, por canal, por tipo de mensaje o por tag. No ajusta horarios ni se autorregula.",
+   "src": "Examen real · P2 de 50 · oct 2025"
+  },
+  {
+   "id": "b003",
+   "sec": "ab",
+   "t": "Intelligent Timing",
+   "q": "A quick service restaurant wants to re-engage their lapsing users and encourage them to return to the app to make a purchase. In Braze, they are building a Canvas that leverages multivariate testing to test the performance of a message on different channels. They want users to receive these messages when they are most likely to engage. What feature in Braze can they use to achieve this?",
+   "o": [
+    "Audience Sync",
+    "Winning Variant",
+    "Intelligent Timing",
+    "Intelligent Channel"
+   ],
+   "a": 2,
+   "e": "Intelligent Timing envía a cada usuario en el momento en que es más probable que interactúe. Intelligent Channel elige el canal, no la hora.",
+   "src": "Examen real · P3 de 50 · oct 2025"
+  },
+  {
+   "id": "b004",
+   "sec": "ana",
+   "t": "Analytics",
+   "q": "To analyze revenue data for your segments, which of the following steps should you follow? (Select 2)",
+   "o": [
+    "Access the Home page and view the Performance Over Time section.",
+    "Navigate to Analytics > Custom Event Report and select your desired segments to view your segment revenue data.",
+    "Navigate to Analytics > Revenue Report and select \"Break Down by Segment\" to view your segment revenue data",
+    "Enable the Analytics Tracking toggle for each segment you wish to track."
+   ],
+   "a": [
+    2,
+    3
+   ],
+   "e": "Hay que activar Analytics Tracking en cada segmento y luego usar el Revenue Report desglosado por segmento.",
+   "src": "Examen real · P4 de 50 · oct 2025"
+  },
+  {
+   "id": "b005",
+   "sec": "pers",
+   "t": "Liquid",
+   "q": "What is one of the primary advantages of using Liquid in your personalization strategy within Braze?",
+   "o": [
+    "It enables you to create dynamic content based on individual user attributes and behaviors.",
+    "It allows you to send the same message to all users without any customization.",
+    "It limits your ability to use external data sources for personalization.",
+    "It requires extensive coding knowledge to implement effectively."
+   ],
+   "a": 0,
+   "e": "Liquid permite contenido dinámico según atributos y comportamiento de cada usuario.",
+   "src": "Examen real · P5 de 50 · oct 2025"
+  },
+  {
+   "id": "b006",
+   "sec": "seg",
+   "t": "Segmentation",
+   "q": "A health and wellness brand wants to target users who logged at least one yoga session in the past month to send a personalized campaign recommending additional yoga content. Which Braze feature can be used to accomplish this?",
+   "o": [
+    "Segmentation with nested custom attributes",
+    "Segmentation using the filter: \"Yoga Session Logged Exactly 1 Time\"",
+    "Segment Funnels",
+    "Segment Extensions"
+   ],
+   "a": 0,
+   "e": "Respuesta marcada por quien hizo la prueba. \"Exactly 1 time\" no sirve para \"al menos una\" y los funnels miden pasos, no frecuencia.",
+   "src": "Examen real · P6 de 50 · oct 2025",
+   "note": "Duda: Segment Extensions también podría encajar (eventos personalizados con ventana temporal). Se deja la opción marcada en el examen."
+  },
+  {
+   "id": "b007",
+   "sec": "ana",
+   "t": "Attribution",
+   "q": "Which attribution method counts conversions that occur after an email is opened, excluding machine opens, and is calculated as conversions divided by opens per user?",
+   "o": [
+    "Upon Click",
+    "Upon Receipt",
+    "Upon Last-Touch",
+    "Upon Open"
+   ],
+   "a": 3,
+   "e": "Upon Open cuenta las conversiones tras la apertura del email, sin aperturas de máquina.",
+   "src": "Examen real · P7 de 50 · oct 2025"
+  },
+  {
+   "id": "b008",
+   "sec": "ab",
+   "t": "A/B testing",
+   "q": "You're performing an A/B test on your next recurring email campaign. What are two ways to maximize the number of users that are sent to the winning variant?",
+   "o": [
+    "Use the Winning Variant optimization.",
+    "Create two separate campaigns for each variant.",
+    "Wait until the campaign is complete and then compare variant results.",
+    "Turn on Intelligent Selection."
+   ],
+   "a": [
+    0,
+    2
+   ],
+   "e": "Respuesta marcada por quien hizo la prueba: Winning Variant más esperar a los resultados y comparar.",
+   "src": "Examen real · P8 de 50 · oct 2025",
+   "note": "Duda: Intelligent Selection (opción D) también reparte más usuarios a la variante ganadora; la pregunta 9 trata exactamente ese caso."
+  },
+  {
+   "id": "b009",
+   "sec": "ab",
+   "t": "Intelligent Selection",
+   "q": "You are running a multivariate test on a continually-sending email campaign. You want to automate the process of redistributing users among the variants of your message to prioritize sending users to the winning variant. What feature can you use in Braze to achieve this?",
+   "o": [
+    "Experiment paths",
+    "Intelligent Channel",
+    "Predictive events",
+    "Intelligent Selection"
+   ],
+   "a": 3,
+   "e": "Intelligent Selection redistribuye de forma continua a los usuarios hacia la variante que mejor rinde en campañas continuas.",
+   "src": "Examen real · P9 de 50 · oct 2025"
+  },
+  {
+   "id": "b010",
+   "sec": "pers",
+   "t": "Connected Content",
+   "q": "You want to personalize a message by using data from your backend system that is accessible via API but not stored in Braze. Which option allows you to pull this data into your message without needing to store it in Braze first?",
+   "o": [
+    "Catalogs",
+    "Custom event properties",
+    "Connected Content",
+    "Content Cards"
+   ],
+   "a": 2,
+   "e": "Connected Content hace una llamada a una API externa en el momento del envío y usa la respuesta en el mensaje sin guardarla en Braze.",
+   "src": "Examen real · P10 de 50 · oct 2025",
+   "note": "En la captura estaba marcada Custom event properties, pero esa opción exige que el dato ya esté en Braze. Corregida a Connected Content."
+  },
+  {
+   "id": "b011",
+   "sec": "con",
+   "t": "Canvas opt-in",
+   "q": "You are building a new Canvas targeting email and push channels. You want to limit your Canvas so that only the users who are explicitly opted in will receive the message. If a user is opted-in to email but is not push enabled, which messages will they receive from the Canvas?",
+   "o": [
+    "The user will not receive the email but will receive the push notification",
+    "The user will receive both the email and the push notification",
+    "The user will receive the email but will not receive the push notification",
+    "The user will not receive both the email and the push notification"
+   ],
+   "a": 2,
+   "e": "El filtro de opt-in se evalúa por canal: recibe el email porque está suscrito, pero no el push porque no está habilitado.",
+   "src": "Examen real · P11 de 50 · oct 2025"
+  },
+  {
+   "id": "b012",
+   "sec": "ab",
+   "t": "Experiment Paths",
+   "q": "A retail brand is launching a multivariate test in their welcome journey in Canvas. They want to test different channel combinations and message cadence to determine which is most effective at engaging new users. They want to automate this process in Braze to run an initial test and then send users the journey that they are most likely to engage with based on their similarity to previously converted users from the initial test. What feature in Braze should they use to achieve this?",
+   "o": [
+    "Winning Variant",
+    "Winning Path",
+    "Personalized Path",
+    "Personalized Variant"
+   ],
+   "a": 2,
+   "e": "Personalized Path (Experiment Paths) usa los resultados del test para enviar a cada usuario el camino con más probabilidad de conversión según su parecido con quienes ya convirtieron.",
+   "src": "Examen real · P12 de 50 · oct 2025",
+   "note": "En la captura estaba marcada Winning Variant, que es de campañas y no de Canvas, y envía a todos la ganadora sin personalizar. Corregida a Personalized Path."
+  },
+  {
+   "id": "b013",
+   "sec": "ab",
+   "t": "A/B testing",
+   "q": "What variables can you test in a campaign in Braze? (Select 2)",
+   "o": [
+    "Channel combinations",
+    "Cadence",
+    "Subject lines",
+    "Deep links"
+   ],
+   "a": [
+    0,
+    2
+   ],
+   "e": "Respuesta marcada por quien hizo la prueba: combinaciones de canal y líneas de asunto.",
+   "src": "Examen real · P13 de 50 · oct 2025",
+   "note": "Respuesta tomada de la selección del candidato, sin contrastar."
+  },
+  {
+   "id": "b014",
+   "sec": "ab",
+   "t": "Canvas experiments",
+   "q": "You want to perform an A/B test on a message step partway through your Canvas. Users should be randomly assigned, and you plan to analyze the results within the Braze dashboard. Which component should you use?",
+   "o": [
+    "Decision Split",
+    "Experiment Paths",
+    "Audience Paths",
+    "Action Paths"
+   ],
+   "a": 1,
+   "e": "Experiment Paths reparte aleatoriamente a los usuarios en caminos del Canvas y muestra los resultados en el dashboard. Decision Split, Audience Paths y Action Paths segmentan por criterio, no al azar.",
+   "src": "Examen real · P14 de 50 · oct 2025"
+  },
+  {
+   "id": "b015",
+   "sec": "ana",
+   "t": "Reporting",
+   "q": "Which of the following are required steps to set up a conversion dashboard report? (Select 3)",
+   "o": [
+    "Choose a breakdown layer for the report",
+    "Filter your results by selecting a tag",
+    "Specify a date range for your report",
+    "Enable custom events to track conversions for non-conversion events",
+    "Select an attribution model."
+   ],
+   "a": [
+    1,
+    2,
+    3
+   ],
+   "e": "Respuesta marcada por quien hizo la prueba: tag, rango de fechas y activar los eventos personalizados como conversión.",
+   "src": "Examen real · P15 de 50 · oct 2025",
+   "note": "Respuesta tomada de la selección del candidato, sin contrastar."
+  },
+  {
+   "id": "b016",
+   "sec": "ana",
+   "t": "Segment export",
+   "q": "What is one key difference between exporting segment data using \"CSV Export User Data\" versus \"CSV Export Email Addresses\"?",
+   "o": [
+    "\"CSV Export Email Addresses\" indicates when users in the segment opted in or unsubscribed from your emails, while \"CSV Export User Data\" does not provide this information.",
+    "\"CSV Export Email Addresses\" allows you to select up to 50 events or attributes for export, while \"CSV Export User Data\" permits a maximum of 25.",
+    "\"CSV Export User Data\" provides information on when users in the segment opted in or unsubscribed from your emails, while \"CSV Export Email Addresses\" does not.",
+    "\"CSV Export Email Addresses\" offers detailed information on selected events and attributes of your segment, whereas \"CSV Export User Data\" does not."
+   ],
+   "a": 0,
+   "e": "El export de direcciones de email incluye las fechas de opt-in y de baja del email. El de User Data trae el perfil completo (dispositivos, sesiones, compras, eventos y atributos) y las fechas de push.",
+   "src": "Examen real · P16 de 50 · oct 2025",
+   "note": "En la captura estaba marcada la opción C. Corregida a la A según la documentación de Braze (exportar datos de segmento a CSV)."
+  },
+  {
+   "id": "b017",
+   "sec": "ana",
+   "t": "Conversion events",
+   "q": "You are launching a Canvas to create an early-win back campaign to engage users who are at risk of churning. You plan to leverage multivariate testing to test channel combinations and message cadence to determine which combination is most effective. To do this, you plan to track the number of conversions each test results in. What is the primary benefit of using conversion events in this early-win back campaign?",
+   "o": [
+    "It allows you to analyze user demographics without linking them to specific actions taken by users",
+    "It tracks the number of times a message is displayed to users, rather than their subsequent actions",
+    "It helps you to track user interactions without measuring any specific outcomes",
+    "It helps you determine which messaging combination effectively drives conversions"
+   ],
+   "a": 3,
+   "e": "Los eventos de conversión miden el resultado deseado y permiten saber qué combinación de mensajes lo consigue.",
+   "src": "Examen real · P17 de 50 · oct 2025"
+  },
+  {
+   "id": "b018",
+   "sec": "seg",
+   "t": "Custom events",
+   "q": "A news media brand seeks to develop an in-app message campaign to re-engage users by offering a 20% discount on their monthly subscription when they request to opt out of the service. Which of the following is necessary to execute this use case?",
+   "o": [
+    "A custom event that records the last time a user made a purchase",
+    "A custom event that tracks when a user cancels their subscription",
+    "A custom attribute that captures the date the user first signed up for the app",
+    "A custom attribute indicating the user's favorite brand"
+   ],
+   "a": 1,
+   "e": "Hace falta un evento personalizado que registre la cancelación para lanzar el in-app en ese momento.",
+   "src": "Examen real · P18 de 50 · oct 2025"
+  },
+  {
+   "id": "b019",
+   "sec": "ab",
+   "t": "Global control group",
+   "q": "A retail brand with a 100,000-member user base is implementing a global control group to assess the effectiveness of its marketing strategies by comparing the behavior of users who receive marketing messages with those who do not. What is the best approach to ensure the effectiveness of their global control group?",
+   "o": [
+    "Limit the global control group to no more than 10% of users.",
+    "Increase the designated percentage of the global control group to 12%.",
+    "Consider that implementing a global control group may not be necessary, as the member base is too small.",
+    "Include all 100,000 users in the global control group to achieve comprehensive results."
+   ],
+   "a": 0,
+   "e": "El grupo de control global debe ser una fracción pequeña de la base, con un máximo del 10 %, para medir el efecto sin dejar sin mensajes a demasiados usuarios.",
+   "src": "Examen real · P19 de 50 · oct 2025"
+  },
+  {
+   "id": "b020",
+   "sec": "ab",
+   "t": "Control group",
+   "q": "Which of the following statements best describes the role of a control group in multivariate testing?",
+   "o": [
+    "A control group is never necessary for multivariate tests, regardless of the sample size.",
+    "A control group is used as a baseline that does not receive the test to evaluate the impact of the variables being tested.",
+    "A control group receives all variations of a message to compare effectiveness of the variables being tested.",
+    "A control group is only useful if the test is run for a minimum of two weeks."
+   ],
+   "a": 1,
+   "e": "El grupo de control no recibe el mensaje y sirve de referencia para medir el impacto de las variables probadas.",
+   "src": "Examen real · P20 de 50 · oct 2025"
+  },
+  {
+   "id": "b021",
+   "sec": "con",
+   "t": "Subscription states",
+   "q": "What feature in Braze can you use to ensure that users only receive messages through channels they have opted-in to?",
+   "o": [
+    "Recent devices",
+    "Subscription States",
+    "Global Control Groups",
+    "Custom attributes"
+   ],
+   "a": 1,
+   "e": "Los subscription states (suscrito, opt-in, baja) controlan por canal a qué usuarios se puede enviar.",
+   "src": "Examen real · P21 de 50 · oct 2025"
+  },
+  {
+   "id": "b022",
+   "sec": "ana",
+   "t": "Email analytics",
+   "q": "In the Email Performance section of the Analytics tab, which email reporting feature allows you to visually compare the number of bounces to the number of confirmed deliveries over the past year?",
+   "o": [
+    "Email Insights",
+    "Engagement by Device",
+    "Deliverability Center",
+    "Overview"
+   ],
+   "a": 0,
+   "e": "Respuesta marcada por quien hizo la prueba: Email Insights.",
+   "src": "Examen real · P22 de 50 · oct 2025",
+   "note": "Respuesta tomada de la selección del candidato, sin contrastar."
+  },
+  {
+   "id": "b023",
+   "sec": "can",
+   "t": "Canvas components",
+   "q": "You are creating a Canvas to encourage free subscription members to upgrade to premium. When users first enter the Canvas, they will receive an email highlighting the benefits of premium. You want to hold users for a 24-hour evaluation period; if they upgrade during this time, they will exit the Canvas. After 24 hours, users who did not upgrade will receive an in-app message nudging them to sign up. Which Canvas component is best for creating these two paths?",
+   "o": [
+    "Action Path",
+    "Decision Split",
+    "Audience Path",
+    "Experiment Path"
+   ],
+   "a": 0,
+   "e": "Action Paths espera una ventana de tiempo y separa a quien hace la acción (mejorar a premium) de quien no la hace.",
+   "src": "Examen real · P23 de 50 · oct 2025"
+  },
+  {
+   "id": "b024",
+   "sec": "ana",
+   "t": "SMS analytics",
+   "q": "Which of the following metrics can you view results for on the SMS/MMS/RCS Performance page in Braze? (Select 2)",
+   "o": [
+    "Total Clicks",
+    "Unique Opens",
+    "Bounces",
+    "Rejections"
+   ],
+   "a": [
+    0,
+    3
+   ],
+   "e": "En SMS/MMS/RCS se ven clics y rechazos. Las aperturas y los rebotes son métricas de email.",
+   "src": "Examen real · P24 de 50 · oct 2025",
+   "note": "En la captura estaban marcadas Total Clicks y Unique Opens. Corregida: los SMS no tienen aperturas, y los rechazos sí aparecen en esa página."
+  },
+  {
+   "id": "b025",
+   "sec": "ab",
+   "t": "Personalized Variant",
+   "q": "How does the Personalized Variant feature work in Braze?",
+   "o": [
+    "Personalized Variant sends an initial test to train a look-alike model, after the test, users are sent the message that is most likely to result in a conversion based on their similarity to previously converted users from the initial test.",
+    "Personalized Variant does not require any initial testing; it simply sends a random message to all users in the target segment.",
+    "Personalized Variant uses machine learning to continuously adapt messaging strategies based on real-time user behavior, ensuring that each individual user receives the most relevant content over time.",
+    "Personalized Variant sends an initial test to train a look-alike model, once the test is complete, Braze will automatically send everyone else the best performing variant."
+   ],
+   "a": 0,
+   "e": "Personalized Variant entrena un modelo look-alike con un test inicial y después envía a cada usuario la variante con más probabilidad de convertir según su parecido con quienes ya convirtieron. Enviar la mejor variante a todos es Winning Variant.",
+   "src": "Examen real · P25 de 50 · oct 2025",
+   "note": "En la captura estaba marcada la opción C. Corregida a la A, que coincide con la descripción de Personalized Variant y con la pregunta 12."
+  },
+  {
+   "id": "b026",
+   "sec": "pers",
+   "t": "AI tools",
+   "q": "You are composing a push notification that you want to personalize using Liquid. What tools can you use in Braze to help you generate Liquid for your message? (Select 2)",
+   "o": [
+    "Content QA with AI",
+    "Personalization Tool (\"+\" icon)",
+    "Liquid AI Assistant",
+    "AI Copywriting Assistant"
+   ],
+   "a": [
+    1,
+    2
+   ],
+   "e": "La herramienta de personalización (icono +) y el Liquid AI Assistant generan código Liquid. El AI Copywriting Assistant redacta texto, no Liquid.",
+   "src": "Examen real · P26 de 50 · oct 2025"
+  },
+  {
+   "id": "b027",
+   "sec": "can",
+   "t": "Push opt-in",
+   "q": "What is an effective strategy for priming users to opt-in to push notifications?",
+   "o": [
+    "Automatically sending system-level mobile or web prompts the first time a user opens your app",
+    "Sending multiple unsolicited notifications to create urgency for users to accept system-level mobile or web prompts",
+    "Offering a discount only after users have opted in, without any prior information",
+    "Using an in-app message to communicate the value of receiving push notifications before sending system-level mobile or web prompts"
+   ],
+   "a": 3,
+   "e": "Un push primer o in-app previo explica el valor de las notificaciones antes del aviso del sistema, que solo se puede mostrar una vez.",
+   "src": "Examen real · P27 de 50 · oct 2025"
+  },
+  {
+   "id": "b028",
+   "sec": "can",
+   "t": "In-app messages",
+   "q": "In what scenario would a re-engagement in-app campaign be most appropriate?",
+   "o": [
+    "An eCommerce brand wants to thank a loyal user for consistently purchasing items from the site.",
+    "A news subscription service seeks to capture a user's attention after they have renewed their subscription for the upcoming year.",
+    "A fitness brand aims to re-engage users who have not started a session in the app in the last 60 days.",
+    "A movie streaming service notices a subset of users who frequently start a session but never watch a movie."
+   ],
+   "a": 3,
+   "e": "Un in-app solo se muestra con la app abierta, así que sirve para reactivar a quien entra pero no completa la acción clave.",
+   "src": "Examen real · P28 de 50 · oct 2025",
+   "note": "En la captura estaba marcada la opción C. Corregida a la D: usuarios sin sesión en 60 días no verían un in-app, para ellos haría falta push o email."
+  },
+  {
+   "id": "b029",
+   "sec": "can",
+   "t": "Push opt-in",
+   "q": "A financial services brand wants to expand their messaging channels to include push notifications. They know that all push-enabled platforms—iOS, Web, and Android—require explicit opt-in from users via a native system prompt. What can this brand do to improve the chance of getting users to opt-in?",
+   "o": [
+    "Send push notifications to users who have not opted in, encouraging them to opt in by highlighting exclusive offers",
+    "Use a countdown timer in the app to tell users when they will receive the native system prompt",
+    "Create a push primer that educates users on the value of push before sending the native system prompts",
+    "Automatically send the native system prompt the next time the user opens the open"
+   ],
+   "a": 2,
+   "e": "Un push primer explica el valor de las notificaciones antes del aviso nativo del sistema. No se puede enviar push a quien no ha dado el opt-in.",
+   "src": "Examen real · P29 de 50 · oct 2025"
+  },
+  {
+   "id": "b030",
+   "sec": "pers",
+   "t": "Liquid",
+   "q": "Where can you use Liquid in Braze?",
+   "o": [
+    "In any channel message composer, HTML editor, or drag-and-drop editor",
+    "In the conversions dashboard to track success metrics",
+    "In a user profile to update user preferences",
+    "In the Braze API for data retrieval"
+   ],
+   "a": 0,
+   "e": "Liquid se usa en los compositores de mensajes de cualquier canal, tanto en el editor HTML como en el de arrastrar y soltar.",
+   "src": "Examen real · P30 de 50 · oct 2025"
+  },
+  {
+   "id": "b031",
+   "sec": "can",
+   "t": "Lapsing users",
+   "q": "Which of the following statements accurately describes lapsing users? (Select 2)",
+   "o": [
+    "Lapsing users are guaranteed to return after receiving a discount offer.",
+    "Lapsing users can fluctuate between being active and inactive.",
+    "Lapsing users are defined as individuals who have never used the app or service.",
+    "The definition of a lapsing user depends on the brand's specific criteria."
+   ],
+   "a": [
+    1,
+    3
+   ],
+   "e": "Un usuario en riesgo de abandono puede alternar entre activo e inactivo, y cada marca define sus propios criterios para considerarlo así.",
+   "src": "Examen real · P31 de 50 · oct 2025"
+  },
+  {
+   "id": "b032",
+   "sec": "can",
+   "t": "Frequency",
+   "q": "Which of the following statements about message send frequency is true?",
+   "o": [
+    "All brands within a specific industry share the same frequency capping baselines.",
+    "An incorrect send frequency can lead to decreased engagement, purchases, and subscriber rates.",
+    "Message frequency does not affect user engagement.",
+    "Frequency capping applies only to brands with physical storefronts, not those with an online presence."
+   ],
+   "a": 1,
+   "e": "Una frecuencia de envío mal calibrada reduce el engagement, las compras y las suscripciones. Cada marca debe encontrar la suya.",
+   "src": "Examen real · P32 de 50 · oct 2025"
+  },
+  {
+   "id": "b033",
+   "sec": "ana",
+   "t": "Analytics",
+   "q": "What type of data can you access about segments from the Home Page of the Braze dashboard?",
+   "o": [
+    "Session data",
+    "Custom event data",
+    "User device data",
+    "Revenue data"
+   ],
+   "a": 0,
+   "e": "Respuesta marcada por quien hizo la prueba: datos de sesión.",
+   "src": "Examen real · P33 de 50 · oct 2025",
+   "note": "Respuesta tomada de la selección del candidato, sin contrastar."
+  },
+  {
+   "id": "b034",
+   "sec": "ab",
+   "t": "Intelligent Timing",
+   "q": "When is the best time to use Intelligent Timing?",
+   "o": [
+    "When sending recurring campaigns that are not time sensitive",
+    "When sending messages to brand-new users",
+    "When sending action-based or API-triggered campaigns",
+    "During IP warming"
+   ],
+   "a": 0,
+   "e": "Intelligent Timing necesita historial de cada usuario y un envío sin urgencia, por eso encaja en campañas recurrentes. No sirve para envíos disparados por acción o API.",
+   "src": "Examen real · P34 de 50 · oct 2025"
+  },
+  {
+   "id": "b035",
+   "sec": "con",
+   "t": "Subscription states",
+   "q": "What occurs when a user is \"unsubscribed\" from push notifications in Braze?",
+   "o": [
+    "They continue to receive push notifications until the app is deleted",
+    "They are automatically moved to the \"Subscribed\" state after a period of time",
+    "They should no longer receive push notifications but may still get messages on other channels that they have opted-in to",
+    "They receive a confirmation email to re-subscribe"
+   ],
+   "a": 2,
+   "e": "La baja de push es por canal: deja de recibir push pero conserva el resto de canales en los que sigue suscrito.",
+   "src": "Examen real · P35 de 50 · oct 2025"
+  },
+  {
+   "id": "b036",
+   "sec": "can",
+   "t": "Canvas survey",
+   "q": "An eCommerce brand wants to create a preference survey for their mobile app using Canvas and In-App Messages. The Canvas includes the following steps: 1. Target users who have registered an account and used the app within the last week. 2. Send an in-app message survey asking which products they are most interested in. 3. After a delay, send a second personalized in-app message with deals based on their survey responses to users who completed the survey. 4. Exit users who did not complete the survey from the Canvas. Which of the following is necessary to execute this use case? (Select 3)",
+   "o": [
+    "Connected Content",
+    "Email",
+    "The Braze SDK",
+    "A custom attribute",
+    "A custom event"
+   ],
+   "a": [
+    2,
+    3,
+    4
+   ],
+   "e": "Hace falta el SDK para mostrar el in-app, un atributo personalizado que guarde las respuestas y un evento personalizado que marque que completó la encuesta.",
+   "src": "Examen real · P36 de 50 · oct 2025"
+  },
+  {
+   "id": "b037",
+   "sec": "ana",
+   "t": "Segment export",
+   "q": "Which of the following statements about exporting segment data as a CSV is true? (Select 2)",
+   "o": [
+    "Downloading a CSV export of email addresses provides information on when users opted in or unsubscribed.",
+    "You can select up to 50 custom events and attributes for export.",
+    "To export segment data, navigate to a previously created Canvas, select Segment Details, then choose User Data.",
+    "You can export segment data using Currents."
+   ],
+   "a": [
+    0,
+    1
+   ],
+   "e": "El export de direcciones de email incluye cuándo se hizo opt-in o baja. La exportación se lanza desde la página Segments (no desde un Canvas) y Currents es streaming de eventos, no un export de segmento.",
+   "src": "Examen real · P37 de 50 · oct 2025",
+   "note": "En la captura estaban marcadas B y C. Corregida a A y B: la C habla de un Canvas, pero el export parte de Segments. El límite de 50 eventos y atributos no se ha podido contrastar."
+  },
+  {
+   "id": "b038",
+   "sec": "pers",
+   "t": "Liquid",
+   "q": "You're creating an API-triggered campaign to send an email to users when they have earned more than 500 loyalty points. In your campaign copy, you want to include the exact number of loyalty points the user has at that time. Which Liquid statement is the most appropriate to use?",
+   "o": [
+    "{{campaign_entry_properties.${loyalty_points_balance}}}",
+    "{{event_properties.${loyalty_points_balance}}}",
+    "{{api_trigger_properties.${loyalty_points_balance}}}",
+    "{{canvas_entry_properties.${loyalty_points_balance}}}"
+   ],
+   "a": 2,
+   "e": "En campañas disparadas por API, las propiedades enviadas en la llamada se leen con api_trigger_properties.",
+   "src": "Examen real · P38 de 50 · oct 2025"
+  },
+  {
+   "id": "b039",
+   "sec": "can",
+   "t": "Frequency capping",
+   "q": "Which of the following statements about frequency cap rules is true?",
+   "o": [
+    "Frequency caps can be adjusted based on user engagement levels.",
+    "You can set multiple caps for the same message type.",
+    "Frequency cap rules can be applied to promotional messages, but not to transactional ones.",
+    "You can establish up to 25 frequency capping rules per workspace."
+   ],
+   "a": 1,
+   "e": "Respuesta marcada por quien hizo la prueba: se pueden definir varias reglas de límite para el mismo tipo de mensaje.",
+   "src": "Examen real · P39 de 50 · oct 2025",
+   "note": "Respuesta tomada de la selección del candidato, sin contrastar."
+  },
+  {
+   "id": "b040",
+   "sec": "can",
+   "t": "Lapsing users",
+   "q": "A beauty brand aims to re-engage lapsing users and encourage them to return to the app to make a purchase. What step should they take to create an effective lapsing user campaign?",
+   "o": [
+    "Create a segment that includes all users to maximize the potential audience size",
+    "Define the brand's criteria for identifying lapsing users",
+    "Implement a campaign that focuses solely on discounts without considering user preferences",
+    "Analyze only the most recent purchases of users to assess their engagement level"
+   ],
+   "a": 1,
+   "e": "Lo primero es definir qué significa estar en riesgo de abandono para la marca (por ejemplo, días sin sesión o sin compra) y segmentar con ese criterio.",
+   "src": "Examen real · P40 de 50 · oct 2025",
+   "note": "En la captura estaba marcada la opción D. Corregida a la B, coherente con la pregunta 31 (el criterio depende de la marca)."
+  },
+  {
+   "id": "b041",
+   "sec": "ab",
+   "t": "Multivariate testing",
+   "q": "Which of the following strategies is recommended when running follow-up tests based on insights from previous multivariate tests?",
+   "o": [
+    "Change the sample size to be smaller than the initial test to reduce costs.",
+    "Test different segments of users to understand how various groups respond to the same messaging strategy.",
+    "Avoid using insights from previous tests, as they may lead to biased conclusions.",
+    "Always use the same messaging channel for follow-up tests, regardless of previous results."
+   ],
+   "a": 1,
+   "e": "Los tests de seguimiento deben aprovechar lo aprendido y probar con otros segmentos para ver cómo responden a la misma estrategia.",
+   "src": "Examen real · P41 de 50 · oct 2025"
+  },
+  {
+   "id": "b042",
+   "sec": "pers",
+   "t": "Liquid",
+   "q": "You want to use Liquid to personalize a message with a user's first name. However, if the first name field is missing from their profile, you want to assign a fallback value of \"Friend\" in place of the first name. Which Liquid snippet should you use to personalize this message?",
+   "o": [
+    "{{${first_name} | assign: 'Friend'}}",
+    "{{${first_name} | default: 'Friend'}}",
+    "{{${first_name} | replace: 'Friend'}}",
+    "{{${first_name} | uniq: 'Friend'}}"
+   ],
+   "a": 1,
+   "e": "El filtro default de Liquid aplica un valor alternativo cuando el campo está vacío o no existe.",
+   "src": "Examen real · P42 de 50 · oct 2025"
+  },
+  {
+   "id": "b043",
+   "sec": "ab",
+   "t": "Experiment Paths",
+   "q": "A quick service restaurant (QSR) app is noticing a decline in app engagement from some of their users who have not made a purchase in a while. To re-engage these lapsing users, they want to identify the most effective channels, personalization strategies, and incentives that will encourage users to return to the app. They decide to utilize multivariate testing and experiment paths in Braze to optimize their approach. Which strategy should the QSR marketing team implement to effectively use multivariate testing and experiment paths for re-engaging lapsing users?",
+   "o": [
+    "Send a single generic message to all lapsing users, regardless of their previous interactions or preferences, to save time",
+    "Create multiple variants of a message on email, and test different subject lines, message copy, and incentive offers to see which message drives the most engagement",
+    "Run the tests for a very short period to quickly determine the best strategy without overwhelming users",
+    "Create multiple variants of messages that include different incentives, personalized content, and various channels to see which combination drives the most engagement"
+   ],
+   "a": 3,
+   "e": "El multivariante debe combinar incentivos, personalización y canales para saber qué combinación funciona mejor, no limitarse a un solo canal.",
+   "src": "Examen real · P43 de 50 · oct 2025"
+  },
+  {
+   "id": "b044",
+   "sec": "pers",
+   "t": "AI tools",
+   "q": "What is the primary function of the AI Liquid Assistant in Braze?",
+   "o": [
+    "It automatically sends messages without user intervention",
+    "It generates personalized messaging templates by providing suggestions and examples",
+    "It generates random user attributes for testing purposes",
+    "It manages user segmentation and targeting strategies"
+   ],
+   "a": 1,
+   "e": "El asistente de Liquid con IA ayuda a escribir código de personalización proponiendo sugerencias y ejemplos.",
+   "src": "Examen real · P44 de 50 · oct 2025"
+  },
+  {
+   "id": "b045",
+   "sec": "seg",
+   "t": "Lapsing users",
+   "q": "You are creating a Canvas to target lapsing users and encourage them to return to your app for a purchase. Your brand defines a lapsed user as someone who has not made a purchase in over 60 days. Which of the following options correctly targets this audience?",
+   "o": [
+    "Audience = Users who last made a purchase less than 59 days ago",
+    "Audience = Users who last made a purchase more than 60 days ago",
+    "Audience = Users who last made a purchase more than 59 days ago",
+    "Audience = Users who last made a purchase less than 60 days ago"
+   ],
+   "a": 1,
+   "e": "Sin compra en más de 60 días equivale a que la última compra fue hace más de 60 días. Menos de 60 días serían usuarios activos.",
+   "src": "Examen real · P45 de 50 · oct 2025",
+   "note": "En la captura estaba marcada la opción D (menos de 60 días), que selecciona a los usuarios activos. Corregida a la B."
+  },
+  {
+   "id": "b046",
+   "sec": "pers",
+   "t": "Liquid",
+   "q": "In the following message containing Liquid, what string filter is being used? Don't know where to start? Since you enjoy {{custom_attribute.${favorite_workout} | capitalize | default: \"trying new workouts\"}}, check out our {{custom_attribute.${favorite_workout_type} | default: \"Recently Added\" }} workout catalog!",
+   "o": [
+    "Default",
+    "Capitalize",
+    "${favorite_workout_type}",
+    "${favorite_workout}"
+   ],
+   "a": 1,
+   "e": "capitalize es el filtro de cadena que pone en mayúscula la primera letra. default solo define un valor alternativo.",
+   "src": "Examen real · P46 de 50 · oct 2025"
+  },
+  {
+   "id": "b047",
+   "sec": "ab",
+   "t": "Personalized Paths",
+   "q": "In Braze, what is the purpose of a Delay Group when using Personalized Paths?",
+   "o": [
+    "A Delay Group allows you to increase the frequency of messages sent to users.",
+    "A Delay Group holds a percentage of users while everyone else will enter the Experiment Path to train a look-alike model.",
+    "A Delay Group is used to segment users into different categories based on their custom attributes.",
+    "A Delay Group ensures that all users receive the same message simultaneously, regardless of their individual behaviors."
+   ],
+   "a": 1,
+   "e": "El Delay Group retiene a un porcentaje de usuarios mientras el resto entra al Experiment Path para entrenar el modelo look-alike. Después los retenidos reciben el camino personalizado.",
+   "src": "Examen real · P47 de 50 · oct 2025"
+  },
+  {
+   "id": "b048",
+   "sec": "pers",
+   "t": "Liquid",
+   "q": "In the following message, what content is being personalized using Liquid? Your subscription expires on January 19, renew by the end of the month.",
+   "o": [
+    "The subscription expiration date",
+    "The calendar month",
+    "The membership tier",
+    "The user's first name"
+   ],
+   "a": 0,
+   "e": "La fecha de caducidad (January 19) es el dato que cambia por usuario. El mes de fin de plazo es texto fijo.",
+   "src": "Examen real · P48 de 50 · oct 2025"
+  },
+  {
+   "id": "b049",
+   "sec": "can",
+   "t": "Frequency",
+   "q": "The term \"send frequency\" refers to:",
+   "o": [
+    "The number of messages a brand sends to a specific user within a set timeframe.",
+    "The number of different channels utilized in a single canvas.",
+    "The total number of users who receive a message in a campaign.",
+    "The maximum number of messages that can be sent in a single campaign."
+   ],
+   "a": 0,
+   "e": "La frecuencia de envío es cuántos mensajes recibe un usuario concreto en un periodo de tiempo.",
+   "src": "Examen real · P49 de 50 · oct 2025"
+  },
+  {
+   "id": "b050",
+   "sec": "con",
+   "t": "Consent",
+   "q": "Which of the following statements best describes the principle of consent for marketing messaging?",
+   "o": [
+    "Consent can be obtained through purchased email lists, as long as the emails are valid.",
+    "Consent should always be an opt-in process, allowing users to choose and control the messages they receive.",
+    "Consent can be transferred between brands, allowing for shared marketing lists.",
+    "Consent is optional and can be implied through user engagement with your brand."
+   ],
+   "a": 1,
+   "e": "El consentimiento debe ser siempre opt-in, y el usuario decide y controla qué mensajes recibe.",
+   "src": "Examen real · P50 de 50 · oct 2025"
+  }
+ ],
+ "logo": "assets/logos/braze.png",
+ "logoClass": "wide mono"
+}

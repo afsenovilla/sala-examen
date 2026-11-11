@@ -297,3 +297,6 @@ select.search{appearance:none;padding-right:34px}
 
 .logo{width:1.1em;height:1.1em;vertical-align:-.15em;margin-right:.4em;object-fit:contain}
 .logo.big{width:.95em;height:.95em;vertical-align:-.08em}
+.logo.wide{width:auto;height:.8em;vertical-align:-.05em;margin-right:.5em}
+.logo.mono{filter:invert(1)}
+@media (prefers-color-scheme:light){.logo.mono{filter:none}}

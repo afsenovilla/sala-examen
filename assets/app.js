@@ -30,7 +30,7 @@
 
   /* ---------------- utilidades ---------------- */
   function logoImg(e, big) {
-    return e && e.logo ? '<img class="logo' + (big ? ' big' : '') + '" src="' + esc(e.logo) + '" alt="" aria-hidden="true">' : "";
+    return e && e.logo ? '<img class="logo' + (big ? ' big' : '') + (e.logoClass ? ' ' + esc(e.logoClass) : '') + '" src="' + esc(e.logo) + '" alt="" aria-hidden="true">' : "";
   }
   function esc(s) {
     return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");

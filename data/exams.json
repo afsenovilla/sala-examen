@@ -54,7 +54,9 @@
    "scored": 50,
    "date": "2025-10",
    "blurb": "Canvas, segmentación, Liquid, testing multivariante, canales y analítica en Braze. Elegir 1, 2 o 3 respuestas.",
-   "accent": "indigo"
+   "accent": "indigo",
+   "logo": "assets/logos/braze.png",
+   "logoClass": "wide mono"
   },
   {
    "id": "claude-developer",
