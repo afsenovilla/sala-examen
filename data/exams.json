@@ -59,7 +59,7 @@
   {
    "id": "claude-developer",
    "file": "data/claude-developer.json",
-   "name": "Claude Certified Developer",
+   "name": "Claude Certified Developer Foundations",
    "code": "Claude Developer",
    "vendor": "Anthropic",
    "questions": 81,
