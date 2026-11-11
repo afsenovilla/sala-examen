@@ -294,3 +294,6 @@ select.search{appearance:none;padding-right:34px}
 .pick{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 2px}
 .opts .confirm{align-self:flex-start;margin-top:6px}
 .exam-row .age{display:block;margin-top:8px;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;color:var(--muted)}
+
+.logo{width:1.1em;height:1.1em;vertical-align:-.15em;margin-right:.4em;object-fit:contain}
+.logo.big{width:.95em;height:.95em;vertical-align:-.08em}

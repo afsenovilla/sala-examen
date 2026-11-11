@@ -68,7 +68,8 @@
    "scored": 96,
    "blurb": "API y SDK de Claude, prompts y salida estructurada, agentes, herramientas, Claude Code, Skills y MCP, contexto y operación.",
    "accent": "indigo",
-   "date": "2026-11"
+   "date": "2026-11",
+   "logo": "assets/logos/claude.png"
   }
  ]
 }

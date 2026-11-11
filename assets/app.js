@@ -29,6 +29,9 @@
   }
 
   /* ---------------- utilidades ---------------- */
+  function logoImg(e, big) {
+    return e && e.logo ? '<img class="logo' + (big ? ' big' : '') + '" src="' + esc(e.logo) + '" alt="" aria-hidden="true">' : "";
+  }
   function esc(s) {
     return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
@@ -150,7 +153,7 @@
       return '<a class="exam-row" href="#/e/' + esc(e.id) + '">' +
         '<div class="er-main">' +
           '<span class="eyebrow">' + esc(e.vendor) + ' · ' + esc(e.code) + '</span>' +
-          '<div class="name">' + esc(e.name) + '</div>' +
+          '<div class="name">' + logoImg(e) + esc(e.name) + '</div>' +
           '<p class="blurb">' + esc(e.blurb) + '</p>' +
           (e.date ? '<span class="age">' + esc(dateLine(e)) + '</span>' : '') +
         '</div>' +
@@ -372,7 +375,7 @@
       '<p><a class="ghost" href="#/">← Todos los exámenes</a></p>' +
       '<div style="margin-top:16px">' +
         '<p class="eyebrow">' + esc(ex.vendor) + ' · ' + esc(ex.code) + ' · ' + esc(ex.release) + (ex.date ? ' (' + esc(ageEs(ex.date)) + ')' : '') + '</p>' +
-        '<h1 style="margin-top:6px">' + esc(ex.name) + '</h1>' +
+        '<h1 style="margin-top:6px">' + logoImg(ex, 1) + esc(ex.name) + '</h1>' +
         '<p class="muted" style="margin-top:10px;max-width:58ch">' + (ex.unofficial ? 'Formato estimado: ' : 'Examen oficial: ') + f.scored + ' preguntas puntuadas' + (f.unscored ? ' (más hasta ' + f.unscored + ' sin puntuar)' : '') + ', ' + f.minutes + ' minutos y ' + f.pass + ' % para aprobar. ' + (ex.hasMulti ? 'Hay preguntas de una respuesta y de selección múltiple («elige 2», «elige 3»): solo suman si marcas todas las correctas y ninguna más.' : f.choices + ' opciones por pregunta, una correcta.') + '</p>' +
       '</div>' +
       '<div class="strip section">' +
