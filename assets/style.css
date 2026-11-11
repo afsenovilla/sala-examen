@@ -12,13 +12,20 @@
   --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
 }
 @media (prefers-color-scheme:light){
-  :root{
+  :root:not([data-theme="dark"]){
     --bg:#FFFFFF; --surface:#FFFFFF; --surface-2:#F4F4F6; --line:#E2E2E7;
     --text:#0A0A0C; --muted:#63636E;
     --accent:#C0129E; --accent-soft:#FCE9FA; --accent-ink:#FFFFFF; --accent-line:#C0129E;
     --good:#0C7A52; --good-soft:#E2F5EC; --bad:#C22B2B; --bad-soft:#FBE6E6;
     --warn:#8A5A00; --warn-soft:#FBEED6;
   }
+}
+:root[data-theme="light"]{
+    --bg:#FFFFFF; --surface:#FFFFFF; --surface-2:#F4F4F6; --line:#E2E2E7;
+    --text:#0A0A0C; --muted:#63636E;
+    --accent:#C0129E; --accent-soft:#FCE9FA; --accent-ink:#FFFFFF; --accent-line:#C0129E;
+    --good:#0C7A52; --good-soft:#E2F5EC; --bad:#C22B2B; --bad-soft:#FBE6E6;
+    --warn:#8A5A00; --warn-soft:#FBEED6;
 }
 *{box-sizing:border-box}
 html,body{margin:0}
@@ -299,7 +306,7 @@ select.search{appearance:none;padding-right:34px}
 .logo.big{width:.95em;height:.95em;vertical-align:-.08em}
 .logo.wide{width:auto;height:.8em;vertical-align:-.05em;margin-right:.5em}
 .logo.mono{filter:invert(1)}
-@media (prefers-color-scheme:light){.logo.mono{filter:none}}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .logo.mono{filter:none}}:root[data-theme="light"] .logo.mono{filter:none}
 .logo.cloud{width:auto;height:1.15em;vertical-align:-.2em}
 .logo.cloud.big{height:1em;vertical-align:-.12em}
 .exam-row.soon{cursor:default;opacity:.5;filter:grayscale(1)}
@@ -310,3 +317,6 @@ select.search{appearance:none;padding-right:34px}
 .exam-row .ribbon b{position:absolute;top:20px;right:-30px;width:128px;transform:rotate(45deg);text-align:center;
   background:linear-gradient(90deg,#E5383B,#B01218);color:#fff;font-family:var(--f-mono);font-size:10.5px;font-weight:600;
   letter-spacing:.16em;text-transform:uppercase;padding:4px 0;line-height:1.2;box-shadow:0 2px 5px rgba(0,0,0,.4)}
+
+.foot-base .themebtn{background:none;border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.foot-base .themebtn:hover{color:var(--text);border-color:var(--muted)}

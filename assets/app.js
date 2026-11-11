@@ -227,11 +227,31 @@
         '</div>' +
       '</div>' +
       '<div id="ioPanel" hidden></div>' +
-      '<div class="foot-base"><span>Sala de examen</span><span>Material de estudio, sin relación con los fabricantes de las certificaciones.</span></div>' +
+      '<div class="foot-base"><span>Sala de examen</span><button class="themebtn" id="themeBtn" type="button"></button></div>' +
     '</footer>';
   }
 
+  function curTheme() {
+    var t = document.documentElement.getAttribute("data-theme");
+    if (t) return t;
+    return window.matchMedia && matchMedia("(prefers-color-scheme:light)").matches ? "light" : "dark";
+  }
+  function setThemeLabel() {
+    var b = document.getElementById("themeBtn");
+    if (b) b.textContent = curTheme() === "dark" ? "☀ Modo día" : "☾ Modo noche";
+  }
+
   function bindFooter() {
+    var tb = document.getElementById("themeBtn");
+    if (tb) {
+      setThemeLabel();
+      tb.onclick = function () {
+        var t = curTheme() === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", t);
+        try { localStorage.setItem("sala.theme", t); } catch (e) {}
+        setThemeLabel();
+      };
+    }
     var e = document.getElementById("expBtn"), i = document.getElementById("impBtn"), c = document.getElementById("clrBtn");
     if (e) e.onclick = function () { togglePanel("exp"); };
     if (i) i.onclick = function () { togglePanel("imp"); };
