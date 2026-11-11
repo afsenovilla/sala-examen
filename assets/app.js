@@ -161,7 +161,7 @@
       var seen = Object.keys(p.stats).length;
       var acc = accuracy(p, null);
       var best = p.history.length ? Math.max.apply(null, p.history.map(function (h) { return h.pct; })) : null;
-      return '<a class="exam-row" href="#/e/' + esc(e.id) + '">' + (e.isNew ? '<span class="tag-new">Nuevo</span>' : '') +
+      return '<a class="exam-row" href="#/e/' + esc(e.id) + '">' + (e.isNew ? '<span class="ribbon" aria-label="Nuevo"><b>Nuevo</b></span>' : '') +
         '<div class="er-main">' +
           '<span class="eyebrow">' + esc(e.vendor) + ' · ' + esc(e.code) + '</span>' +
           '<div class="name">' + logoImg(e) + esc(e.name) + '</div>' +
