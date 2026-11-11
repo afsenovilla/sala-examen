@@ -55,6 +55,19 @@
    "date": "2025-10",
    "blurb": "Canvas, segmentación, Liquid, testing multivariante, canales y analítica en Braze. Elegir 1, 2 o 3 respuestas.",
    "accent": "indigo"
+  },
+  {
+   "id": "claude-developer",
+   "file": "data/claude-developer.json",
+   "name": "Claude Developer · Set 1",
+   "code": "Claude Dev",
+   "vendor": "Anthropic",
+   "questions": 53,
+   "pass": 70,
+   "minutes": 90,
+   "scored": 53,
+   "blurb": "API y SDK de Claude, prompts y salida estructurada, agentes, herramientas, Claude Code, Skills y MCP, contexto y operación.",
+   "accent": "indigo"
   }
  ]
 }

@@ -373,7 +373,7 @@
       '<div style="margin-top:16px">' +
         '<p class="eyebrow">' + esc(ex.vendor) + ' · ' + esc(ex.code) + ' · ' + esc(ex.release) + (ex.date ? ' (' + esc(ageEs(ex.date)) + ')' : '') + '</p>' +
         '<h1 style="margin-top:6px">' + esc(ex.name) + '</h1>' +
-        '<p class="muted" style="margin-top:10px;max-width:58ch">' + (ex.unofficial ? 'Examen real: ' : 'Examen oficial: ') + f.scored + ' preguntas puntuadas' + (f.unscored ? ' (más hasta ' + f.unscored + ' sin puntuar)' : '') + ', ' + f.minutes + ' minutos y ' + f.pass + ' % para aprobar. ' + (ex.hasMulti ? 'Hay preguntas de una respuesta y de selección múltiple («elige 2», «elige 3»): solo suman si marcas todas las correctas y ninguna más.' : f.choices + ' opciones por pregunta, una correcta.') + '</p>' +
+        '<p class="muted" style="margin-top:10px;max-width:58ch">' + (ex.unofficial ? 'Formato estimado: ' : 'Examen oficial: ') + f.scored + ' preguntas puntuadas' + (f.unscored ? ' (más hasta ' + f.unscored + ' sin puntuar)' : '') + ', ' + f.minutes + ' minutos y ' + f.pass + ' % para aprobar. ' + (ex.hasMulti ? 'Hay preguntas de una respuesta y de selección múltiple («elige 2», «elige 3»): solo suman si marcas todas las correctas y ninguna más.' : f.choices + ' opciones por pregunta, una correcta.') + '</p>' +
       '</div>' +
       '<div class="strip section">' +
         '<div><div class="k mono">' + ex.questions.length + '</div><div class="l">En el banco</div></div>' +
@@ -785,8 +785,8 @@
 
     var missing = f.scored - R.total;
     var note = R.mode === "exam"
-      ? 'Simulacro con el reparto ' + (ex.unofficial ? 'orientativo' : 'oficial') + ' por áreas. En el examen real apruebas con ' + f.pass + ' % sobre ' + f.scored + ' preguntas puntuadas, es decir ' + Math.ceil(f.scored * f.pass / 100) + ' aciertos.'
-      : 'Sesión de práctica de ' + R.total + ' preguntas' + (missing > 0 ? ', no un examen completo' : '') + '. El listón del ' + f.pass + ' % es el del examen real.';
+      ? 'Simulacro con el reparto ' + (ex.unofficial ? 'orientativo' : 'oficial') + ' por áreas. ' + (ex.unofficial ? 'Con el corte estimado' : 'En el examen real') + ' apruebas con ' + f.pass + ' % sobre ' + f.scored + ' preguntas puntuadas, es decir ' + Math.ceil(f.scored * f.pass / 100) + ' aciertos.'
+      : 'Sesión de práctica de ' + R.total + ' preguntas' + (missing > 0 ? ', no un examen completo' : '') + '. El listón del ' + f.pass + ' % es ' + (ex.unofficial ? 'el estimado.' : 'el del examen real.');
 
     var review = R.list.map(function (q, i) {
       var a = R.answers[q.id], ok = isRight(q, a);
