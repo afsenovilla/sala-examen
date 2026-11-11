@@ -1490,5 +1490,6 @@
   }
  ],
  "date": "2026-11",
- "logo": "assets/logos/claude.png"
+ "logo": "assets/logos/claude.png",
+ "isNew": true
 }

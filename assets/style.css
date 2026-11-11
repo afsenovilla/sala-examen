@@ -306,3 +306,4 @@ select.search{appearance:none;padding-right:34px}
 .exam-row.soon::before{display:none}
 .exam-row.soon:hover{border-bottom-color:var(--line)}
 .exam-row.soon .er-go,.exam-row.soon:hover .er-go{color:var(--muted);transform:none;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.newbadge{width:1.6em;height:1.6em;margin-left:.3em;vertical-align:-.35em;object-fit:contain}

@@ -71,7 +71,8 @@
    "date": "2025-10",
    "blurb": "Canvas, segmentación, Liquid, testing multivariante, canales y analítica en Braze. Elegir 1, 2 o 3 respuestas.",
    "accent": "indigo",
-   "logo": "assets/logos/braze.png"
+   "logo": "assets/logos/braze.png",
+   "isNew": true
   },
   {
    "id": "claude-developer",
@@ -86,7 +87,8 @@
    "blurb": "API y SDK de Claude, prompts y salida estructurada, agentes, herramientas, Claude Code, Skills y MCP, contexto y operación.",
    "accent": "indigo",
    "date": "2026-11",
-   "logo": "assets/logos/claude.png"
+   "logo": "assets/logos/claude.png",
+   "isNew": true
   }
  ]
 }

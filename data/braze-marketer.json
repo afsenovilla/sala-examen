@@ -848,5 +848,6 @@
    "src": "Examen real · P50 de 50 · oct 2025"
   }
  ],
- "logo": "assets/logos/braze.png"
+ "logo": "assets/logos/braze.png",
+ "isNew": true
 }
