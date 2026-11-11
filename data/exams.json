@@ -59,10 +59,10 @@
    "logo": "assets/logos/salesforce.png",
    "logoClass": "cloud",
    "file": "data/mc-administrator.json",
-   "questions": 60,
+   "questions": 96,
    "pass": 67,
    "minutes": 105,
-   "scored": 60,
+   "scored": 96,
    "date": "2026-11",
    "accent": "blue",
    "isNew": true
