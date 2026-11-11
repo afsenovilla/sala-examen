@@ -188,7 +188,7 @@
       '<header class="hero">' +
         '<div>' +
           '<p class="eyebrow">Práctica de certificaciones</p>' +
-          '<h1 style="margin-top:6px">Sala de examen</h1>' +
+          '<h1 style="margin-top:6px">Sala de <i>examen</i></h1>' +
         '</div>' +
         '<p class="hero-lede">Bancos de preguntas reales con explicación en cada respuesta, simulacros cronometrados con el formato oficial de cada certificación y un diagnóstico de puntos flacos al terminar.</p>' +
       '</header>' +
