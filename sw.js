@@ -1,7 +1,7 @@
 /* Caché offline simple. Sube CACHE cuando publiques cambios. */
-var CACHE = "sala-examen-v15";
+var CACHE = "sala-examen-v16";
 var ASSETS = [
-  "./", "index.html", "assets/style.css?v=15", "assets/app.js?v=15", "assets/logos/claude.png", "assets/logos/braze.png", "assets/logos/salesforce.png",
+  "./", "index.html", "assets/style.css?v=16", "assets/app.js?v=16", "assets/logos/claude.png", "assets/logos/braze.png", "assets/logos/salesforce.png",
   "assets/icon.svg", "assets/icon-192.png", "assets/icon-512.png",
   "data/exams.json", "manifest.webmanifest"
 ];
