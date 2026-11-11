@@ -5,7 +5,7 @@
  "vendor": "Anthropic",
  "release": "Pruebas de nov 2026",
  "format": {
-  "scored": 81,
+  "scored": 96,
   "unscored": 0,
   "minutes": 90,
   "pass": 70,
@@ -16,35 +16,35 @@
   {
    "id": "ops",
    "name": "Despliegue, costes y operación",
-   "weight": 28
+   "weight": 30
   },
   {
    "id": "agent",
    "name": "Agentes, herramientas y arquitectura",
-   "weight": 17
+   "weight": 19
   },
   {
    "id": "prompt",
    "name": "Prompts y salida estructurada",
-   "weight": 14
+   "weight": 11
   },
   {
    "id": "cc",
    "name": "Claude Code, Skills y MCP",
-   "weight": 15
+   "weight": 14
   },
   {
    "id": "ctx",
    "name": "Contexto y sesiones",
-   "weight": 11
+   "weight": 10
   },
   {
    "id": "fiab",
    "name": "Fiabilidad y seguridad",
-   "weight": 15
+   "weight": 16
   }
  ],
- "notes": "Banco de 81 preguntas de situación sobre desarrollo con Claude (API, SDK, agentes, Claude Code, Skills y MCP), unidas desde dos sets de capturas (Set 1: 55 capturas, Set 2: 53). Las repetidas entre sets y dentro de cada set se han descartado. Las respuestas son las marcadas en las capturas y se han revisado una a una; las dudosas llevan una nota. Anthropic no publica corte ni duración: el 70 % y los 90 min son valores provisionales para poder cronometrar, y los pesos por área son el reparto de estas 81 preguntas.",
+ "notes": "Banco de 96 preguntas de situación sobre desarrollo con Claude (API, SDK, agentes, Claude Code, Skills y MCP), unidas desde tres sets de capturas (Set 1: 55 capturas, Set 2: 53, Set 3: 53). Las repetidas entre sets y dentro de cada set se han descartado. Las respuestas son las marcadas en las capturas y se han revisado una a una; las dudosas llevan una nota. Anthropic no publica corte ni duración: el 70 % y los 90 min son valores provisionales para poder cronometrar, y los pesos por área son el reparto de estas 96 preguntas.",
  "questions": [
   {
    "id": "c001",
@@ -1262,6 +1262,231 @@
    "a": 1,
    "e": "Se audita el prompt para detectar solapes, contradicciones y contenido obsoleto, y se refactoriza para que cada instrucción sea clara, vigente y no redundante.",
    "src": "Claude Dev Set 2 · captura 52"
+  },
+  {
+   "id": "c082",
+   "sec": "ops",
+   "t": "Conexión en tiempo real",
+   "q": "You are building a Claude application that needs to maintain a persistent connection to a service that streams real-time updates. The team is unsure what communication pattern to use. Which communication pattern would you use?",
+   "o": [
+    "File-based communication where the service writes new updates to disk and the application polls the file system for changes.",
+    "A websocket, because websockets are designed for bidirectional, persistent, real-time communication between the client and the streaming service.",
+    "A single long HTTP request the server holds open indefinitely, with no standard websocket framing on the connection.",
+    "Repeated short-lived HTTP polling requests, where the application opens a new HTTP connection each time it checks for updates."
+   ],
+   "a": 1,
+   "e": "Un websocket está pensado para comunicación bidireccional, persistente y en tiempo real entre cliente y servicio de streaming.",
+   "src": "Claude Dev Set 3 · captura 2"
+  },
+  {
+   "id": "c083",
+   "sec": "agent",
+   "t": "Herramienta propia o integrada",
+   "q": "The team is debating whether to build a new capability as a custom tool or to use an existing built-in tool that nearly covers the use case but lacks one specific feature. How would you decide?",
+   "o": [
+    "Identify whether the team has previously built similar custom tools and use those precedents to determine which approach is more consistent with the existing codebase.",
+    "Evaluate whether the missing feature can be addressed by extending the built-in tool or warrants a custom tool, then choose accordingly.",
+    "Examine the custom tool option by scoping the implementation effort and determining whether the additional flexibility justifies the development and maintenance cost.",
+    "Review the built-in tool's documentation and assess whether its existing capabilities are sufficient to cover the use case without any modification or extension."
+   ],
+   "a": 1,
+   "e": "Se evalúa si la función que falta se resuelve ampliando la herramienta integrada o si justifica una herramienta propia, y se decide en consecuencia.",
+   "src": "Claude Dev Set 3 · captura 10"
+  },
+  {
+   "id": "c084",
+   "sec": "agent",
+   "t": "Esquema estricto de herramienta",
+   "q": "Your Claude agent has access to a tool that retrieves customer records. A teammate has noticed that the agent occasionally calls the tool with arguments the schema does not declare, and the tool's downstream service returns an error each time. The teammate proposes loosening the schema so the tool accepts whatever arguments the model produces. How would you respond?",
+   "o": [
+    "Keep the schema strict, validate arguments before dispatching, and return a structured error so the agent can retry.",
+    "Loosen the schema as the teammate proposed so the downstream service receives every call the agent makes during normal operation.",
+    "Remove the schema entirely and rely on the downstream service to reject invalid calls, treating the downstream service as the team's primary enforcement layer.",
+    "Add a system prompt instruction telling the model to produce schema-conforming arguments, treating the prompt instruction as the primary mechanism for keeping the agent's tool calls valid."
+   ],
+   "a": 0,
+   "e": "Se mantiene el esquema estricto, se validan los argumentos antes de despachar y se devuelve un error estructurado para que el agente reintente.",
+   "src": "Claude Dev Set 3 · captura 12"
+  },
+  {
+   "id": "c085",
+   "sec": "ops",
+   "t": "Parámetro obsoleto",
+   "q": "The Anthropic API deprecated a request parameter that your Claude application uses in approximately 40 places across the codebase. The deprecation notice gives a six-month window before the parameter is removed and recommends a replacement parameter with slightly different semantics. You would respond to the deprecation by...",
+   "o": [
+    "swapping all 40 call sites in a single change right away to prevent drawn-out migration work that will delay ongoing functioning.",
+    "adding regression tests to cover the parameter's behavior, then migrating call sites in batches that you validate against regression tests.",
+    "migrating all 40 call sites in a single change near the removal date to ensure the deprecated parameter continues to work as long as possible.",
+    "keeping the deprecated parameter in place while writing a wrapper function around it to insulate the rest of the codebase from the eventual change."
+   ],
+   "a": 1,
+   "e": "Como la semántica del parámetro nuevo es algo distinta, se cubre el comportamiento con tests de regresión y se migra por lotes validando cada uno.",
+   "src": "Claude Dev Set 3 · captura 18"
+  },
+  {
+   "id": "c086",
+   "sec": "fiab",
+   "t": "Rechazos inesperados",
+   "q": "A Claude application is occasionally refusing to answer questions that should be in scope, including questions the application has answered correctly in the past. You want to investigate. What is the first step of your investigation?",
+   "o": [
+    "Test whether removing or adjusting those instructions resolves the behavior.",
+    "Identify which questions have been refused and compare them against previously answered questions to determine what changed between the successful and refused interactions.",
+    "Examine traces of the refused requests to identify what triggers the refusal, whether input patterns, system prompt content, or other context.",
+    "Assess whether the refusals cluster around specific input patterns, question types, or time periods by analyzing the distribution of refused requests in the logs."
+   ],
+   "a": 2,
+   "e": "Lo primero es examinar las trazas de las peticiones rechazadas para ver qué dispara el rechazo (patrones de entrada, contenido del system prompt u otro contexto) antes de tocar nada.",
+   "src": "Claude Dev Set 3 · captura 22"
+  },
+  {
+   "id": "c087",
+   "sec": "ops",
+   "t": "Deuda técnica",
+   "q": "The Claude application your team built has grown over six months, and the prompt-handling code has accumulated duplication and tangled control flow. The functionality is working, but new features are getting harder to add. How would you address this?",
+   "o": [
+    "Move all the prompt-handling code into a single large function to reduce the number of files developers have to navigate when reading the code.",
+    "Refactor the prompt-handling code in small increments as part of each new feature ticket, treating the cleanup as a side effect of feature work.",
+    "Continue adding features and plan a refactoring pass after the next two release cycles when the team has more bandwidth for internal work.",
+    "Plan a refactoring pass to consolidate duplicated logic, separate concerns, and simplify control flow before adding new features."
+   ],
+   "a": 3,
+   "e": "Se planifica una pasada de refactorización que consolide la lógica duplicada, separe responsabilidades y simplifique el flujo antes de añadir más funcionalidades.",
+   "src": "Claude Dev Set 3 · captura 25"
+  },
+  {
+   "id": "c088",
+   "sec": "ctx",
+   "t": "Prompt vs context engineering",
+   "q": "A teammate has asked you to explain the difference between context engineering and prompt engineering. They have heard the terms used interchangeably and are unsure how each applies to a Claude application that processes long-running multi-step tasks. How would you describe the distinction?",
+   "o": [
+    "Prompt engineering shapes individual prompts for specific outputs, while context engineering manages how content flows across turns and steps and takes steps to keep relevant state visible.",
+    "Prompt engineering is the older term for prompt design, while context engineering is the newer term that has replaced it in modern Claude applications across the industry.",
+    "Prompt engineering focuses on the model's response, while context engineering focuses on the user's input across many sessions in a long-running multi-step Claude application.",
+    "Prompt engineering and context engineering each address content the team gives Claude, but the team can group them under a single workflow because the practices use overlapping techniques."
+   ],
+   "a": 0,
+   "e": "La ingeniería de prompts da forma a prompts concretos; la de contexto gestiona cómo fluye el contenido entre turnos y pasos y mantiene visible el estado relevante.",
+   "src": "Claude Dev Set 3 · captura 34"
+  },
+  {
+   "id": "c089",
+   "sec": "ops",
+   "t": "Precio de tokens de salida",
+   "q": "A teammate has asked you to explain why the team's Claude application is billed for output tokens at a different rate than input tokens. They had assumed the rate was the same for both. How would you explain the difference?",
+   "o": [
+    "Output tokens are typically billed at the same rate as input tokens, and the apparent rate difference is a billing error to report to Anthropic.",
+    "Output tokens are typically billed at a higher rate than input tokens, and cost models for the application should reflect both rates separately.",
+    "Output tokens are not billed at all, because cost is determined entirely by the input tokens sent to the model on each request.",
+    "Output tokens are typically billed at a lower rate than input tokens, because output tokens are cheaper to produce than input tokens are to process."
+   ],
+   "a": 1,
+   "e": "Los tokens de salida suelen facturarse a una tarifa mayor que los de entrada, así que el modelo de costes debe contemplar ambas tarifas por separado.",
+   "src": "Claude Dev Set 3 · captura 35"
+  },
+  {
+   "id": "c090",
+   "sec": "agent",
+   "t": "Personalizaciones del SDK",
+   "q": "Your team's Claude agent has accumulated several customizations that bypass the SDK's defaults, including custom history management, retry logic, and error handling. A new team member has proposed reverting all the customizations to maintain the codebase more easily. The tech lead disagrees and says each customization was added for a reason. How would you advise the team?",
+   "o": [
+    "Decide on each customization individually based on its original reason and the SDK's current capabilities.",
+    "Keep all customizations, trusting that the tech lead's original reasoning is still valid.",
+    "Revert all customizations to the SDK's defaults to standardize the codebase.",
+    "Migrate the agent off the SDK and rebuild it with a custom loop."
+   ],
+   "a": 0,
+   "e": "Cada personalización se evalúa por separado: se conserva la que sigue justificada y se retira la que el SDK ya cubre.",
+   "src": "Claude Dev Set 3 · captura 39"
+  },
+  {
+   "id": "c091",
+   "sec": "ops",
+   "t": "Estrategia de tests",
+   "q": "Your team's Claude application has been in production for a year, and the team has decided to formalize its testing strategy. Currently, the team writes ad-hoc tests for individual features but has no overall testing approach. What testing approach would you formalize?",
+   "o": [
+    "Continue writing ad-hoc tests as features ship and introduce a peer review step to ensure each test adequately covers the feature being released.",
+    "Define a single testing approach that uses end-to-end tests and apply it consistently across all new features as they are added to the codebase.",
+    "Define unit tests for individual functions, integration tests for the Claude integration, and end-to-end tests for critical user flows, applied consistently across the codebase.",
+    "Adopt a test-driven development practice where unit tests are written before each feature is implemented and must pass before code is merged."
+   ],
+   "a": 2,
+   "e": "Se formaliza una estrategia por capas: unitarios para funciones, integración para la llamada a Claude y end-to-end para los flujos críticos, aplicada de forma consistente.",
+   "src": "Claude Dev Set 3 · captura 45"
+  },
+  {
+   "id": "c092",
+   "sec": "fiab",
+   "t": "Depuración sistemática",
+   "q": "Your Claude application is producing inconsistent outputs for similar inputs, even when using the same model and prompt. You want to debug the issue systematically. Your debugging approach would...",
+   "o": [
+    "capture full traces of input, system prompt, user messages, model output, and parameters, then analyze the differences between consistent and inconsistent runs.",
+    "assume inconsistent outputs reflect normal LLM non-determinism and document the variability as an accepted characteristic of the application's behavior.",
+    "lower the model's temperature and re-run the inconsistent inputs to determine whether the parameter change reduces output variability across runs.",
+    "retry every request that produces an unexpected output and log the results to identify whether repeated calls converge on a consistent response pattern."
+   ],
+   "a": 0,
+   "e": "Se capturan trazas completas (entrada, system prompt, mensajes, salida y parámetros) y se analizan las diferencias entre ejecuciones consistentes e inconsistentes.",
+   "src": "Claude Dev Set 3 · captura 46"
+  },
+  {
+   "id": "c093",
+   "sec": "fiab",
+   "t": "Política de contenido",
+   "q": "Your Claude application's content policy specifies categories of content it should not produce under any circumstance. The application currently has no mechanism to enforce this policy, and content matching these categories is appearing in the application's output. How would you enforce the content policy?",
+   "o": [
+    "Add deterministic output filtering that checks responses against the content policy before they reach users.",
+    "Enhance the system prompt to contain explicit instructions for the categories to avoid, complete with examples of each category. Treat the strengthened prompt as the primary enforcement mechanism for the application's content policy across all responses.",
+    "Remove the content policy entirely and let any output reach users during normal operation, accepting whatever content the application produces in response to incoming traffic.",
+    "Move enforcement to users by asking them to report content policy violations after the violating content has already reached them in the application's responses."
+   ],
+   "a": 0,
+   "e": "Lo que no debe ocurrir 'bajo ninguna circunstancia' se refuerza con un filtrado determinista de la salida antes de que llegue al usuario; el prompt por sí solo no lo garantiza.",
+   "src": "Claude Dev Set 3 · captura 47"
+  },
+  {
+   "id": "c094",
+   "sec": "cc",
+   "t": "Configuración versionada",
+   "q": "You are setting up the configuration management approach for a new Claude Code project. Your team will use CLAUDE.md files and settings.json files to control behavior, and you want to make sure changes are tracked and reviewable. The configuration management approach would...",
+   "o": [
+    "version-control CLAUDE.md and settings.json files in a separate repository from the project's source code, so configuration evolves independently from the application code over time.",
+    "version-control CLAUDE.md alongside the project's source code and settings.json files in a separate repository from the project's source code.",
+    "duplicate CLAUDE.md and settings.json files in multiple repositories to provide redundancy, on the grounds that a single source of truth is risky for project configuration.",
+    "version-control CLAUDE.md and settings.json files alongside the project's source code, with changes reviewed through standard pull request workflows the team applies."
+   ],
+   "a": 3,
+   "e": "CLAUDE.md y settings.json se versionan junto al código y sus cambios pasan por las revisiones de pull request habituales.",
+   "src": "Claude Dev Set 3 · captura 49"
+  },
+  {
+   "id": "c095",
+   "sec": "agent",
+   "t": "Orquestador y subagentes especializados",
+   "q": "You are designing an agent that handles a multi-step research task. You want the agent to break the task into smaller pieces, hand each piece to a focused subagent, and consolidate the results. The agent pattern you would apply is...",
+   "o": [
+    "a single tool-use loop that includes every tool the agent might need across all subtasks.",
+    "a context-window pruning pattern that drops each subtask's content after the agent moves on.",
+    "a memory pattern that stores the entire research history in advance, before any subtask begins execution.",
+    "a orchestrator and subagent pattern with specialized subagents assigned to each subtask."
+   ],
+   "a": 3,
+   "e": "Descomponer la tarea, delegar cada parte en un subagente especializado y consolidar resultados es el patrón orquestador y subagentes.",
+   "src": "Claude Dev Set 3 · captura 51"
+  },
+  {
+   "id": "c096",
+   "sec": "ops",
+   "t": "Límites de tasa",
+   "q": "Your Claude application makes high-volume API calls during business hours and very few calls overnight. The team is concerned about staying within rate limits during business hours and wants to understand how the Claude API enforces those limits. How would you proceed?",
+   "o": [
+    "Examine the peak-hour request patterns in your application logs and smooth traffic by distributing requests more evenly across the business-hours window.",
+    "Identify the rate limits, design the application to stay within them during peak hours, and use exponential backoff when limits are reached.",
+    "Assess the average payload size of current API calls and consolidate requests where possible to reduce the total number of calls made during peak hours.",
+    "Review the API documentation for streaming endpoints and evaluate whether migrating peak-hour calls to streaming reduces exposure to rate limit enforcement."
+   ],
+   "a": 1,
+   "e": "Se identifican los límites, se diseña la aplicación para respetarlos en hora punta y se usa backoff exponencial cuando se alcanzan.",
+   "src": "Claude Dev Set 3 · captura 53"
   }
  ],
  "date": "2026-11"
