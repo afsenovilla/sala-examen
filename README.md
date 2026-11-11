@@ -10,7 +10,7 @@ data/exams.json            catálogo de exámenes
 data/mc-next-consultant.json   banco de 116 preguntas (MC-Con-201)
 data/sf-administrator.json     158 preguntas (pruebas de oct 2025)
 data/mc-developer.json         150 preguntas (pruebas de feb 2025)
-data/braze-marketer.json       50 preguntas 🔥 (Braze Certified Marketer, oct 2025)
+data/braze-marketer.json       50 preguntas (Braze Certified Marketer, oct 2025)
 data/claude-developer.json     96 preguntas (Claude Certified Developer Foundations, sets 1 a 3, nov 2026)
 manifest.webmanifest, sw.js, assets/icon*   PWA + caché offline
 CNAME                      sfmc.asuntosimportant.es (dominio de GitHub Pages)
