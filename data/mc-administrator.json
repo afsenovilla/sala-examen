@@ -953,10 +953,10 @@
     "Marketing Cloud Connect",
     "Distributed Marketing"
    ],
-   "a": 2,
-   "e": "Distributed Marketing permite a los usuarios de Sales Cloud lanzar comunicaciones sin acceder directamente a Marketing Cloud.",
+   "a": 1,
+   "e": "Marketing Cloud Connect integra Sales Cloud con Marketing Cloud y es la opción marcada en los exámenes.",
    "src": "MC Admin Set 2 · pregunta 6",
-   "note": "En la captura estaba marcada la B (Marketing Cloud Connect), pero lo que permite a usuarios de Sales Cloud lanzar campañas sin acceso a Marketing Cloud es Distributed Marketing (C). Respuesta corregida: revísala."
+   "note": "Marcada como correcta en dos exámenes distintos (Sets 2 y 3). Ojo: Distributed Marketing también encaja con 'sin dar acceso directo a Marketing Cloud'; si la clave oficial lo contradice, es la alternativa."
   },
   {
    "id": "m066",
@@ -1039,10 +1039,10 @@
     "MobilePush was enabled by mistake, which consumes Super Messages when not in use.",
     "Each email consumes five Super Messages when sending below a certain threshold."
    ],
-   "a": 0,
-   "e": "Los SMS consumen Super Messages con un multiplicador según el país de destino, lo que explica el consumo elevado.",
+   "a": 2,
+   "e": "Opción marcada en los exámenes: según ella, cada email consume cinco Super Messages al enviar por debajo de cierto umbral.",
    "src": "MC Admin Set 2 · pregunta 18",
-   "note": "En la captura estaba marcada la C, pero habla de emails y la pregunta es sobre SMS; el consumo de Super Messages varía con un multiplicador por país de destino (A). Respuesta corregida: revísala."
+   "note": "Marcada como correcta en dos exámenes distintos (Sets 2 y 3). Ojo: el enunciado habla de SMS y la opción menciona emails; el multiplicador por país de destino (A) podría ser la alternativa si la clave oficial lo contradice."
   },
   {
    "id": "m072",
@@ -1152,10 +1152,10 @@
     "Content",
     "List Hygiene"
    ],
-   "a": 2,
-   "e": "Las spam traps se alcanzan al enviar a listas sin depurar, por lo que el factor implicado es la higiene de la lista.",
+   "a": 0,
+   "e": "Sender Authentication es la opción marcada en los exámenes como la parte de la entregabilidad vinculada a las spam traps.",
    "src": "MC Admin Set 2 · pregunta 35",
-   "note": "En la captura estaba marcada la A (Sender Authentication), pero las spam traps se asocian a listas sin depurar; la respuesta correcta es List Hygiene (C)."
+   "note": "Marcada como correcta en dos exámenes distintos (Sets 2 y 3). Ojo: las spam traps suelen asociarse a la higiene de la lista (C); si la clave oficial lo contradice, es la alternativa."
   },
   {
    "id": "m080",
@@ -1237,10 +1237,10 @@
     "Entry Source attributes are available in Journey Settings",
     "Journey Data is used for the Decision Split"
    ],
-   "a": 0,
-   "e": "Los Journey Data son una instantánea del momento de entrada; para ver cambios posteriores, el Decision Split debe usar datos de contacto (Contact Data).",
+   "a": 2,
+   "e": "Journey Data es la opción marcada en los exámenes: el Decision Split usa los datos del journey para dirigir a cada suscriptor.",
    "src": "MC Admin Set 2 · pregunta 44",
-   "note": "En la captura estaba marcada la C (Journey Data), pero los datos de entrada del journey se leen al entrar; como el campo se actualiza después, el Decision Split debe leer Contact Data (A). Respuesta corregida: revísala si tienes la solución oficial."
+   "note": "Marcada como correcta en dos exámenes distintos (Sets 2 y 3). Ojo: como el campo se actualiza tras la entrada, Contact Data podría ser la alternativa si la clave oficial lo contradice."
   },
   {
    "id": "m086",
