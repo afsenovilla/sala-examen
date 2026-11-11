@@ -300,3 +300,5 @@ select.search{appearance:none;padding-right:34px}
 .logo.wide{width:auto;height:.8em;vertical-align:-.05em;margin-right:.5em}
 .logo.mono{filter:invert(1)}
 @media (prefers-color-scheme:light){.logo.mono{filter:none}}
+.logo.cloud{width:auto;height:1.15em;vertical-align:-.2em}
+.logo.cloud.big{height:1em;vertical-align:-.12em}
