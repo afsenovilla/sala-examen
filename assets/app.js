@@ -50,6 +50,38 @@
       return r.json();
     });
   }
+  function asArr(a) { return Array.isArray(a) ? a : [a]; }
+  function isRight(q, a) {
+    if (a === undefined || a === null) return false;
+    var x = asArr(a).slice().sort(function (m, n) { return m - n; }), y = q.A;
+    if (x.length !== y.length) return false;
+    for (var i = 0; i < x.length; i++) if (x[i] !== y[i]) return false;
+    return true;
+  }
+  function letterList(arr) {
+    var L = arr.map(function (i) { return LETTERS[i]; });
+    return L.length > 1 ? L.slice(0, -1).join(", ") + " y " + L[L.length - 1] : L[0];
+  }
+  function ansText(q, a) {
+    return asArr(a).slice().sort(function (m, n) { return m - n; }).map(function (i) { return LETTERS[i] + ". " + q.o[i]; }).join(" · ");
+  }
+  var MONTHS = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
+  function dateEs(iso) {
+    var p = String(iso).split("-");
+    return +p[2] + " " + MONTHS[+p[1] - 1] + " " + p[0];
+  }
+  function ageEs(iso) {
+    var p = String(iso).split("-"), n = new Date();
+    var m = (n.getFullYear() - +p[0]) * 12 + (n.getMonth() + 1 - +p[1]);
+    if (n.getDate() < +p[2]) m--;
+    if (m < 1) return "este mes";
+    if (m < 12) return "hace " + m + (m === 1 ? " mes" : " meses");
+    var y = Math.floor(m / 12), r = m % 12;
+    return "hace " + y + (y === 1 ? " año" : " años") + (r ? " y " + r + (r === 1 ? " mes" : " meses") : "");
+  }
+  function dateLine(e) {
+    return e.date ? "Pruebas del " + dateEs(e.date) + " · " + ageEs(e.date) : "";
+  }
   function largestRemainder(weights, total) {
     var raw = weights.map(function (w) { return (w / 100) * total; });
     var out = raw.map(Math.floor);
@@ -69,6 +101,12 @@
     return fetchJSON(row.file).then(function (data) {
       data.meta = row;
       data.secMap = {};
+      data.hasMulti = false;
+      (data.questions || []).forEach(function (q) {
+        q.A = asArr(q.a).slice().sort(function (x, y) { return x - y; });
+        q.multi = q.A.length > 1;
+        if (q.multi) data.hasMulti = true;
+      });
       (data.sections || []).forEach(function (s) { data.secMap[s.id] = s; });
       cache[id] = data;
       return data;
@@ -114,6 +152,7 @@
           '<span class="eyebrow">' + esc(e.vendor) + ' · ' + esc(e.code) + '</span>' +
           '<div class="name">' + esc(e.name) + '</div>' +
           '<p class="blurb">' + esc(e.blurb) + '</p>' +
+          (e.date ? '<span class="age">' + esc(dateLine(e)) + '</span>' : '') +
         '</div>' +
         '<div class="er-facts">' +
           fact(e.questions, "preguntas") +
@@ -332,9 +371,9 @@
     app.innerHTML = '<div class="wrap">' +
       '<p><a class="ghost" href="#/">← Todos los exámenes</a></p>' +
       '<div style="margin-top:16px">' +
-        '<p class="eyebrow">' + esc(ex.vendor) + ' · ' + esc(ex.code) + ' · ' + esc(ex.release) + '</p>' +
+        '<p class="eyebrow">' + esc(ex.vendor) + ' · ' + esc(ex.code) + ' · ' + esc(ex.release) + (ex.date ? ' (' + esc(ageEs(ex.date)) + ')' : '') + '</p>' +
         '<h1 style="margin-top:6px">' + esc(ex.name) + '</h1>' +
-        '<p class="muted" style="margin-top:10px;max-width:58ch">Examen oficial: ' + f.scored + ' preguntas puntuadas (más hasta ' + f.unscored + ' sin puntuar), ' + f.minutes + ' minutos y ' + f.pass + ' % para aprobar. ' + f.choices + ' opciones por pregunta, una correcta.</p>' +
+        '<p class="muted" style="margin-top:10px;max-width:58ch">Examen oficial: ' + f.scored + ' preguntas puntuadas (más hasta ' + f.unscored + ' sin puntuar), ' + f.minutes + ' minutos y ' + f.pass + ' % para aprobar. ' + (ex.hasMulti ? 'Hay preguntas de una respuesta y de selección múltiple («elige 2», «elige 3»): solo suman si marcas todas las correctas y ninguna más.' : f.choices + ' opciones por pregunta, una correcta.') + '</p>' +
       '</div>' +
       '<div class="strip section">' +
         '<div><div class="k mono">' + ex.questions.length + '</div><div class="l">En el banco</div></div>' +
@@ -410,7 +449,7 @@
   function start(ex, cfg) {
     var pool = shuffle(cfg.pool.slice());
     S = {
-      examId: ex.id, ex: ex, mode: cfg.mode, label: cfg.label, list: pool, i: 0, answers: {},
+      examId: ex.id, ex: ex, mode: cfg.mode, label: cfg.label, list: pool, i: 0, answers: {}, draft: {},
       started: Date.now(), deadline: cfg.timed ? Date.now() + ex.format.minutes * 60000 : null
     };
     go("#/e/" + ex.id + "/run");
@@ -455,7 +494,7 @@
     '</div>';
 
     document.getElementById("exitBtn").onclick = function () {
-      if (!window.confirm("¿Salir de la sesión? Tu acierto por pregunta se guarda, pero la sesión no.")) return;
+      if (!window.confirm(S.mode === "exam" ? "¿Salir del simulacro? No se guardará nada de esta sesión." : "¿Salir de la sesión? Tu acierto por pregunta se guarda, pero la sesión no.")) return;
       stopTimer(); S = null; go("#/e/" + ex.id);
     };
     document.getElementById("nextBtn").onclick = next;
@@ -536,18 +575,33 @@
 
     var opts = document.getElementById("opts");
     opts.textContent = "";
+    if (q.multi) {
+      var hint = document.createElement("p");
+      hint.className = "pick";
+      hint.textContent = "Elige " + q.A.length + " respuestas";
+      opts.appendChild(hint);
+    }
     q.o.forEach(function (text, idx) {
       var b = document.createElement("button");
       b.type = "button"; b.className = "opt";
       var k = document.createElement("span"); k.className = "key"; k.textContent = LETTERS[idx];
       var s = document.createElement("span"); s.textContent = text;
       b.appendChild(k); b.appendChild(s);
-      b.onclick = function () { choose(idx); };
+      b.onclick = function () { if (q.multi) toggle(idx); else submit(idx); };
       opts.appendChild(b);
     });
+    if (q.multi && S.mode === "practice") {
+      var cb = document.createElement("button");
+      cb.type = "button"; cb.className = "btn sec confirm"; cb.id = "confirmBtn";
+      cb.textContent = "Comprobar"; cb.disabled = true;
+      cb.onclick = confirmMulti;
+      opts.appendChild(cb);
+    }
 
     var chosen = S.answers[q.id];
+    if (q.multi && chosen !== undefined) S.draft[q.id] = asArr(chosen).slice();
     if (chosen !== undefined) paint(q, chosen);
+    else if (q.multi) paintDraft(q);
     setNext(S.i === S.list.length - 1 ? "Terminar" : "Siguiente", S.mode === "practice" && chosen === undefined);
   }
 
@@ -560,23 +614,35 @@
     });
   }
 
+  function optNodes() { return document.querySelectorAll("#opts .opt"); }
+
+  function paintDraft(q) {
+    var d = S.draft[q.id] || [], nodes = optNodes();
+    for (var i = 0; i < nodes.length; i++) nodes[i].classList.toggle("sel", d.indexOf(i) !== -1);
+    var cb = document.getElementById("confirmBtn");
+    if (cb) cb.disabled = !d.length;
+  }
+
   function paint(q, chosen) {
-    var nodes = document.getElementById("opts").children;
+    var nodes = optNodes(), c = asArr(chosen);
     for (var i = 0; i < nodes.length; i++) {
       var n = nodes[i];
       n.disabled = S.mode === "practice";
       n.classList.remove("sel", "right", "wrong");
       if (S.mode === "practice") {
-        if (i === q.a) n.classList.add("right");
-        else if (i === chosen) n.classList.add("wrong");
-      } else if (i === chosen) n.classList.add("sel");
+        if (q.A.indexOf(i) !== -1) n.classList.add("right");
+        else if (c.indexOf(i) !== -1) n.classList.add("wrong");
+      } else if (c.indexOf(i) !== -1) n.classList.add("sel");
     }
+    var cb = document.getElementById("confirmBtn");
+    if (cb) cb.hidden = true;
     if (S.mode === "practice") {
-      var ok = chosen === q.a, fb = document.getElementById("feedback");
+      var ok = isRight(q, chosen), fb = document.getElementById("feedback");
       fb.hidden = false;
       fb.className = "feedback " + (ok ? "ok" : "no");
-      document.getElementById("verdict").textContent = ok ? "Correcto" : "Incorrecto — la buena es " + LETTERS[q.a];
-      document.getElementById("explain").textContent = q.e;
+      document.getElementById("verdict").textContent = ok ? "Correcto" :
+        "Incorrecto — " + (q.multi ? "las buenas son " : "la buena es ") + letterList(q.A);
+      document.getElementById("explain").textContent = q.e || "";
       if (q.note) {
         var nt = document.getElementById("note");
         nt.hidden = false; nt.textContent = "Nota: " + q.note;
@@ -584,21 +650,48 @@
     }
   }
 
-  function choose(idx) {
-    var q = S.list[S.i], p = prog(S.examId);
-    if (S.mode === "practice" && S.answers[q.id] !== undefined) return;
-    S.answers[q.id] = idx;
-    var ok = idx === q.a;
+  function record(q, ok) {
+    var p = prog(S.examId);
     var rec = p.stats[q.id] || { n: 0, ok: 0 };
     rec.n++; if (ok) rec.ok++;
     p.stats[q.id] = rec;
     if (ok) delete p.wrong[q.id]; else p.wrong[q.id] = 1;
-    save();
-    paint(q, idx);
+  }
+
+  function markDone(on) {
     var cell = document.querySelector('.qmap button[data-i="' + S.i + '"]');
-    if (cell) cell.classList.add("done");
+    if (cell) cell.classList.toggle("done", on);
+  }
+
+  /* respuesta única, o respuesta múltiple ya confirmada */
+  function submit(value) {
+    var q = S.list[S.i];
+    if (S.mode === "practice" && S.answers[q.id] !== undefined) return;
+    S.answers[q.id] = value;
+    if (S.mode === "practice") { record(q, isRight(q, value)); save(); }
+    paint(q, value);
+    markDone(true);
     setNext(null, false);
-    if (S.mode === "exam") setTimeout(next, 130);
+    if (S.mode === "exam" && !q.multi) setTimeout(next, 130);
+  }
+
+  /* selección múltiple: se marca y desmarca; en práctica se comprueba con el botón */
+  function toggle(idx) {
+    var q = S.list[S.i];
+    if (S.mode === "practice" && S.answers[q.id] !== undefined) return;
+    var d = S.draft[q.id] || [], k = d.indexOf(idx);
+    if (k === -1) d.push(idx); else d.splice(k, 1);
+    S.draft[q.id] = d;
+    if (S.mode === "exam") {
+      if (d.length) { S.answers[q.id] = d.slice(); markDone(true); }
+      else { delete S.answers[q.id]; markDone(false); }
+    }
+    paintDraft(q);
+  }
+
+  function confirmMulti() {
+    var q = S.list[S.i], d = S.draft[q.id];
+    if (d && d.length) submit(d.slice());
   }
 
   function next() {
@@ -610,8 +703,12 @@
   document.addEventListener("keydown", function (e) {
     if (!S || location.hash.indexOf("/run") === -1) return;
     if (e.key >= "1" && e.key <= "5") {
-      var i = +e.key - 1;
-      if (i < S.list[S.i].o.length) choose(i);
+      var i = +e.key - 1, kq = S.list[S.i];
+      if (i < kq.o.length) { if (kq.multi) toggle(i); else submit(i); }
+    }
+    if (e.key === "Enter") {
+      var cq = S.list[S.i], cbn = document.getElementById("confirmBtn");
+      if (cq.multi && cbn && !cbn.hidden && !cbn.disabled) { confirmMulti(); return; }
     }
     if (e.key === "Enter" || e.key === "ArrowRight") {
       var nb = document.getElementById("nextBtn");
@@ -627,8 +724,9 @@
     var right = 0;
     var bySec = {}, byTopic = {};
     S.list.forEach(function (q) {
-      var ok = S.answers[q.id] === q.a;
+      var ok = isRight(q, S.answers[q.id]);
       if (ok) right++;
+      if (S.mode === "exam" && S.answers[q.id] !== undefined) record(q, ok);
       var s = bySec[q.sec] = bySec[q.sec] || { n: 0, ok: 0 };
       s.n++; if (ok) s.ok++;
       var t = byTopic[q.t] = byTopic[q.t] || { n: 0, ok: 0 };
@@ -691,12 +789,12 @@
       : 'Sesión de práctica de ' + R.total + ' preguntas' + (missing > 0 ? ', no un examen completo' : '') + '. El listón del ' + f.pass + ' % es el del examen real.';
 
     var review = R.list.map(function (q, i) {
-      var a = R.answers[q.id], ok = a === q.a;
+      var a = R.answers[q.id], ok = isRight(q, a);
       return '<details class="rev ' + (ok ? "ok" : "no") + '"><summary><span class="idx">' + (i + 1) + '</span>' + esc(q.q) + '</summary>' +
         '<div class="body">' +
-          '<div class="ans">Tu respuesta: <b>' + (a === undefined ? "sin contestar" : LETTERS[a] + ". " + esc(q.o[a])) + '</b></div>' +
-          '<div class="ans">Correcta: <b>' + LETTERS[q.a] + ". " + esc(q.o[q.a]) + '</b></div>' +
-          '<div>' + esc(q.e) + '</div>' +
+          '<div class="ans">Tu respuesta: <b>' + (a === undefined ? "sin contestar" : esc(ansText(q, a))) + '</b></div>' +
+          '<div class="ans">' + (q.multi ? "Correctas" : "Correcta") + ': <b>' + esc(ansText(q, q.A)) + '</b></div>' +
+          (q.e ? '<div>' + esc(q.e) + '</div>' : "") +
           (q.note ? '<div class="ans">Nota: ' + esc(q.note) + '</div>' : "") +
         '</div></details>';
     }).join("");
@@ -731,7 +829,7 @@
 
     var redo = document.getElementById("redoBtn");
     if (redo) redo.onclick = function () {
-      var pool = R.list.filter(function (q) { return R.answers[q.id] !== q.a; });
+      var pool = R.list.filter(function (q) { return !isRight(q, R.answers[q.id]); });
       start(ex, { mode: "practice", pool: pool, label: "repaso de fallos" });
     };
     scrollTop();
@@ -764,7 +862,7 @@
         if (sec && qq.sec !== sec) return false;
         if (onlyWrong && !p.wrong[qq.id]) return false;
         if (!term) return true;
-        return (qq.q + " " + qq.o.join(" ") + " " + qq.e).toLowerCase().indexOf(term) !== -1;
+        return (qq.q + " " + qq.o.join(" ") + " " + (qq.e || "")).toLowerCase().indexOf(term) !== -1;
       });
       document.getElementById("count").textContent = list.length + " de " + ex.questions.length + " preguntas";
       document.getElementById("list").innerHTML = list.map(function (qq) {
@@ -772,11 +870,12 @@
         return '<details class="rev' + (p.wrong[qq.id] ? " no" : st ? " ok" : "") + '"><summary><span class="idx">' + qq.id + '</span>' + esc(qq.q) + '</summary>' +
           '<div class="body">' +
             qq.o.map(function (o, i) {
-              return '<div class="ans"' + (i === qq.a ? ' style="color:var(--good)"' : '') + '><b>' + LETTERS[i] + '.</b> ' + esc(o) + (i === qq.a ? " ✓" : "") + '</div>';
+              var good = qq.A.indexOf(i) !== -1;
+              return '<div class="ans"' + (good ? ' style="color:var(--good)"' : '') + '><b>' + LETTERS[i] + '.</b> ' + esc(o) + (good ? " ✓" : "") + '</div>';
             }).join("") +
-            '<div style="margin-top:4px">' + esc(qq.e) + '</div>' +
+            (qq.e ? '<div style="margin-top:4px">' + esc(qq.e) + '</div>' : "") +
             (qq.note ? '<div class="ans">Nota: ' + esc(qq.note) + '</div>' : "") +
-            '<div class="row" style="margin-top:6px"><span class="chip theme">' + esc((ex.secMap[qq.sec] || {}).name || qq.sec) + '</span><span class="chip">' + esc(qq.t) + '</span>' +
+            '<div class="row" style="margin-top:6px"><span class="chip theme">' + esc((ex.secMap[qq.sec] || {}).name || qq.sec) + '</span><span class="chip">' + esc(qq.t) + '</span>' + (qq.multi ? '<span class="chip">Elige ' + qq.A.length + '</span>' : "") +
             (st ? '<span class="chip ' + (p.wrong[qq.id] ? "no" : "ok") + '">' + st.ok + '/' + st.n + ' aciertos</span>' : "") + '</div>' +
           '</div></details>';
       }).join("") || '<p class="muted small">Sin resultados.</p>';

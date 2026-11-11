@@ -7,7 +7,9 @@ index.html                 página única (router por #hash)
 assets/style.css
 assets/app.js              motor: práctica, simulacro, resultados, listado
 data/exams.json            catálogo de exámenes
-data/mc-next-consultant.json   banco de 116 preguntas
+data/mc-next-consultant.json   banco de 116 preguntas (MC-Con-201)
+data/sf-administrator.json     158 preguntas (pruebas del 2 oct 2025)
+data/mc-developer.json         150 preguntas (pruebas del 20 feb 2025)
 manifest.webmanifest, sw.js, assets/icon*   PWA + caché offline
 CNAME                      sfmc.asuntosimportant.es (dominio de GitHub Pages)
 ```

@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-15",
+ "updated": "2026-11-11",
  "exams": [
   {
    "id": "mc-next-consultant",
@@ -12,6 +12,34 @@
    "minutes": 105,
    "scored": 60,
    "blurb": "Consent, Data 360, flows, contenido y Agentforce sobre la nueva Marketing Cloud.",
+   "accent": "indigo"
+  },
+  {
+   "id": "sf-administrator",
+   "file": "data/sf-administrator.json",
+   "name": "Salesforce Administrator",
+   "code": "ADM-201",
+   "vendor": "Salesforce",
+   "questions": 158,
+   "pass": 65,
+   "minutes": 105,
+   "scored": 60,
+   "date": "2025-10-02",
+   "blurb": "Configuración, objetos, automatización con Flow, ventas, servicio y datos de la plataforma. Elegir 1, 2 o 3 respuestas.",
+   "accent": "indigo"
+  },
+  {
+   "id": "mc-developer",
+   "file": "data/mc-developer.json",
+   "name": "Marketing Cloud Developer",
+   "code": "MC Developer",
+   "vendor": "Salesforce",
+   "questions": 150,
+   "pass": 63,
+   "minutes": 105,
+   "scored": 60,
+   "date": "2025-02-20",
+   "blurb": "AMPscript, SSJS, APIs REST y SOAP, SQL, Contact Builder y seguridad en Marketing Cloud. Elegir 1, 2 o 3 respuestas.",
    "accent": "indigo"
   }
  ]

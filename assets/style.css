@@ -289,3 +289,8 @@ button.rowitem:hover .go{color:var(--accent)}
 textarea.search{border-radius:var(--r-sm)}
 select.search{appearance:none;padding-right:34px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* selección múltiple y fecha del banco */
+.pick{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 2px}
+.opts .confirm{align-self:flex-start;margin-top:6px}
+.exam-row .age{display:block;margin-top:8px;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;color:var(--muted)}
