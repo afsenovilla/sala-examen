@@ -30,7 +30,8 @@
    "blurb": "Configuración, objetos, automatización con Flow, ventas, servicio y datos de la plataforma. Elegir 1, 2 o 3 respuestas.",
    "accent": "indigo",
    "logo": "assets/logos/salesforce.png",
-   "logoClass": "cloud"
+   "logoClass": "cloud",
+   "isNew": true
   },
   {
    "id": "mc-developer",
@@ -46,7 +47,8 @@
    "blurb": "AMPscript, SSJS, APIs REST y SOAP, SQL, Contact Builder y seguridad en Marketing Cloud. Elegir 1, 2 o 3 respuestas.",
    "accent": "indigo",
    "logo": "assets/logos/salesforce.png",
-   "logoClass": "cloud"
+   "logoClass": "cloud",
+   "isNew": true
   },
   {
    "id": "mc-administrator",
