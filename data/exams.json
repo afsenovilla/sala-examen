@@ -59,13 +59,13 @@
   {
    "id": "claude-developer",
    "file": "data/claude-developer.json",
-   "name": "Claude Certified Developer · Set 1",
+   "name": "Claude Certified Developer",
    "code": "Claude Developer",
    "vendor": "Anthropic",
-   "questions": 53,
+   "questions": 81,
    "pass": 70,
    "minutes": 90,
-   "scored": 53,
+   "scored": 81,
    "blurb": "API y SDK de Claude, prompts y salida estructurada, agentes, herramientas, Claude Code, Skills y MCP, contexto y operación.",
    "accent": "indigo",
    "date": "2026-11"
