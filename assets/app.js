@@ -68,19 +68,19 @@
   var MONTHS = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
   function dateEs(iso) {
     var p = String(iso).split("-");
-    return +p[2] + " " + MONTHS[+p[1] - 1] + " " + p[0];
+    return MONTHS[+p[1] - 1] + " " + p[0];
   }
   function ageEs(iso) {
     var p = String(iso).split("-"), n = new Date();
     var m = (n.getFullYear() - +p[0]) * 12 + (n.getMonth() + 1 - +p[1]);
-    if (n.getDate() < +p[2]) m--;
+    if (p[2] && n.getDate() < +p[2]) m--;
     if (m < 1) return "este mes";
     if (m < 12) return "hace " + m + (m === 1 ? " mes" : " meses");
     var y = Math.floor(m / 12), r = m % 12;
     return "hace " + y + (y === 1 ? " año" : " años") + (r ? " y " + r + (r === 1 ? " mes" : " meses") : "");
   }
   function dateLine(e) {
-    return e.date ? "Pruebas del " + dateEs(e.date) + " · " + ageEs(e.date) : "";
+    return e.date ? "Pruebas de " + dateEs(e.date) + " · " + ageEs(e.date) : "";
   }
   function largestRemainder(weights, total) {
     var raw = weights.map(function (w) { return (w / 100) * total; });
@@ -373,7 +373,7 @@
       '<div style="margin-top:16px">' +
         '<p class="eyebrow">' + esc(ex.vendor) + ' · ' + esc(ex.code) + ' · ' + esc(ex.release) + (ex.date ? ' (' + esc(ageEs(ex.date)) + ')' : '') + '</p>' +
         '<h1 style="margin-top:6px">' + esc(ex.name) + '</h1>' +
-        '<p class="muted" style="margin-top:10px;max-width:58ch">Examen oficial: ' + f.scored + ' preguntas puntuadas (más hasta ' + f.unscored + ' sin puntuar), ' + f.minutes + ' minutos y ' + f.pass + ' % para aprobar. ' + (ex.hasMulti ? 'Hay preguntas de una respuesta y de selección múltiple («elige 2», «elige 3»): solo suman si marcas todas las correctas y ninguna más.' : f.choices + ' opciones por pregunta, una correcta.') + '</p>' +
+        '<p class="muted" style="margin-top:10px;max-width:58ch">' + (ex.unofficial ? 'Examen real: ' : 'Examen oficial: ') + f.scored + ' preguntas puntuadas' + (f.unscored ? ' (más hasta ' + f.unscored + ' sin puntuar)' : '') + ', ' + f.minutes + ' minutos y ' + f.pass + ' % para aprobar. ' + (ex.hasMulti ? 'Hay preguntas de una respuesta y de selección múltiple («elige 2», «elige 3»): solo suman si marcas todas las correctas y ninguna más.' : f.choices + ' opciones por pregunta, una correcta.') + '</p>' +
       '</div>' +
       '<div class="strip section">' +
         '<div><div class="k mono">' + ex.questions.length + '</div><div class="l">En el banco</div></div>' +
@@ -383,7 +383,7 @@
       '<div class="cols section">' +
         '<div class="col-main">' +
           '<div class="section-head"><h2>Empezar</h2></div><div class="modes">' +
-            mode("exam", "Simulacro · " + f.minutes + " min", "Examen completo", f.scored + " preguntas repartidas según el peso oficial de cada área. Cronómetro, sin feedback hasta el final.") +
+            mode("exam", "Simulacro · " + f.minutes + " min", "Examen completo", f.scored + " preguntas repartidas según el peso " + (ex.unofficial ? "orientativo" : "oficial") + " de cada área. Cronómetro, sin feedback hasta el final.") +
             mode("practice", "Práctica", "Banco completo", ex.questions.length + " preguntas en orden aleatorio, con feedback y explicación tras cada respuesta.") +
             mode("short", "Práctica · 20", "Sesión corta", "20 preguntas al azar para un repaso rápido.") +
             mode("wrong", "Práctica", "Solo mis fallos", wrongIds.length ? "Repite las " + wrongIds.length + " preguntas que has fallado alguna vez." : "Aún no hay fallos registrados. Aparecerán aquí en cuanto ocurra.", !wrongIds.length) +
@@ -392,12 +392,12 @@
         '</div>' +
         '<aside class="col-side">' +
           '<div class="section-head"><h2>Áreas del examen</h2></div>' +
-          '<p class="eyebrow" style="margin:-6px 0 10px">Peso oficial · tu acierto</p>' +
+          '<p class="eyebrow" style="margin:-6px 0 10px">' + (ex.unofficial ? "Peso orientativo" : "Peso oficial") + ' · tu acierto</p>' +
           '<div class="rows">' + secRows + '</div>' +
           (hist ? '<div class="section-head" style="margin-top:26px"><h2>Últimas sesiones</h2></div><div class="rows">' + hist + '</div>' : "") +
         '</aside>' +
       '</div>' +
-      footerHtml(esc(ex.notes) + " El formato del examen, los pesos por área y el " + f.pass + " % de corte son los oficiales de " + esc(ex.vendor) + ".") +
+      footerHtml(esc(ex.notes) + (ex.unofficial ? "" : " El formato del examen, los pesos por área y el " + f.pass + " % de corte son los oficiales de " + esc(ex.vendor) + ".")) +
     '</div>';
 
     bindFooter();
@@ -780,12 +780,12 @@
       diag = '<div class="weak">Tu punto más caro ahora mismo es <b>' + esc(lead.s.name) + '</b>: ' + pc(lead.pct) + ' de acierto sobre un área que vale el ' + pc(lead.s.weight) + ' del examen.' +
         (weakSecs.length > 1 ? ' Después vienen ' + weakSecs.slice(1, 3).map(function (r) { return '<b>' + esc(r.s.name) + '</b> (' + pc(r.pct) + ')'; }).join(" y ") + '.' : '') +
         (weakTopics.length ? '<br><br>Por temas concretos: ' + weakTopics.map(function (t) { return esc(t.name) + ' (' + t.ok + '/' + t.n + ')'; }).join(", ") + '.' : '') +
-        '<br><br>El orden está calculado por impacto: acierto bajo multiplicado por el peso oficial del área, que es lo que más puntos te cuesta en el examen real.</div>';
+        '<br><br>El orden está calculado por impacto: acierto bajo multiplicado por el peso del área, que es lo que más puntos te cuesta en el examen real.</div>';
     }
 
     var missing = f.scored - R.total;
     var note = R.mode === "exam"
-      ? 'Simulacro con el reparto oficial por áreas. En el examen real apruebas con ' + f.pass + ' % sobre ' + f.scored + ' preguntas puntuadas, es decir ' + Math.ceil(f.scored * f.pass / 100) + ' aciertos.'
+      ? 'Simulacro con el reparto ' + (ex.unofficial ? 'orientativo' : 'oficial') + ' por áreas. En el examen real apruebas con ' + f.pass + ' % sobre ' + f.scored + ' preguntas puntuadas, es decir ' + Math.ceil(f.scored * f.pass / 100) + ' aciertos.'
       : 'Sesión de práctica de ' + R.total + ' preguntas' + (missing > 0 ? ', no un examen completo' : '') + '. El listón del ' + f.pass + ' % es el del examen real.';
 
     var review = R.list.map(function (q, i) {

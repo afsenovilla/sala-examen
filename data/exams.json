@@ -24,7 +24,7 @@
    "pass": 65,
    "minutes": 105,
    "scored": 60,
-   "date": "2025-10-02",
+   "date": "2025-10",
    "blurb": "Configuración, objetos, automatización con Flow, ventas, servicio y datos de la plataforma. Elegir 1, 2 o 3 respuestas.",
    "accent": "indigo"
   },
@@ -38,8 +38,22 @@
    "pass": 63,
    "minutes": 105,
    "scored": 60,
-   "date": "2025-02-20",
+   "date": "2025-02",
    "blurb": "AMPscript, SSJS, APIs REST y SOAP, SQL, Contact Builder y seguridad en Marketing Cloud. Elegir 1, 2 o 3 respuestas.",
+   "accent": "indigo"
+  },
+  {
+   "id": "braze-marketer",
+   "file": "data/braze-marketer.json",
+   "name": "🔥 Braze Certified Marketer",
+   "code": "Braze Certified Marketer",
+   "vendor": "Braze",
+   "questions": 50,
+   "pass": 65,
+   "minutes": 60,
+   "scored": 50,
+   "date": "2025-10",
+   "blurb": "Canvas, segmentación, Liquid, testing multivariante, canales y analítica en Braze. Elegir 1, 2 o 3 respuestas.",
    "accent": "indigo"
   }
  ]
