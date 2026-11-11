@@ -302,3 +302,7 @@ select.search{appearance:none;padding-right:34px}
 @media (prefers-color-scheme:light){.logo.mono{filter:none}}
 .logo.cloud{width:auto;height:1.15em;vertical-align:-.2em}
 .logo.cloud.big{height:1em;vertical-align:-.12em}
+.exam-row.soon{cursor:default;opacity:.5;filter:grayscale(1)}
+.exam-row.soon::before{display:none}
+.exam-row.soon:hover{border-bottom-color:var(--line)}
+.exam-row.soon .er-go,.exam-row.soon:hover .er-go{color:var(--muted);transform:none;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}

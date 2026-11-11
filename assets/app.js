@@ -143,9 +143,20 @@
   /* ---------------- vista: portada ---------------- */
   function viewHome() {
     stopTimer();
-    var list = manifest.exams || [];
+    var all = manifest.exams || [];
+    var list = all.filter(function (e) { return !e.soon; });
 
-    var rows = list.map(function (e) {
+    var rows = all.map(function (e) {
+      if (e.soon) {
+        return '<div class="exam-row soon" aria-disabled="true">' +
+          '<div class="er-main">' +
+            '<span class="eyebrow">' + esc(e.vendor) + ' · ' + esc(e.code) + '</span>' +
+            '<div class="name">' + logoImg(e) + esc(e.name) + '</div>' +
+            '<p class="blurb">' + esc(e.blurb) + '</p>' +
+          '</div>' +
+          '<span class="er-go">Próximamente</span>' +
+        '</div>';
+      }
       var p = prog(e.id);
       var seen = Object.keys(p.stats).length;
       var acc = accuracy(p, null);

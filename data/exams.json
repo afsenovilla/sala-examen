@@ -49,6 +49,16 @@
    "logoClass": "cloud"
   },
   {
+   "id": "mc-administrator",
+   "soon": true,
+   "name": "Marketing Cloud Administrator",
+   "code": "MC Administrator",
+   "vendor": "Salesforce",
+   "blurb": "Banco de preguntas en preparación.",
+   "logo": "assets/logos/salesforce.png",
+   "logoClass": "cloud"
+  },
+  {
    "id": "braze-marketer",
    "file": "data/braze-marketer.json",
    "name": "Braze Certified Marketer",
