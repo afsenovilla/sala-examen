@@ -13,6 +13,9 @@ data/mc-developer.json         150 preguntas (pruebas de feb 2025)
 data/mc-administrator.json       96 preguntas (Marketing Cloud Administrator, sets 1 y 2, nov 2026)
 data/braze-marketer.json       50 preguntas (Braze Certified Marketer, oct 2025)
 data/claude-developer.json     96 preguntas (Claude Certified Developer Foundations, sets 1 a 3, nov 2026)
+data/*-old.json                «Material antiguo» (legacy: true en exams.json, sección aparte en la portada):
+                                 mc-email-specialist-old  347 · mc-consultant-old 506 · mc-administrator-old 520
+                                 mc-developer-old 92 · data-cloud-consultant-old 106 · mc-personalization-old 43
 manifest.webmanifest, sw.js, assets/icon*   PWA + caché offline
 CNAME                      sfmc.asuntosimportant.es (dominio de GitHub Pages)
 ```
@@ -99,7 +102,7 @@ El `CNAME` de la carpeta solo lo usa GitHub Pages; en tu servidor puedes borrarl
 }
 ```
 
-2. Añade la fila correspondiente en `data/exams.json`.
+2. Añade la fila correspondiente en `data/exams.json`. Con `"legacy": true` sale en la sección «Material antiguo» de la portada.
 3. Sube `CACHE` a `sala-examen-v2` en `sw.js` para que los navegadores con la versión cacheada se enteren.
 
 El simulacro reparte las preguntas según el peso de cada sección (método del resto mayor) y el aprobado sale de `format.pass`.

@@ -144,9 +144,10 @@
   function viewHome() {
     stopTimer();
     var all = manifest.exams || [];
-    var list = all.filter(function (e) { return !e.soon; });
+    var list = all.filter(function (e) { return !e.soon && !e.legacy; });
+    var old = all.filter(function (e) { return e.legacy; });
 
-    var rows = all.map(function (e) {
+    function rowHtml(e) {
       if (e.soon) {
         return '<div class="exam-row soon" aria-disabled="true">' +
           '<div class="er-main">' +
@@ -180,9 +181,12 @@
           '<span class="small muted">' + seen + ' de ' + e.questions + ' preguntas trabajadas' +
           (p.history.length ? ' · ' + p.history.length + (p.history.length === 1 ? ' sesión' : ' sesiones') : '') + '</span></div>' : '') +
         '</a>';
-    }).join("");
+    }
+    var rows = all.filter(function (e) { return !e.legacy; }).map(rowHtml).join("");
+    var oldRows = old.map(rowHtml).join("");
 
     var totalQ = list.reduce(function (a, e) { return a + e.questions; }, 0);
+    var oldQ = old.reduce(function (a, e) { return a + e.questions; }, 0);
 
     app.innerHTML = '<div class="wrap">' +
       '<header class="hero">' +
@@ -197,6 +201,12 @@
         '<span class="eyebrow">' + list.length + (list.length === 1 ? ' disponible' : ' disponibles') + ' · ' + totalQ + ' preguntas</span></div>' +
         '<div class="exam-list">' + rows + '</div>' +
       '</div>' +
+      (old.length ? '<div class="section">' +
+        '<div class="section-head"><h2>Material <i>antiguo</i></h2>' +
+        '<span class="eyebrow">' + old.length + ' bancos · ' + oldQ + ' preguntas</span></div>' +
+        '<p class="muted small" style="margin:-6px 0 16px;max-width:62ch">Preguntas de versiones anteriores de los exámenes (2019–2024), recopiladas de los documentos de estudio del equipo. Útiles para repasar conceptos, pero el formato y parte del temario han cambiado: no las tomes como referencia del examen actual.</p>' +
+        '<div class="exam-list">' + oldRows + '</div>' +
+      '</div>' : '') +
       footerHtml() +
     '</div>';
 

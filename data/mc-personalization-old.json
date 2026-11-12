@@ -1,0 +1,691 @@
+{
+ "id": "mc-personalization-old",
+ "code": "MC Personalization",
+ "name": "Marketing Cloud Personalization",
+ "vendor": "Salesforce",
+ "release": "Material 2023",
+ "date": "2023-06",
+ "format": {
+  "scored": 40,
+  "unscored": 0,
+  "minutes": 70,
+  "pass": 65,
+  "choices": 4
+ },
+ "sections": [
+  {
+   "id": "impl",
+   "name": "Implementación, sitemap y datos",
+   "weight": 30
+  },
+  {
+   "id": "camp",
+   "name": "Campañas y plantillas",
+   "weight": 25
+  },
+  {
+   "id": "rec",
+   "name": "Recomendaciones y Einstein",
+   "weight": 20
+  },
+  {
+   "id": "seg",
+   "name": "Segmentación y analítica",
+   "weight": 25
+  }
+ ],
+ "notes": "Preguntas del documento de preguntas de examen del Learning Camp de Personalization y de la demo del Accredited Professional. Áreas, pesos y formato son orientativos (no hay guía oficial equivalente).",
+ "logo": "assets/logos/salesforce.png",
+ "logoClass": "cloud",
+ "unofficial": true,
+ "legacy": true,
+ "questions": [
+  {
+   "id": "ps001",
+   "sec": "camp",
+   "t": "Campañas y plantillas",
+   "q": "What are two reasons that marketers have a hard time delivering personalized experiences?",
+   "o": [
+    "Connected channels and inconsistent experiences",
+    "Internal silos and consistent experiences",
+    "Disconnected channels and unhappy customers",
+    "Internal silos and inconsistent experiences"
+   ],
+   "a": 3,
+   "src": "Personalization · preguntas de examen · 1"
+  },
+  {
+   "id": "ps002",
+   "sec": "seg",
+   "t": "Segmentación y analítica",
+   "q": "What type of data does MC Personalization capture?",
+   "o": [
+    "Behavioral",
+    "Transactional",
+    "Purchases",
+    "Service cases"
+   ],
+   "a": [
+    0,
+    1,
+    2
+   ],
+   "src": "Personalization · preguntas de examen · 2"
+  },
+  {
+   "id": "ps003",
+   "sec": "camp",
+   "t": "Campañas y plantillas",
+   "q": "What RTIM core capability helps you determine which offer, content, or message will inspire consumer engagement?",
+   "o": [
+    "Recognition",
+    "Context",
+    "Next-best action",
+    "Orchestration",
+    "Optimization"
+   ],
+   "a": 2,
+   "src": "Personalization · preguntas de examen · 3"
+  },
+  {
+   "id": "ps004",
+   "sec": "impl",
+   "t": "Implementación, sitemap y datos",
+   "q": "When does the site mapping process happen during the implementation process?",
+   "o": [
+    "At the end after everything is defined in the system",
+    "At the beginning since it is the basis for the rest of the implementation",
+    "In the middle after certain components like the catalog have been populated",
+    "It can happen at any point since it is unrelated to the rest of the implementation"
+   ],
+   "a": 1,
+   "src": "Personalization · preguntas de examen · 4"
+  },
+  {
+   "id": "ps005",
+   "sec": "camp",
+   "t": "Campañas y plantillas",
+   "q": "What are the key areas you need to identify for a customer prior to starting MC Personalization implementation?",
+   "o": [
+    "Data integrations, channel integrations, activation use cases",
+    "Data ingestion, catalog setup, first campaign",
+    "Customer Journey, key metrics, ROI",
+    "Key stakeholders, user account setup, server size and speed"
+   ],
+   "a": 0,
+   "src": "Personalization · preguntas de examen · 5"
+  },
+  {
+   "id": "ps006",
+   "sec": "impl",
+   "t": "Implementación, sitemap y datos",
+   "q": "Approximately how long does a standard implementation take for one customer, one domain, and one or two data feeds?",
+   "o": [
+    "2 weeks",
+    "4 weeks",
+    "10 weeks",
+    "26 weeks"
+   ],
+   "a": 2,
+   "src": "Personalization · preguntas de examen · 6"
+  },
+  {
+   "id": "ps007",
+   "sec": "impl",
+   "t": "Implementación, sitemap y datos",
+   "q": "When an MC Personalization customer plans to implement multiple domains or locales, which factors influence using a single dataset versus multiple datasets?",
+   "o": [
+    "The similarity of languages, ease of use, and the same team managing each domain",
+    "The similarity of site structure, audience overlap, and ease of use",
+    "The similarity of site structure, the same team managing each domain, and hypothesis testing",
+    "Similarity of marketing goals, shared inventory, and audience overlap"
+   ],
+   "a": 3,
+   "src": "Personalization · preguntas de examen · 7"
+  },
+  {
+   "id": "ps008",
+   "sec": "impl",
+   "t": "Implementación, sitemap y datos",
+   "q": "What's the most effective way to begin use case discovery?",
+   "o": [
+    "Start with the same use cases you saw in an MC Personalization demo",
+    "Decide how many datasets you need for your implementation",
+    "Consider your key points of interaction and the KPIs associated with them",
+    "Determine how much you want to increase your conversion rate"
+   ],
+   "a": 2,
+   "src": "Personalization · preguntas de examen · 8"
+  },
+  {
+   "id": "ps009",
+   "sec": "rec",
+   "t": "Recomendaciones y Einstein",
+   "q": "Which of the following are common use cases of MC Personalization? Select three answers.",
+   "o": [
+    "Personalized rules-based next best offer on the homepage",
+    "Machine Learning audit of privileged users permissions",
+    "Machine Learning driven offers personalized at open-time",
+    "Rule-based activities on an immediate, triggered, or scheduled basis",
+    "Behavioral targeted pop-ups"
+   ],
+   "a": [
+    0,
+    2,
+    4
+   ],
+   "src": "Personalization · preguntas de examen · 9"
+  },
+  {
+   "id": "ps010",
+   "sec": "camp",
+   "t": "Campañas y plantillas",
+   "q": "Which three topics are covered during a standard discovery process?",
+   "o": [
+    "QA of data integrations",
+    "Catalog design",
+    "Template Building",
+    "Marketing objectives",
+    "Use case design"
+   ],
+   "a": [
+    1,
+    3,
+    4
+   ],
+   "src": "Personalization · preguntas de examen · 10"
+  },
+  {
+   "id": "ps011",
+   "sec": "seg",
+   "t": "Segmentación y analítica",
+   "q": "You access user and account segments in this section of the left-navigation menu.",
+   "o": [
+    "Channels & Campaigns",
+    "Audiences",
+    "Catalog",
+    "Machine Learning"
+   ],
+   "a": 1,
+   "src": "Personalization · preguntas de examen · 11"
+  },
+  {
+   "id": "ps012",
+   "sec": "impl",
+   "t": "Implementación, sitemap y datos",
+   "q": "What must a Marketing Cloud Administrator do before a Marketing Cloud user accesses MC Personalization?",
+   "o": [
+    "Set user access permissions for MC Personalization in Marketing Cloud Setup",
+    "Create and assign roles under Manage Users in MC Personalization",
+    "Grant Marketing Cloud Administrator access to the user",
+    "Reset the user's Marketing Cloud password"
+   ],
+   "a": 0,
+   "src": "Personalization · preguntas de examen · 12"
+  },
+  {
+   "id": "ps013",
+   "sec": "impl",
+   "t": "Implementación, sitemap y datos",
+   "q": "Once the username and password are created for an SFTP user, how do you manage the password?",
+   "o": [
+    "You must download or save the SFTP credentials at the time of creation",
+    "Navigate back to Manage SFTP Users anytime to see the credentials",
+    "The credentials are masked in Manage SFTP Users but you can reset the password anytime",
+    "The credentials automatically expire after 60 and you will be sent a new password"
+   ],
+   "a": 0,
+   "src": "Personalization · preguntas de examen · 13"
+  },
+  {
+   "id": "ps014",
+   "sec": "impl",
+   "t": "Implementación, sitemap y datos",
+   "q": "What is the primary benefit of the synchronous integration method of the MC Personalization JavaScript Beacon?",
+   "o": [
+    "It reduces \"flicker\" which occurs when default content is seen before it is replaced by personalized content",
+    "It results in faster data synchronization from the Web SDK to MC Personalization",
+    "It has an easier installation process at the header of every page",
+    "It requires a smaller amount of code to deploy"
+   ],
+   "a": 0,
+   "src": "Personalization · preguntas de examen · 14"
+  },
+  {
+   "id": "ps015",
+   "sec": "seg",
+   "t": "Segmentación y analítica",
+   "q": "What is the maximum number of custom user attributes allowed across a dataset?",
+   "o": [
+    "50",
+    "100",
+    "500",
+    "Unlimited"
+   ],
+   "a": 1,
+   "src": "Personalization · preguntas de examen · 15"
+  },
+  {
+   "id": "ps016",
+   "sec": "impl",
+   "t": "Implementación, sitemap y datos",
+   "q": "If the JavaScript Beacon is already installed on a site and you need to work in a different dataset, how do you change the dataset used on the site?",
+   "o": [
+    "Open the Launcher extension, select Disable Evergage, log into MC Personalization on the correct dataset, and refresh the tab with the site open",
+    "Open the Launcher extension, select Force SDK URL, copy the cdn URL from Web > JavaScript Integration, paste it into the field preceded by https:, and refresh the tab with the site open",
+    "Navigate to Web > JavaScript Integration and change the dataset the beacon is pointing to and refresh the site",
+    "Uninstall the Launcher extension, log into MC Personalization, navigate to Web > JavaScript Integration, change the dataset, and reinstall the Launcher and refresh the site"
+   ],
+   "a": 1,
+   "src": "Personalization · preguntas de examen · 16"
+  },
+  {
+   "id": "ps017",
+   "sec": "seg",
+   "t": "Segmentación y analítica",
+   "q": "What is an Identity Namespace?",
+   "o": [
+    "The screen in MC Personalization where you name identities",
+    "The form fill value of an email capture form",
+    "Confirmation that a merged user will keep the identity attribute upon merge",
+    "An indication that an identity type is unique within the dataset"
+   ],
+   "a": 3,
+   "src": "Personalization · preguntas de examen · 17"
+  },
+  {
+   "id": "ps018",
+   "sec": "impl",
+   "t": "Implementación, sitemap y datos",
+   "q": "What is a Sitemap in MC Personalization?",
+   "o": [
+    "A list of pages of a web site used in site planning and design.",
+    "A visual page map of a web site that shows you the architecture of the site.",
+    "JavaScript used to identify site page types and collect and send data based on user actions.",
+    "XML outline of the site that displays the relationship between pages for use by search engine crawlers."
+   ],
+   "a": 2,
+   "src": "Personalization · preguntas de examen · 18"
+  },
+  {
+   "id": "ps019",
+   "sec": "impl",
+   "t": "Implementación, sitemap y datos",
+   "q": "What tool do you use to create and edit an MC Personalization Sitemap?",
+   "o": [
+    "Visual Studio Code",
+    "MC Personalization Visual Editor - Sitemap JS tab",
+    "MC Personalization XML Editor - Sitemap XML tab",
+    "Any plain-text or code editor"
+   ],
+   "a": 1,
+   "src": "Personalization · preguntas de examen · 19"
+  },
+  {
+   "id": "ps020",
+   "sec": "camp",
+   "t": "Campañas y plantillas",
+   "q": "Which of the following may be components of a Sitemap?",
+   "o": [
+    "Catalog objects, page types, content zones",
+    "Namespace, tags, DTD",
+    "Page sets, listener types, content template",
+    "Content framework, page tags, catalog domain"
+   ],
+   "a": 0,
+   "src": "Personalization · preguntas de examen · 20"
+  },
+  {
+   "id": "ps021",
+   "sec": "camp",
+   "t": "Campañas y plantillas",
+   "q": "What Sitemap object is used to indicate areas on a page that can be personalized?",
+   "o": [
+    "Content template",
+    "Content zone",
+    "Content framework",
+    "Content map"
+   ],
+   "a": 1,
+   "src": "Personalization · preguntas de examen · 21"
+  },
+  {
+   "id": "ps022",
+   "sec": "seg",
+   "t": "Segmentación y analítica",
+   "q": "If you are an ecommerce site trying to integrate purchase data, which built-in ETL do you use?",
+   "o": [
+    "User",
+    "Transaction",
+    "Product",
+    "Manual Segment"
+   ],
+   "a": 1,
+   "src": "Personalization · preguntas de examen · 22"
+  },
+  {
+   "id": "ps023",
+   "sec": "camp",
+   "t": "Campañas y plantillas",
+   "q": "How do you manually load a file into MC Personalization?",
+   "o": [
+    "Select Feeds>Feeds Dashboard, click Validate or Execute, and upload a CSV or select a file already loaded, click Run Test, ensure the file is error-free, and click Commit",
+    "Select Feeds>SFTP Files, click Validate or Execute, and upload a CSV or select a file already loaded, click Run Test, ensure the file is error-free, and click Commit",
+    "Select Feeds>Feeds Dashboard, click Validate or Execute, and upload a CSV or select a file already loaded, click Run Test, ensure the file is error-free, and click Export Products",
+    "Select Feeds>SFTP Files, click Validate or Execute, and upload a CSV or select a file already loaded, click Run Test, ensure the file is error-free, and click Export Products"
+   ],
+   "a": 0,
+   "src": "Personalization · preguntas de examen · 23"
+  },
+  {
+   "id": "ps024",
+   "sec": "seg",
+   "t": "Segmentación y analítica",
+   "q": "What is the purpose of segment rules?",
+   "o": [
+    "They tell you when you can and cannot use segments",
+    "They define which visitors will be included or excluded from a segment",
+    "They govern how segment data is filtered and sorted",
+    "They define the location of the recommendation models on your site or in your app"
+   ],
+   "a": 1,
+   "src": "Personalization · preguntas de examen · 24"
+  },
+  {
+   "id": "ps025",
+   "sec": "seg",
+   "t": "Segmentación y analítica",
+   "q": "What are the options for logic gates when creating segments?",
+   "o": [
+    "You only choose one logic gate (and/or) per group and one logic gate across groups",
+    "Logic gates vary per group but must be the same between multiple groups",
+    "Only one logic gate is available between rules and groups of rules",
+    "You choose multiple logic gates between rules and groups of rules"
+   ],
+   "a": 3,
+   "src": "Personalization · preguntas de examen · 25"
+  },
+  {
+   "id": "ps026",
+   "sec": "rec",
+   "t": "Recomendaciones y Einstein",
+   "q": "What powers Marketing Cloud Personalization recommendations?",
+   "o": [
+    "Manually selected product or content based on the marketer's intuition.",
+    "Marketing Cloud Personalization's non-configurable proprietary algorithms, set up by the Marketing Cloud Personalization team",
+    "Configurable algorithms, business rules, and affinity boosters that leverage a user's historical and real-time behavior",
+    "Nightly ranking of the most popular products or content"
+   ],
+   "a": 2,
+   "src": "Personalization · preguntas de examen · 26"
+  },
+  {
+   "id": "ps027",
+   "sec": "rec",
+   "t": "Recomendaciones y Einstein",
+   "q": "To configure a recipe to return items only in categories visitors most recently purchased from, what recipe option or feature do you add and configure?",
+   "o": [
+    "Booster",
+    "Weight",
+    "Exclusion",
+    "Threshold"
+   ],
+   "a": 2,
+   "src": "Personalization · preguntas de examen · 27"
+  },
+  {
+   "id": "ps028",
+   "sec": "rec",
+   "t": "Recomendaciones y Einstein",
+   "q": "What is the next step in preparing your recipe for use once you build your recipe?",
+   "o": [
+    "Training",
+    "Previewing",
+    "Publishing",
+    "Deployment"
+   ],
+   "a": 0,
+   "src": "Personalization · preguntas de examen · 28"
+  },
+  {
+   "id": "ps029",
+   "sec": "camp",
+   "t": "Campañas y plantillas",
+   "q": "What are the components of a Marketing Cloud Personalization web campaign?",
+   "o": [
+    "Email capture, homepage, and product requisite",
+    "Affinity, infobar, and attribution window",
+    "Configured recipe, visitor profile, and content window",
+    "Experience, template, and content zone"
+   ],
+   "a": 3,
+   "src": "Personalization · preguntas de examen · 29"
+  },
+  {
+   "id": "ps030",
+   "sec": "rec",
+   "t": "Recomendaciones y Einstein",
+   "q": "Which global template do you select and customize to provide trending blog recommendations on the homepage?",
+   "o": [
+    "Einstein Product Recommendations",
+    "Einstein Content Recommendations",
+    "Banner with CTA",
+    "Infobar with CTA"
+   ],
+   "a": 1,
+   "src": "Personalization · preguntas de examen · 30"
+  },
+  {
+   "id": "ps031",
+   "sec": "camp",
+   "t": "Campañas y plantillas",
+   "q": "What system do you use to send the open-time email you create in Marketing Cloud Personalization?",
+   "o": [
+    "You send directly out of Marketing Cloud Personalization",
+    "It depends on how the message is configured",
+    "Your current email marketing platform",
+    "A separate Marketing Cloud Personalization system you must purchase"
+   ],
+   "a": 2,
+   "src": "Personalization · preguntas de examen · 31"
+  },
+  {
+   "id": "ps032",
+   "sec": "rec",
+   "t": "Recomendaciones y Einstein",
+   "q": "After you send an open-time email, can you make changes to the recipe algorithm used to populate product or content recommendations?",
+   "o": [
+    "Yes. You can make adjustments at any time.",
+    "No. Once you send a message, the contents are static and cannot change.",
+    "No. If you make changes to the recipe, it causes issues with the content rendering at open-time.",
+    "It depends. You need to discuss your specific email campaign with your account representative to determine whether you can make recipe changes after the message is sent."
+   ],
+   "a": 0,
+   "src": "Personalization · preguntas de examen · 32"
+  },
+  {
+   "id": "ps033",
+   "sec": "camp",
+   "t": "Campañas y plantillas",
+   "q": "What three components of Marketing Cloud Personalization can be used to create an open-time email campaign?",
+   "o": [
+    "Subscriber list in Marketing Cloud Personalization",
+    "Item Template",
+    "Recipe",
+    "Promotion",
+    "HTML code"
+   ],
+   "a": [
+    1,
+    3,
+    4
+   ],
+   "src": "Personalization · preguntas de examen · 33"
+  },
+  {
+   "id": "ps034",
+   "sec": "camp",
+   "t": "Campañas y plantillas",
+   "q": "When are the content areas rendered for open-time email campaigns?",
+   "o": [
+    "Each time the email is opened",
+    "Each time a recipient takes action through one of your channels",
+    "The first time the message is opened and then when you trigger an update",
+    "When the message is originally sent"
+   ],
+   "a": 0,
+   "src": "Personalization · preguntas de examen · 34"
+  },
+  {
+   "id": "ps035",
+   "sec": "camp",
+   "t": "Campañas y plantillas",
+   "q": "What are 2 key features of the Event API?",
+   "o": [
+    "Allows sources to send event data to Marketing Cloud Personalization to be processed in the pipeline",
+    "Returns campaigns which are served to qualified recipients",
+    "Triggers email and SMS campaigns from the customers website",
+    "Picks up files from an external SFTP for batch processing"
+   ],
+   "a": [
+    0,
+    1
+   ],
+   "src": "Personalization · preguntas de examen · 35"
+  },
+  {
+   "id": "ps036",
+   "sec": "rec",
+   "t": "Recomendaciones y Einstein",
+   "q": "What are three examples of channels that use server side campaigns to pull decisions and data from Marketing Cloud Personalization?",
+   "o": [
+    "Email",
+    "Sales/Service Cloud",
+    "Call center application",
+    "POS",
+    "Social Media"
+   ],
+   "a": [
+    1,
+    2,
+    3
+   ],
+   "src": "Personalization · preguntas de examen · 36"
+  },
+  {
+   "id": "ps037",
+   "sec": "camp",
+   "t": "Campañas y plantillas",
+   "q": "What four key components are returned in a Server-Side campaign response?",
+   "o": [
+    "Attributes, segment membership, recs, next best offer/action",
+    "Visit Date, Length of Visit, IP Address, Area Code",
+    "Segment membership, recs, catalog values, transactional data",
+    "Catalog values, transactional data, recs, next best offer/action"
+   ],
+   "a": 0,
+   "src": "Personalization · preguntas de examen · 37"
+  },
+  {
+   "id": "ps038",
+   "sec": "seg",
+   "t": "Segmentación y analítica",
+   "q": "Which functionality allows you to show real time \"view\" or \"purchase\" counters on screen?",
+   "o": [
+    "Smart Bundle",
+    "Trends",
+    "Surveys",
+    "Segments"
+   ],
+   "a": 3,
+   "src": "Personalization · preguntas de examen · 38"
+  },
+  {
+   "id": "ps039",
+   "sec": "rec",
+   "t": "Recomendaciones y Einstein",
+   "q": "What two features of interaction studio have functionality to perform an A/B testing?",
+   "o": [
+    "Templates",
+    "Campaigns",
+    "Segments",
+    "Recipes"
+   ],
+   "a": [
+    1,
+    2
+   ],
+   "src": "Personalization demo · 1"
+  },
+  {
+   "id": "ps040",
+   "sec": "camp",
+   "t": "Campañas y plantillas",
+   "q": "What are the three types of mobile campaigns a business user can create in IS?",
+   "o": [
+    "JSON Data A",
+    "In-App Notification",
+    "Browser Notification",
+    "SMS Text Message",
+    "Push Message"
+   ],
+   "a": [
+    1,
+    4
+   ],
+   "src": "Personalization demo · 2",
+   "note": "El original solo marca dos respuestas aunque la pregunta pide tres."
+  },
+  {
+   "id": "ps041",
+   "sec": "camp",
+   "t": "Campañas y plantillas",
+   "q": "What two features of interaction studio can be used in an open-time email campaign?",
+   "o": [
+    "Promotion",
+    "Attribute",
+    "Survey",
+    "Recipe"
+   ],
+   "a": [
+    0,
+    3
+   ],
+   "src": "Personalization demo · 3"
+  },
+  {
+   "id": "ps042",
+   "sec": "camp",
+   "t": "Campañas y plantillas",
+   "q": "What are the components of an interaction studio web campaign? [check]",
+   "o": [
+    "Email capture, homepage, and product requisite Questions & Answers PDF Page 3 www.passitcertify.com",
+    "Experience, template, and content Zone",
+    "Configured recipe, visitor profile, and content window",
+    "Affinity, infobard and attribution window"
+   ],
+   "a": 1,
+   "src": "Personalization demo · 4"
+  },
+  {
+   "id": "ps043",
+   "sec": "camp",
+   "t": "Campañas y plantillas",
+   "q": "What three things does a developer code in web template?",
+   "o": [
+    "Campaign qualification rules",
+    "HTML and CSS for controlling appearance",
+    "Client side instructions for rendering",
+    "Set the control group percentage",
+    "Defining what can be configured in a campaign"
+   ],
+   "a": [
+    1,
+    2
+   ],
+   "e": "Questions & Answers PDF Page 4 www.passitcertify.com Thank You for trying MARKETING-CLOUD- PERSONALIZATION PDF Demo To try our MARKETING-CLOUD-PERSONALIZATION practice exam software visit link below PERSONALIZATION.html Start Your MARKETING-CLOUD- PERSONALIZATION Preparation [Limited Time Offer] Use Coupon “20OFF” for extra 20% discount on the purchase of Practice Test Software. Test your MARKETING-CLOUD-PERSONALIZATION preparation with actual exam questions.",
+   "src": "Personalization demo · 5",
+   "note": "El original solo marca dos respuestas aunque la pregunta pide tres."
+  }
+ ]
+}

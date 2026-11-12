@@ -1,0 +1,1446 @@
+{
+ "id": "mc-developer-old",
+ "code": "MC Developer",
+ "name": "Marketing Cloud Developer (antiguo)",
+ "vendor": "Salesforce",
+ "release": "Material 2020–2021",
+ "date": "2021-01",
+ "format": {
+  "scored": 60,
+  "unscored": 0,
+  "minutes": 105,
+  "pass": 63,
+  "choices": 4
+ },
+ "sections": [
+  {
+   "id": "pl",
+   "name": "Programmatic Languages",
+   "weight": 35
+  },
+  {
+   "id": "api",
+   "name": "API",
+   "weight": 22
+  },
+  {
+   "id": "dmg",
+   "name": "Data Management",
+   "weight": 22
+  },
+  {
+   "id": "dm",
+   "name": "Data Modeling",
+   "weight": 14
+  },
+  {
+   "id": "sec",
+   "name": "Security",
+   "weight": 7
+  }
+ ],
+ "notes": "Preguntas de los tests de TestPrep guardados en enero de 2021 y del cuestionario de CertificationAID, sin repetidas y sin las que ya están en el banco actual de Marketing Cloud Developer. Formato orientativo.",
+ "logo": "assets/logos/salesforce.png",
+ "logoClass": "cloud",
+ "unofficial": true,
+ "legacy": true,
+ "questions": [
+  {
+   "id": "dv001",
+   "sec": "dmg",
+   "t": "Cumplimiento y privacidad",
+   "q": "A developer identified duplicate contacts and initiated a Contact Delete process for 10 millionsubscribers. How could the process be expedited?",
+   "o": [
+    "Change the Suppression value to a larger value",
+    "Manually delete subscribers in All Contacts",
+    "Stop current delete process and delete smaller groups",
+    "Delete any unnecessary Sendable Data Extensions"
+   ],
+   "a": 2,
+   "src": "Developer TestPrep (2021) · index5 · 236467"
+  },
+  {
+   "id": "dv002",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "A developer wants to use the Marketing Cloud SOAP API to retrieve which subscribers were sent aparticular email. Which SOAP API object should be used?",
+   "o": [
+    "Send",
+    "ListSend",
+    "SentEvent",
+    "LinkSend"
+   ],
+   "a": 2,
+   "src": "Developer TestPrep (2021) · index5 · 236470 / Developer TestPrep (2021) · index4 · 237428"
+  },
+  {
+   "id": "dv003",
+   "sec": "dmg",
+   "t": "Cumplimiento y privacidad",
+   "q": "A developer want to email a subscriber who is currently being processed for a Contact Deletionrequest. When could the Contact be reintroduced after a Contact Delete operation has started?",
+   "o": [
+    "Never",
+    "14 days after deletion process is complete",
+    "After deletion is fully complete",
+    "Anytime"
+   ],
+   "a": 2,
+   "src": "Developer TestPrep (2021) · index5 · 236473"
+  },
+  {
+   "id": "dv004",
+   "sec": "dm",
+   "t": "Data Extensions y modelo de datos",
+   "q": "A developer has a text field in a data extension they want to format using the FormatCurrencyAMPscript function. Which two values would return $6.96? Choose 2",
+   "o": [
+    "6961",
+    "69.6",
+    "$6.96",
+    "6.96"
+   ],
+   "a": [
+    2,
+    3
+   ],
+   "src": "Developer TestPrep (2021) · index5 · 236481"
+  },
+  {
+   "id": "dv005",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "A developer receives a 401 Unathorized HTTP status message from a REST API request. What is thereason for this error?",
+   "o": [
+    "The account lacks the privileges necessary to perform the request",
+    "The access token was not found in the request, or it is invalid or expired",
+    "OAuth is not supported for the requested resource",
+    "API requests are temporarily blocked due to too many concurrent requests."
+   ],
+   "a": 1,
+   "src": "Developer TestPrep (2021) · index6 · 236491"
+  },
+  {
+   "id": "dv006",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "How often should a developer request a new token when making multiple API calls in v1?",
+   "o": [
+    "When changing routes/objects",
+    "Before every new call",
+    "Once an hour",
+    "Every 15 minutes"
+   ],
+   "a": 3,
+   "src": "Developer TestPrep (2021) · index6 · 236498"
+  },
+  {
+   "id": "dv007",
+   "sec": "dmg",
+   "t": "Cumplimiento y privacidad",
+   "q": "What is the operational order of the Contact Delete process for Marketing Cloud?",
+   "o": [
+    "Delete initiated > Suppression phase > Final Deletion",
+    "Delete initiated > Final deletion",
+    "Delete initiated > Final deletion >Suppression phase",
+    "Data identified > Suppression phase > Delete initiated > Account page"
+   ],
+   "a": 0,
+   "src": "Developer TestPrep (2021) · index6 · 236512"
+  },
+  {
+   "id": "dv008",
+   "sec": "api",
+   "t": "MobileConnect y MobilePush",
+   "q": "What parameter should a developer include to ensure the MobileConnect Contact is tied to theEmail Contact when making a QueueMO call for an existing email subscriber?",
+   "o": [
+    "mobilenumbers",
+    "phonenumbers",
+    "emailaddress",
+    "subscribers"
+   ],
+   "a": 0,
+   "src": "Developer TestPrep (2021) · index6 · 236514"
+  },
+  {
+   "id": "dv009",
+   "sec": "dmg",
+   "t": "Tracking e informes",
+   "q": "Northern Trail Outfitters (NTO) wants to prevent competitors from receiving a coupon email. Theyalso want to capture email addresses of competitors who are included in the targeted audience. Which feature could NTO use to prevent the coupon from being sent and report the email addressesskipped?",
+   "o": [
+    "Auto-Suppression list",
+    "RaiseError AMPscript function",
+    "Exclusion Script",
+    "Try/Catch SSJS functions"
+   ],
+   "a": 2,
+   "src": "Developer TestPrep (2021) · index3 · 236581"
+  },
+  {
+   "id": "dv010",
+   "sec": "pl",
+   "t": "AMPscript y personalización",
+   "q": "A developer wants to aggregate monthly energy usage data over a four month period for eachsubscriber within an email. The monthly usage values are stored in variables for each month in thefollowing way: How should the developer use AMPscript to generate the total?",
+   "o": [
+    "SET @total - (@jan - 3fet - @mar @apr>",
+    "SET @total = AZD((@jan @feb) @mar) @apr)",
+    "SET @total - ADD(@jan,ADD(@feb,ADD(@mar,@apr)))",
+    "SET @total = (ADD(@jan,@feb), ADD(@mar, @apr))"
+   ],
+   "a": 2,
+   "src": "Developer TestPrep (2021) · index3 · 236583 / Developer TestPrep (2021) · index4 · 237421"
+  },
+  {
+   "id": "dv011",
+   "sec": "dm",
+   "t": "Suscriptores y contactos",
+   "q": "When appending data to links via Web Analytics Connector, which parameter should be used to tracksubscriber behavior?",
+   "o": [
+    "Subscriber ID",
+    "Subscriber Key",
+    "Contact Key",
+    "Email Address"
+   ],
+   "a": 0,
+   "src": "Developer TestPrep (2021) · index3 · 236590 / Developer TestPrep (2021) · index2 · 237451",
+   "note": "Las fuentes no coinciden: se usa A (1 de 2 fuentes), pero aparece C en Developer TestPrep (2021) · index2."
+  },
+  {
+   "id": "dv012",
+   "sec": "dmg",
+   "t": "SQL y Data Views",
+   "q": "A developer wants to expand their knowledge of Query Activities. They want to identify emailaddresses that have bounced in the last 30 days, along with the Bounce Reason and some additionalsubscriber specific data; however, the SQL they have written does not return any records. Below isthe SQL statement: What updates should be made to ensure this SQL statement returns the desired results?",
+   "o": [
+    "Marketing Cloud does not allow DateAdd functions in Query Activities. They should define aspecific date.",
+    "Marketing Cloud _Bounce data view does not contain EmailAddress. They should join onSubscriberlD.",
+    "Marketing Cloud Data Views only hold 20 days worth of data. They should narrow scope ofDateAdd function.",
+    "Marketing Cloud does not allow use of GETDATE function. They should define a specific date."
+   ],
+   "a": 1,
+   "src": "Developer TestPrep (2021) · index3 · 236592"
+  },
+  {
+   "id": "dv013",
+   "sec": "dmg",
+   "t": "SQL y Data Views",
+   "q": "A new record is appended to the Orders data extension each time a customer makes a purchase. Which SQL statement would select a unique list of subscribers who have made multiple purchases?",
+   "o": [
+    "SELECT TOP 1 SubscriberKey FROM Orders",
+    "SELECT SubscriberKey FROM Orders GROUP BY SubscriberKey",
+    "SELECT DISTINCT SubscriberKey FROM Orders",
+    "SELECT SubscriberKey FROM Orders GROUP BY SubscriberKey HAVING COUNT(*)>1"
+   ],
+   "a": 1,
+   "src": "Developer TestPrep (2021) · index4 · 237430"
+  },
+  {
+   "id": "dv014",
+   "sec": "pl",
+   "t": "AMPscript y personalización",
+   "q": "Certification Aid created following AMPscript code: %%[ SET @var1 = 10 SET @var2 = 20 SET @var3 = 30 ]%% How can the three variables be summed up to evaluate to 60? Choose 1.",
+   "o": [
+    "SET @total = Add(@var1, Add(@var2, @var3))",
+    "SET @total = Add(@var1, @var2, @var3)",
+    "SET @total = @var1 + @var2 + @var3",
+    "SET @total = Sum(@var1, @var2, @var3)"
+   ],
+   "a": 0,
+   "src": "Developer TestPrep (2021) · index4 · 237434 / Developer TestPrep (2021) · index7 · 236533"
+  },
+  {
+   "id": "dv015",
+   "sec": "dm",
+   "t": "Data Extensions y modelo de datos",
+   "q": "Certification Aid wants to automate the import of zipped files into a Data Extension. The zip files are placed on the Marketing Cloud Enhanced FTP server every night. Which activity is needed before those files can be imported? Choose 1.",
+   "o": [
+    "File Import activity",
+    "Data Extension Import activity",
+    "Data Extract activity",
+    "File Transfer activity"
+   ],
+   "a": 3,
+   "src": "Developer TestPrep (2021) · index4 · 237435 / Developer TestPrep (2021) · index7 · 236548"
+  },
+  {
+   "id": "dv016",
+   "sec": "dmg",
+   "t": "Automation Studio",
+   "q": "Certification Aid wants to create a file drop automation with a filename pattern. An import file is placed daily on the Marketing Cloud Enhanced FTP server, and the file name always starts with the current month and day (e.g. OCT26). How should the filename pattern be defined? Choose 2.",
+   "o": [
+    "%%MMDD%%",
+    "Ends With operator",
+    "%%Month%%%%Day%%",
+    "Begins With operator"
+   ],
+   "a": [
+    2,
+    3
+   ],
+   "src": "Developer TestPrep (2021) · index4 · 237436 / Developer TestPrep (2021) · index7 · 236534 / Developer CertificationAID · 50"
+  },
+  {
+   "id": "dv017",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "Certification Aid wants to implement a custom profile center using SOAP API. Which SOAP API methods are relevant to achieve this? Choose 2.",
+   "o": [
+    "Configure",
+    "Extract",
+    "Describe",
+    "Update"
+   ],
+   "a": [
+    2,
+    3
+   ],
+   "src": "Developer TestPrep (2021) · index4 · 237438 / Developer TestPrep (2021) · index7 · 236546 / Developer CertificationAID · 30"
+  },
+  {
+   "id": "dv018",
+   "sec": "dm",
+   "t": "Data Extensions y modelo de datos",
+   "q": "Certification Aid wants to import data from a CSV file into a Data Extension. The CSV file contains all relevant dat a. New records should be added to the Data Extension, and records which are not in the file should be removed from the Data Extension. Which import operation should be chosen for this? Choose 1.",
+   "o": [
+    "Add only",
+    "Overwrite",
+    "Update only",
+    "Add and update"
+   ],
+   "a": 1,
+   "src": "Developer TestPrep (2021) · index3 · 237439 / Developer TestPrep (2021) · index7 · 236539"
+  },
+  {
+   "id": "dv019",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "Certification Aid wants to trigger and email send in Marketing Cloud when a purchase is made on their website. Which API should be used for this? Choose 2.",
+   "o": [
+    "Subscriber API",
+    "Email API",
+    "SOAP API",
+    "REST API"
+   ],
+   "a": [
+    2,
+    3
+   ],
+   "src": "Developer TestPrep (2021) · index3 · 237440 / Developer TestPrep (2021) · index7 · 236532 / Developer CertificationAID · 34"
+  },
+  {
+   "id": "dv020",
+   "sec": "dm",
+   "t": "Data Extensions y modelo de datos",
+   "q": "What can be created in Attribute Groups within Contact Builder? Choose 2.",
+   "o": [
+    "Relationships",
+    "Attribute Groups",
+    "Data Extensions",
+    "Populations"
+   ],
+   "a": [
+    0,
+    2
+   ],
+   "src": "Developer TestPrep (2021) · index3 · 237450 / Developer TestPrep (2021) · index7 · 236530 / Developer CertificationAID · 2"
+  },
+  {
+   "id": "dv021",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "When do synchronous REST API calls to Marketing Cloud time out? Choose 2.",
+   "o": [
+    "240 seconds for non-tracking operations.",
+    "300 seconds for tracking and data retrieve operations.",
+    "120 seconds for non-tracking operations.",
+    "240 seconds for tracking and data retrieve operations."
+   ],
+   "a": [
+    1,
+    2
+   ],
+   "src": "Developer TestPrep (2021) · index2 · 237452 / Developer CertificationAID · 31"
+  },
+  {
+   "id": "dv022",
+   "sec": "pl",
+   "t": "SSJS",
+   "q": "Where can the SSJS Core library be used? Choose 2.",
+   "o": [
+    "Marketing Cloud apps",
+    "Email messages",
+    "Landing pages",
+    "SMS messages"
+   ],
+   "a": [
+    0,
+    2
+   ],
+   "src": "Developer TestPrep (2021) · index3 · 237453 / Developer CertificationAID · 18"
+  },
+  {
+   "id": "dv023",
+   "sec": "dm",
+   "t": "Suscriptores y contactos",
+   "q": "Which encryption methods are supported in file imports? Choose 2.",
+   "o": [
+    "SSH",
+    "AES",
+    "GPG",
+    "PGP"
+   ],
+   "a": [
+    2,
+    3
+   ],
+   "src": "Developer TestPrep (2021) · index3 · 237454 / Developer CertificationAID · 64"
+  },
+  {
+   "id": "dv024",
+   "sec": "pl",
+   "t": "SSJS",
+   "q": "Which SSJS library can be used in email messages? Choose 1.",
+   "o": [
+    "None",
+    "Both",
+    "Core",
+    "Platform"
+   ],
+   "a": 3,
+   "src": "Developer TestPrep (2021) · index3 · 237455 / Developer TestPrep (2021) · index2 · 236535"
+  },
+  {
+   "id": "dv025",
+   "sec": "pl",
+   "t": "SSJS",
+   "q": "Which SSJS library can be used in landing pages? Choose 1.",
+   "o": [
+    "Core",
+    "Both",
+    "None",
+    "Platform"
+   ],
+   "a": 1,
+   "src": "Developer TestPrep (2021) · index3 · 237456 / Developer CertificationAID · 16"
+  },
+  {
+   "id": "dv026",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "Certification Aid wants to add records to a Data Extension using the SOAP API. Which object can beused for this? Choose 1.",
+   "o": [
+    "DataExtensionObject object",
+    "Subscriber object",
+    "Attribute object",
+    "DataExtension object"
+   ],
+   "a": 0,
+   "src": "Developer TestPrep (2021) · index7 · 236529"
+  },
+  {
+   "id": "dv027",
+   "sec": "dm",
+   "t": "Suscriptores y contactos",
+   "q": "Certification Aid sends an email to a newly imported List with Subscribers who have no associatedSubscriber Key. Which value will become the Contact Key? Choose 1.",
+   "o": [
+    "Contact ID",
+    "Email address",
+    "Subscriber ID",
+    "Unique random number"
+   ],
+   "a": 1,
+   "src": "Developer TestPrep (2021) · index7 · 236531 / Developer CertificationAID · 1"
+  },
+  {
+   "id": "dv028",
+   "sec": "pl",
+   "t": "AMPscript y personalización",
+   "q": "Which of the following is a valid comment within an AMPscript code block? Choose 1.",
+   "o": [
+    "--comment",
+    "// comment",
+    "- comment -->",
+    "/* comment */"
+   ],
+   "a": 3,
+   "src": "Developer TestPrep (2021) · index7 · 236536"
+  },
+  {
+   "id": "dv029",
+   "sec": "pl",
+   "t": "AMPscript y personalización",
+   "q": "Which programming language should be used in email messages? Choose 1.",
+   "o": [
+    "AMPscript only",
+    "Both",
+    "Either AMPscript or SSJS",
+    "SSJS only"
+   ],
+   "a": 2,
+   "src": "Developer TestPrep (2021) · index7 · 236541"
+  },
+  {
+   "id": "dv030",
+   "sec": "dmg",
+   "t": "Automation Studio",
+   "q": "Certification Aid wants to import an encrypted CSV file from the Marketing Cloud Enhanced FTPserver. Which two File Transfer activities are needed to achieve this? Choose 2.",
+   "o": [
+    "To decrypt the import file on the Enhanced FTP server.",
+    "To move the import file from the Safehouse to Marketing Cloud.",
+    "To decrypt the import file on the Safehouse.",
+    "To move the import file from the Enhanced FTP server to the Safehouse"
+   ],
+   "a": [
+    1,
+    2
+   ],
+   "src": "Developer TestPrep (2021) · index7 · 236542 / Developer CertificationAID · 49",
+   "note": "Las fuentes no coinciden: se usa B, C (1 de 2 fuentes), pero aparece C en Developer CertificationAID."
+  },
+  {
+   "id": "dv031",
+   "sec": "api",
+   "t": "Marketing Cloud Connect",
+   "q": "Certification Aid uses Marketing Cloud Connect and wants to create a lead capture form on alanding page. When a customer submits the form, a Lead record should be created in Salesforce. Which scripting language can be used for this? Choose 2.",
+   "o": [
+    "AMPscript to create Salesforce record, SSJS for form handling.",
+    "SSJS to create Salesforce record, AMPscript for form handling.",
+    "AMPscript for whole functionality.",
+    "SSJS for whole functionality."
+   ],
+   "a": [
+    0,
+    2
+   ],
+   "src": "Developer TestPrep (2021) · index7 · 236543 / Developer CertificationAID · 14"
+  },
+  {
+   "id": "dv032",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "Which statements are true regarding the Marketing Cloud SOAP API? Choose 2.",
+   "o": [
+    "More than 2000 SOAP calls can be performed per minute.",
+    "Most SOAP calls can be synchronous or asynchronous.",
+    "Uses XML in request and response body.",
+    "Uses JSON in request and response body."
+   ],
+   "a": [
+    1,
+    2
+   ],
+   "src": "Developer TestPrep (2021) · index7 · 236545 / Developer CertificationAID · 38"
+  },
+  {
+   "id": "dv033",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "Certification Aid wants to add new customers to a cross-channel welcome campaign when theyregister on the company website. Which API should be used for this? Choose 1.",
+   "o": [
+    "Personalization Builder API",
+    "Event Notification API",
+    "Transactional Messaging API",
+    "Journey Builder API"
+   ],
+   "a": 3,
+   "src": "Developer TestPrep (2021) · index7 · 236547 / Developer CertificationAID · 36"
+  },
+  {
+   "id": "dv034",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "Certification Aid wants to update Contact data stored in a Data Extension using the REST API. What isrequired to achieve this? Choose 1.",
+   "o": [
+    "The Data Extension must be in a Population.",
+    "The Data Extension must be in an Attribute Group.",
+    "The Data Extension must be sendable.",
+    "The Data Extension must be created in Email Studio."
+   ],
+   "a": 1,
+   "src": "Developer TestPrep (2021) · index7 · 236549 / Developer CertificationAID · 29"
+  },
+  {
+   "id": "dv035",
+   "sec": "sec",
+   "t": "Cuentas, usuarios y seguridad",
+   "q": "Certification Aid wants to encrypt data stored in Marketing Cloud. It is fine if unencrypted fields arevisible to Marketing Cloud and Salesforce users, but the underlying data should be encrypted at restto prevent physical data theft. Which encryption method should be chosen? Choose 1.",
+   "o": [
+    "Transparent Data Encryption",
+    "Asymmetric Encryption",
+    "Tokenized Sending",
+    "Field-Level Encryption"
+   ],
+   "a": 0,
+   "src": "Developer TestPrep (2021) · index7 · 236552"
+  },
+  {
+   "id": "dv036",
+   "sec": "dmg",
+   "t": "Journey Builder",
+   "q": "Certification Aid created a journey and event definition in Marketing Cloud. Which of the followingresources are relevant to inject Contacts into the journey using the REST API? Choose 2.",
+   "o": [
+    "POST /eventDefinitions/key:{key} or /eventDefinitions/{id}",
+    "POST /interaction/v1/events",
+    "POST /interaction/v1/interactions/contactentry",
+    "GET /eventDefinitions/key:{key}"
+   ],
+   "a": [
+    1,
+    2
+   ],
+   "src": "Developer TestPrep (2021) · index7 · 236553 / Developer CertificationAID · 33",
+   "note": "Las fuentes no coinciden: se usa B, C (1 de 2 fuentes), pero aparece B, D en Developer CertificationAID."
+  },
+  {
+   "id": "dv037",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "Certification Aid wants to create Contacts in Marketing Cloud via API calls. Which API should be usedfor this? Choose 2.",
+   "o": [
+    "POST /contacts/v1/contacts route",
+    "SOAP API",
+    "REST API",
+    "Contact object"
+   ],
+   "a": [
+    0,
+    2
+   ],
+   "src": "Developer TestPrep (2021) · index9 · 236554 / Developer CertificationAID · 28"
+  },
+  {
+   "id": "dv038",
+   "sec": "pl",
+   "t": "CloudPages",
+   "q": "A developer is creating a custom preference center and wants to log unsubscribe events from theCloudPage. Which set of parameters should be captured and provided to the LongUnsubEventExecute Call to ensure accurate unsubscribe information?",
+   "o": [
+    "SubscriberKey and JobID",
+    "SubscriberID and BatchID",
+    "EmailAddress and JobID",
+    "SubscriberKey and BatchID"
+   ],
+   "a": 0,
+   "src": "Developer TestPrep (2021) · index6 · 236518"
+  },
+  {
+   "id": "dv039",
+   "sec": "pl",
+   "t": "SSJS",
+   "q": "A developer wants to retrieve daily JSON data from a customer's API and write it to a data extensionfor consumption in Marketing Cloud at a later time. What set of Server-Side JavaScript activities should the developer use?",
+   "o": [
+    "Platform.Function.InvokeRetrieve(); Platform.Function.ParseJSON();Platform.Function.UpsertData();",
+    "Platform.Function.HTTPGet(); Platform.Function.ParseJSON(); Platform.Function.UpsertData();",
+    "Platform.Function.InvokeRetrievef); Platform.Function.Stringify(); Platform.Function.UpsertDE();",
+    "Platform.Function.HTTPGe(); Platform.Function.Stringify(); Platform.Response.Write();"
+   ],
+   "a": 2,
+   "src": "Developer TestPrep (2021) · index9 · 236562"
+  },
+  {
+   "id": "dv040",
+   "sec": "dmg",
+   "t": "Journey Builder",
+   "q": "New subscribers at Northern Trail Outfitters (NTO) are added to a data extension. NTO would like to send these subscribers a welcome series with Journey Builder. What would allow the data extension to be selected for journey entry'",
+   "o": [
+    "At least one Campaign must be associated to the data extension.",
+    "The Triggered Send Template must be used to create the data extension.",
+    "The data extension must be configured for sending.",
+    "The data extension must contain a field of the EmailAddress data type."
+   ],
+   "a": 2,
+   "src": "Developer TestPrep (2021) · index9 · 236565"
+  },
+  {
+   "id": "dv041",
+   "sec": "pl",
+   "t": "AMPscript y personalización",
+   "q": "What is the purpose of the IF statement below?",
+   "o": [
+    "To handle when no row is returned by the LookupRows function",
+    "To handle when the subscriber is in a held status",
+    "To handle when images are broken",
+    "To handle when there are multiple records in the data extension for the subscriber"
+   ],
+   "a": 0,
+   "src": "Developer TestPrep (2021) · index9 · 236577"
+  },
+  {
+   "id": "dv042",
+   "sec": "dm",
+   "t": "Data Extensions y modelo de datos",
+   "q": "Which of the following statements are correct concerning Populations in Contact Builder? Choose 2.",
+   "o": [
+    "Populations are used to create large subgroups Contacts.",
+    "Populations need to be added to an Attribute Group.",
+    "No more than three Populations should be created.",
+    "Populations should be used for segmentation"
+   ],
+   "a": [
+    0,
+    2
+   ],
+   "src": "Developer TestPrep (2021) · index7 · 236526 / Developer CertificationAID · 4"
+  },
+  {
+   "id": "dv043",
+   "sec": "dm",
+   "t": "Suscriptores y contactos",
+   "q": "Which of the following statements are correct concerning Contacts and Subscribers? Choose 2 answers.",
+   "o": [
+    "A Contact is subscribed to any channel.",
+    "Each Contact is also a Subscriber.",
+    "Each Subscriber is also a Contact.",
+    "A Contact is subscribed to a specific channel."
+   ],
+   "a": [
+    0,
+    2
+   ],
+   "src": "Developer TestPrep (2021) · index7 · 236527 / Developer CertificationAID · 3"
+  },
+  {
+   "id": "dv044",
+   "sec": "pl",
+   "t": "SSJS",
+   "q": "Landing pages can use which SSJS library?1. Core Library2. Platform Library 3. SSJS Library",
+   "o": [
+    "Only 1 and 3",
+    "Only 1 and 2",
+    "Only 2 and 3",
+    "All 1, 2 and 3",
+    "None of these"
+   ],
+   "a": 1,
+   "src": "Developer TestPrep (2021) · index3 · 236528"
+  },
+  {
+   "id": "dv045",
+   "sec": "dmg",
+   "t": "Cumplimiento y privacidad",
+   "q": "The Contact Delete feature can be used within an Enterprise 2.0 account from which business unit?",
+   "o": [
+    "Only in Agency accounts",
+    "The Parent account",
+    "Any business unit",
+    "The business unit where the contact was introduced",
+    "None of these"
+   ],
+   "a": 3,
+   "src": "Developer TestPrep (2021) · index3 · 236586"
+  },
+  {
+   "id": "dv046",
+   "sec": "dm",
+   "t": "Data Extensions y modelo de datos",
+   "q": "Certification Aid sent an email to a sendable Data Extension and personalized the View Email as Web Page Link. When a Subscriber opens the view Email as Web Page Link, an error is displayed. What can be the reason for this?",
+   "o": [
+    "The Data Extension was cleared, overwritten, or deleted.",
+    "The email used in the send has been deleted or moved to another folder.",
+    "The subscriber has unsubscribed from the Publication List associate with the email send.",
+    "The View Email as Web Page has not been generated yet."
+   ],
+   "a": 0,
+   "src": "Developer CertificationAID · 5"
+  },
+  {
+   "id": "dv047",
+   "sec": "dm",
+   "t": "Data Extensions y modelo de datos",
+   "q": "What is required to make a Data Extension sendable?",
+   "o": [
+    "A send Relationship between the Subscriber key and a Data Extension field.",
+    "A send Relationship between the Data Extension and the All Subscribers list.",
+    "A send Relationship between a Data Extension field and the Contact Key.",
+    "A send Relationship between the Contact Key and a Data Extension primary key."
+   ],
+   "a": 0,
+   "src": "Developer CertificationAID · 6"
+  },
+  {
+   "id": "dv048",
+   "sec": "dm",
+   "t": "Data Extensions y modelo de datos",
+   "q": "Which values Contact Builder use to identify Subscribers across Email Studio and other channel applications? Choose 2 answers",
+   "o": [
+    "Contact ID",
+    "Subscriber Key",
+    "Contact Key",
+    "Subscriber ID"
+   ],
+   "a": [
+    1,
+    2
+   ],
+   "src": "Developer CertificationAID · 7"
+  },
+  {
+   "id": "dv049",
+   "sec": "dm",
+   "t": "Suscriptores y contactos",
+   "q": "Certification Aid urgently wants to delete two millions contact records from Marketing Cloud. What could help to speed up the deletion process? Choose 2 answers",
+   "o": [
+    "Change the suppression period to 0 days.",
+    "Add data retention policies on relevant Data Extension.",
+    "Use the REST API and to delete all records at once.",
+    "Delete unnecessary sendable Data Extension."
+   ],
+   "a": [
+    0,
+    3
+   ],
+   "src": "Developer CertificationAID · 8"
+  },
+  {
+   "id": "dv050",
+   "sec": "dm",
+   "t": "Data Extensions y modelo de datos",
+   "q": "Certification Aid deleted a Contact in Contact Builder. From which storage locations will the Contact be removed? Choose 3 answers",
+   "o": [
+    "All Subscribers",
+    "Non-Sendable Data Extensions",
+    "Mobile Lists",
+    "Sendable Data Extensions"
+   ],
+   "a": [
+    0,
+    2,
+    3
+   ],
+   "src": "Developer CertificationAID · 9"
+  },
+  {
+   "id": "dv051",
+   "sec": "dmg",
+   "t": "Suscripciones y bajas",
+   "q": "How long is the default suppression period for Contact deletions in Marketing Cloud?",
+   "o": [
+    "7 days",
+    "21 days",
+    "30 days",
+    "14 days"
+   ],
+   "a": 3,
+   "src": "Developer CertificationAID · 10"
+  },
+  {
+   "id": "dv052",
+   "sec": "pl",
+   "t": "SSJS",
+   "q": "Contacts can be reintroduced during the suppression period. No more than two million Contacts can be included per batch. The Contact deletion process supersedes other automation processes. Contact-level suppression status information can only retrieved after entire batch processed. How can subscriber, system, and sendable Data Extension attributes be referenced for content personalization using SSJS?",
+   "o": [
+    "<ctrl:attribute name = \"attributeName\"/>",
+    "<field name = \"attributeName\"/>",
+    "<ctrl:var name = \"attributeName\"/>",
+    "<ctrl:field name = \"attributeName\"/>"
+   ],
+   "a": 3,
+   "src": "Developer CertificationAID · 11"
+  },
+  {
+   "id": "dv053",
+   "sec": "pl",
+   "t": "SSJS",
+   "q": "Certification Aid wants to include SSJS in an email message. Which code block can be used for this? Choose 2 answers",
+   "o": [
+    "<script language=javascript> </script>",
+    "<script runat=server language=javascript> </script>",
+    "<script language=ssjs> </script>",
+    "<script runat=server> </script>"
+   ],
+   "a": [
+    1,
+    3
+   ],
+   "src": "Developer CertificationAID · 12"
+  },
+  {
+   "id": "dv054",
+   "sec": "pl",
+   "t": "AMPscript y personalización",
+   "q": "Platform Core None Both Which programming language should be used in email messages?",
+   "o": [
+    "SSJS only",
+    "Either AMPscript or SSJS",
+    "Both",
+    "AMPscript only"
+   ],
+   "a": 1,
+   "src": "Developer CertificationAID · 13"
+  },
+  {
+   "id": "dv055",
+   "sec": "dmg",
+   "t": "General",
+   "q": "How can the three variables be summed up to evaluate to 60?",
+   "o": [
+    "Set @total = Sum(@var1, @var2, @var3)",
+    "Set @total = Add(@var1,Add(@var2, @var3))",
+    "Set @total = @var1 + @var2 + @var3",
+    "Set @total = Add(@var1, @var2, @var3)"
+   ],
+   "a": 1,
+   "src": "Developer CertificationAID · 15"
+  },
+  {
+   "id": "dv056",
+   "sec": "pl",
+   "t": "SSJS",
+   "q": "How can SSJS variables be referenced for content personalization?",
+   "o": [
+    "<ctrl:eval> variableName </ctrl:eval>",
+    "< ctrl:field name = \"variableName\"/>",
+    "<ctrl:var name = \"variableName\"/>",
+    "<ctrl:eval name = \"variableName\"/>"
+   ],
+   "a": 2,
+   "src": "Developer CertificationAID · 17"
+  },
+  {
+   "id": "dv057",
+   "sec": "pl",
+   "t": "AMPscript y personalización",
+   "q": "What are the advantages of AMPscript compared to SSJS? Choose 2 answers",
+   "o": [
+    "Shorter learning for experienced developers",
+    "Message content segmentation",
+    "Inline personalization and conditions",
+    "Advanced exception handling"
+   ],
+   "a": [
+    1,
+    2
+   ],
+   "src": "Developer CertificationAID · 19"
+  },
+  {
+   "id": "dv058",
+   "sec": "pl",
+   "t": "AMPscript y personalización",
+   "q": "Certification Aid wants to include the loyalty member status of subscriber in a large email send. Which of the following is the most efficient way to retrieve this value from a Data Extension using AMPscript?",
+   "o": [
+    "Lookup(\"LoyaltyMembers\",\"Status\",\"SubscriberKey\",_subscriberkey)",
+    "Field(Lookup(\"LoyaltyMembers\",\" SubscriberKey\", _subscriberkey)),\" Status\")",
+    "Field(Row(LookupRows(\"LoyaltyMembers\",\" SubscriberKey\", _subscriberkey),1),\" Status\")",
+    "Row(LookupRows(\"LoyaltyMembers\",\" Status\",\" SubscriberKey\", _subscriberkey),1))"
+   ],
+   "a": 0,
+   "src": "Developer CertificationAID · 20"
+  },
+  {
+   "id": "dv059",
+   "sec": "pl",
+   "t": "AMPscript y personalización",
+   "q": "How can AMPScript variables be referenced in SSJS code?",
+   "o": [
+    "AMPscript.Get(\"@variableName\");",
+    "Variable.GetValue(\"@variableName\");",
+    "Variable.Get(\"@variableName\")",
+    "Variable.GetAttibuteValue(\"@variableName\");"
+   ],
+   "a": 1,
+   "src": "Developer CertificationAID · 21"
+  },
+  {
+   "id": "dv060",
+   "sec": "pl",
+   "t": "AMPscript y personalización",
+   "q": "What are advantages of SSJS compared to AMPscript? Choose 2 answers",
+   "o": [
+    "Loops",
+    "Advanced exception handling",
+    "Arrays",
+    "Shorter learning for new developers"
+   ],
+   "a": [
+    1,
+    2
+   ],
+   "src": "Developer CertificationAID · 22"
+  },
+  {
+   "id": "dv061",
+   "sec": "dmg",
+   "t": "General",
+   "q": "To which value will the variable @value evaluate?",
+   "o": [
+    "4",
+    "5",
+    "2",
+    "1",
+    "3"
+   ],
+   "a": 3,
+   "src": "Developer CertificationAID · 23"
+  },
+  {
+   "id": "dv062",
+   "sec": "pl",
+   "t": "AMPscript y personalización",
+   "q": "Certificarion Aid wants to validate AMPscript code in an email message. Which Content Builder tools can be used for this? Choose 2 answers",
+   "o": [
+    "Markup Validation",
+    "Send Preview",
+    "Code Validation",
+    "Spellcheck"
+   ],
+   "a": [
+    0,
+    1
+   ],
+   "src": "Developer CertificationAID · 24"
+  },
+  {
+   "id": "dv063",
+   "sec": "pl",
+   "t": "AMPscript y personalización",
+   "q": "How can attribute be referenced in AMPscript code? Choose 2 answers",
+   "o": [
+    "SET @firstName = AttributeValue(\"First Name\")",
+    "SET @firstName = AttributeValue[First Name]",
+    "SET @firstName = [First Name]",
+    "SET @firstName = Attribute(\"First Name\")"
+   ],
+   "a": [
+    0,
+    2
+   ],
+   "src": "Developer CertificationAID · 25"
+  },
+  {
+   "id": "dv064",
+   "sec": "dm",
+   "t": "Suscriptores y contactos",
+   "q": "ContentBlockByName BeginImpressionRegion ContentAreaByKey ContentAreaByName What is true regarding exclusión scripts? Choose 2 answers",
+   "o": [
+    "If the script evaluates to false, the subscriber is excluded from the send.",
+    "Must evaluate to true or false.",
+    "Subscriber attributes cannot be used.",
+    "If te script evaluates to true, the subscriber is excluded from the send."
+   ],
+   "a": [
+    1,
+    3
+   ],
+   "src": "Developer CertificationAID · 26"
+  },
+  {
+   "id": "dv065",
+   "sec": "dm",
+   "t": "Data Extensions y modelo de datos",
+   "q": "Certification Aid wants to exclude Subscribers with a competitor email address from an email send. A boolean attribute called IsCompetitor is stored in sendable Data Extension. Which of the following is a valid exclusión script for this scenario? Choose 3 answers",
+   "o": [
+    "@IsCompetitor",
+    "AttributeValue(\"IsCompetitor\")",
+    "[IsCompetitor]",
+    "%% IsCompetitor%%"
+   ],
+   "a": [
+    1,
+    2,
+    3
+   ],
+   "src": "Developer CertificationAID · 27"
+  },
+  {
+   "id": "dv066",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "Which statements are true regarding the Marketing Cloud REST API? Choose 2 answers",
+   "o": [
+    "Uses JSON in request and response body.",
+    "Request timeout after 600 seconds.",
+    "Uses XML in request and response body.",
+    "Most REST calls are synchronous."
+   ],
+   "a": [
+    0,
+    3
+   ],
+   "src": "Developer CertificationAID · 32"
+  },
+  {
+   "id": "dv067",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "Certificarion Aid wants to add records to a Data Extension using the SOAP API. Which Object can be used for this?",
+   "o": [
+    "Attribute object",
+    "DataExtension object",
+    "DataExtensionObject object",
+    "Subcriber object"
+   ],
+   "a": 2,
+   "src": "Developer CertificationAID · 35"
+  },
+  {
+   "id": "dv068",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "Certificarion Aid wants to share marketing content from CMS with Marketing Cloud Content Builder. Which API should be used for this?",
+   "o": [
+    "SOAP API",
+    "XML API",
+    "REST API",
+    "JSON API"
+   ],
+   "a": 2,
+   "src": "Developer CertificationAID · 37"
+  },
+  {
+   "id": "dv069",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "What is true regarding an OAuth 2.0 access token for the Marketing Cloud APIs? Choose 2 answers",
+   "o": [
+    "Expires after 20 minutes",
+    "Can be requested from POST /v2/requestToken",
+    "Can be requested with client ID and client secret",
+    "Expires after 60 minutes"
+   ],
+   "a": [
+    0,
+    2
+   ],
+   "src": "Developer CertificationAID · 39"
+  },
+  {
+   "id": "dv070",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "What is true regarding an OAuth access token for legacy packages? Choose 2 answers",
+   "o": [
+    "Expires after 20 minutes",
+    "Can be requested from POST /v2/requestToken",
+    "Can be requested with username and password",
+    "Expires after 60 minutes"
+   ],
+   "a": [
+    1,
+    3
+   ],
+   "src": "Developer CertificationAID · 40"
+  },
+  {
+   "id": "dv071",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "What is the difference between Server-to-Server, Web App, and Public App integrations? Choose 2 answers",
+   "o": [
+    "Only Server-to-Server integrations use grand type Client Credentials.",
+    "Only Server-to-Server integrations are issued client secret",
+    "Server-to-Server and Public App integrations make API request in context of an integration user.",
+    "Only Server-to-Server make API request in context of an integration user."
+   ],
+   "a": [
+    0,
+    3
+   ],
+   "src": "Developer CertificationAID · 41"
+  },
+  {
+   "id": "dv072",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "What is the difference between a Web App and a Public App?",
+   "o": [
+    "Only Web Apps are issued a client secret.",
+    "Only Public Apps make API request in context of a Marketing Cloud user.",
+    "Only Web Apps make API request in context of a Marketing Cloud user.",
+    "Only Public Apps are issued a client secret."
+   ],
+   "a": 0,
+   "src": "Developer CertificationAID · 42"
+  },
+  {
+   "id": "dv073",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "What is true regarding OAuth authentication using Server-to-Server integrations? Choose 2 answers",
+   "o": [
+    "Uses client ID and Client secret",
+    "Uses authorization code.",
+    "Uses access token.",
+    "Uses username and password."
+   ],
+   "a": [
+    0,
+    2
+   ],
+   "src": "Developer CertificationAID · 43"
+  },
+  {
+   "id": "dv074",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "Certification Aid has requested an OAuth access token using the REST API. How should the token be included in subsequent API calls?",
+   "o": [
+    "Bearer: ACCESS_TOKEN",
+    "Authorization: Token ACCESS_TOKEN",
+    "Authorization: Bearer ACCESS_TOKEN",
+    "Token: ACCESS_TOKEN"
+   ],
+   "a": 2,
+   "src": "Developer CertificationAID · 44"
+  },
+  {
+   "id": "dv075",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "What is true regarding authenticating towards the REST API and the SOAP API?",
+   "o": [
+    "Only the REST API supports access token",
+    "Only the REST API supports OAuth authentication.",
+    "Only the SOAP API supports access token",
+    "Only the SOAP API supports username and password authentication."
+   ],
+   "a": 3,
+   "src": "Developer CertificationAID · 45"
+  },
+  {
+   "id": "dv076",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "Certification Aid uses the Marketing Cloud SOAP API and received following error: Cannot perform 'Post' on objects of type SentEvent. What can be the root cause for this?",
+   "o": [
+    "Only the Retrieve method can be used on the SentEvent object.",
+    "Insufficient permissions have been granted in the integration component.",
+    "POST is not supported in SOAP and the REST API should be used.",
+    "The SOAP API access token has expired"
+   ],
+   "a": 0,
+   "src": "Developer CertificationAID · 46"
+  },
+  {
+   "id": "dv077",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "What does a HTTP 401 response from the REST API mean?",
+   "o": [
+    "Route not found",
+    "Invalid request",
+    "Empty response",
+    "Access token invalid or expired"
+   ],
+   "a": 3,
+   "src": "Developer CertificationAID · 47"
+  },
+  {
+   "id": "dv078",
+   "sec": "dmg",
+   "t": "SQL y Data Views",
+   "q": "Certification Aid noticed that birth dates stored in a Data Extension field with data type have different date formats. Which SQL funtions can be used to copy those values to a field with data type Date in a target Data Extension? Choose 2 answers",
+   "o": [
+    "CASE and REPLACE",
+    "CASE and CAST",
+    "IF and REPLACE",
+    "CASE and CONVERT"
+   ],
+   "a": [
+    1,
+    3
+   ],
+   "src": "Developer CertificationAID · 51"
+  },
+  {
+   "id": "dv079",
+   "sec": "dmg",
+   "t": "SQL y Data Views",
+   "q": "What is causing this query to fail?",
+   "o": [
+    "The EmailAddress is not stored in the Opens data view",
+    "JOIN needs to be replaced with RIGHT JOIN.",
+    "GETDATE() should be replaced with a specific date.",
+    "The DATEADD() function is not supported in Marketing Cloud"
+   ],
+   "a": 0,
+   "src": "Developer CertificationAID · 52"
+  },
+  {
+   "id": "dv080",
+   "sec": "dmg",
+   "t": "SQL y Data Views",
+   "q": "Certification Aid wants to randomly query 20% of all records in a sendable Data Extension for A/B testing. Which SQL query should be used for this?",
+   "o": [
+    "SELECT TOP 20 PERCENT SubscriberKey, Email FROM CustomerDE ORDER BY NEWID()",
+    "SELECT RAMDOM 20 PERCENT SubscriberKey, Email FROM CustomerDE",
+    "SELECT TOP 20 PERCENT SubscriberKey, Email FROM CustomerDE ORDER BY RANDOM"
+   ],
+   "a": 0,
+   "src": "Developer CertificationAID · 53"
+  },
+  {
+   "id": "dv081",
+   "sec": "dmg",
+   "t": "SQL y Data Views",
+   "q": "Certification Aid has just added a new field to a Data Extension. Which SELECT statement should be used in a SQL Query activity, to select all fields of this Data Extension?",
+   "o": [
+    "SELECT field, field* FROM DataExtension",
+    "SELECT * FROM DataExtension",
+    "SELECT field* FROM DataExtension",
+    "SELECT field, field2, field3 FROM DataExtension"
+   ],
+   "a": 3,
+   "src": "Developer CertificationAID · 54"
+  },
+  {
+   "id": "dv082",
+   "sec": "dmg",
+   "t": "SQL y Data Views",
+   "q": "Certification Aid wants to combine tracking data from the Opens and Clicks Data Views, and store the output. Which Automation Studio activity can be used for this?",
+   "o": [
+    "Data Extract activity",
+    "SQL Query activity",
+    "Tracking Extract activity",
+    "File Import Activity"
+   ],
+   "a": 1,
+   "src": "Developer CertificationAID · 55"
+  },
+  {
+   "id": "dv083",
+   "sec": "dmg",
+   "t": "SQL y Data Views",
+   "q": "Which of the following SQL statements is the most efficient one?",
+   "o": [
+    "WHERE age LIKE 18",
+    "WHERE age = '18'",
+    "WHERE NOT age > 18 AND age < 18",
+    "WHERE age = 18"
+   ],
+   "a": 3,
+   "src": "Developer CertificationAID · 56"
+  },
+  {
+   "id": "dv084",
+   "sec": "dmg",
+   "t": "SQL y Data Views",
+   "q": "Certification Aid created a complex SQL Query activity which activity is timing out in Automation Studio. Which best practices should be followed to avoid timeouts?",
+   "o": [
+    "Query activities time out after 60 minutes.",
+    "Intermediate tables can be implemented to reduce complexity.",
+    "Multiple query activities should be used per automation step.",
+    "SELECT * should be combined with JOINS."
+   ],
+   "a": 1,
+   "src": "Developer CertificationAID · 57"
+  },
+  {
+   "id": "dv085",
+   "sec": "dmg",
+   "t": "SQL y Data Views",
+   "q": "Certification Aid wants to create a SQL Query activity to replace all line breaks in the Description field of a Data Extension with spaces. How can this be achieved?",
+   "o": [
+    "SELECT REPLACE(\"Description\",CHAR(13), \" \")",
+    "SELECT REPLACE(\"Description\",CHAR(10), \" \")",
+    "SELECT REPLACE(REPLACE(\"Description\",CHAR(13), \" \"),CHAR(10), \" \")",
+    "SELECT REPLACE(\"Description\",CHAR(13), CHAR(10), \" \")"
+   ],
+   "a": 2,
+   "src": "Developer CertificationAID · 58"
+  },
+  {
+   "id": "dv086",
+   "sec": "dmg",
+   "t": "SQL y Data Views",
+   "q": "After which time do SQL Query activities time out in Marketing Cloud?",
+   "o": [
+    "15 minute",
+    "30 minute",
+    "10 minute",
+    "60 minute"
+   ],
+   "a": 1,
+   "src": "Developer CertificationAID · 59"
+  },
+  {
+   "id": "dv087",
+   "sec": "dmg",
+   "t": "Tracking e informes",
+   "q": "Certification Aid uses a Send Log for millions of email sends per day. Which strategies allow to efficiently query the Send Log data?",
+   "o": [
+    "Add more than 10 field to the send Log.",
+    "Copy Send Log data to an intermediary Data Extension and use the Send Log in a SQL Query activity.",
+    "Add a retention policy to the Send Log.",
+    "Copy Send Log data to an intermediary Data Extension and use this Data Extension in a SQL Query"
+   ],
+   "a": 3,
+   "src": "Developer CertificationAID · 60"
+  },
+  {
+   "id": "dv088",
+   "sec": "dmg",
+   "t": "Tracking e informes",
+   "q": "Which of the following statements are correct regarding Send Logs? Choose 2 answers",
+   "o": [
+    "Send Logs must be programmatically populated at send time.",
+    "Custom fields can be added to Send Logs.",
+    "Standard fields in Send Logs can be changed.",
+    "Send Logs allow tracking of additional data at send time."
+   ],
+   "a": [
+    1,
+    3
+   ],
+   "src": "Developer CertificationAID · 61"
+  },
+  {
+   "id": "dv089",
+   "sec": "dmg",
+   "t": "Tracking e informes",
+   "q": "Certification Aid created a Send Log without retention policy and noticed that the storage volume increased a lot over time. How can a row based retention policy be introduced retroactively?",
+   "o": [
+    "Edit the Send Log Data Extension in Contact Builder to add a retention policy",
+    "Create a new Send Log and set the retention policy upon creation.",
+    "Use the REST API to change add a retention policy.",
+    "Edit the Send Log Data Extension in Email Studio to add a retention policy."
+   ],
+   "a": 1,
+   "src": "Developer CertificationAID · 62"
+  },
+  {
+   "id": "dv090",
+   "sec": "dm",
+   "t": "Suscriptores y contactos",
+   "q": "Create two deletion requests with one million Contacts each. Initiate the Contact deletion on the top-level account. Initiate the Contact deletion on core account. Crete one deletion request with two million Contacts. Certification Aid wants to encrypt data stored in Marketing Cloud. It is fine if unencrypted fields are visible to Marketing Cloud and Salesforce users, but the underlying data should be encrypted at rest to prevent physical data theft. Which encryption method should be choosen?",
+   "o": [
+    "Field-Level Encryption",
+    "Asymmetric Encryption",
+    "Transparent Data Encryption",
+    "Tokenized Sending"
+   ],
+   "a": 2,
+   "src": "Developer CertificationAID · 63"
+  },
+  {
+   "id": "dv091",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "Certification Aid created a package with Server-to-Server component to integrate an external application with Marketing Cloud. What are secure ways to manage the client ID and client secret? Choose 2 answers",
+   "o": [
+    "Store them in a key management system (KMS).",
+    "Transmit them a HTTPS query parameters.",
+    "Store them as application environment variables.",
+    "Store them as variables in application"
+   ],
+   "a": [
+    0,
+    2
+   ],
+   "src": "Developer CertificationAID · 65"
+  },
+  {
+   "id": "dv092",
+   "sec": "api",
+   "t": "APIs e integraciones",
+   "q": "What are best practices related to Marketing Cloud API integrations? Choose 2 answers",
+   "o": [
+    "Securely store client ID, client secret, and access token.",
+    "Refresh access token with every call.",
+    "Store client ID and client in JavaScript.",
+    "Only provide necessary API scope permissions."
+   ],
+   "a": [
+    0,
+    3
+   ],
+   "src": "Developer CertificationAID · 66"
+  }
+ ]
+}
