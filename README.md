@@ -11,7 +11,8 @@ data/mc-next-consultant.json   banco de 116 preguntas (MC-Con-201)
 data/sf-administrator.json     158 preguntas (pruebas de oct 2025)
 data/mc-developer.json         150 preguntas (pruebas de feb 2025)
 data/mc-administrator.json       96 preguntas (Marketing Cloud Administrator, sets 1 y 2, nov 2026)
-data/braze-marketer.json       50 preguntas (Braze Certified Marketer, oct 2025)
+data/braze-marketer.json       51 preguntas (Braze Certified Marketer, oct 2025 + documento L2)
+data/braze-developer.json      50 preguntas (Braze Certified Developer, documento L2, nov 2026)
 data/claude-developer.json     96 preguntas (Claude Certified Developer Foundations, sets 1 a 3, nov 2026)
 data/*-old.json                «Material antiguo» (legacy: true en exams.json, sección aparte en la portada):
                                  mc-email-specialist-old  347 · mc-consultant-old 506 · mc-administrator-old 520

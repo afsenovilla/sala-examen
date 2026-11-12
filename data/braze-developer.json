@@ -1,0 +1,746 @@
+{
+ "id": "braze-developer",
+ "code": "Braze Developer (L2)",
+ "name": "Braze Certified Developer",
+ "vendor": "Braze",
+ "release": "Material L2 · nov 2026",
+ "date": "2026-11",
+ "format": {
+  "scored": 50,
+  "unscored": 0,
+  "minutes": 60,
+  "pass": 65,
+  "choices": 4
+ },
+ "sections": [
+  {
+   "id": "sdk",
+   "name": "Integración del SDK",
+   "weight": 20
+  },
+  {
+   "id": "api",
+   "name": "REST API",
+   "weight": 20
+  },
+  {
+   "id": "liquid",
+   "name": "Liquid y Connected Content",
+   "weight": 20
+  },
+  {
+   "id": "data",
+   "name": "Datos y perfiles de usuario",
+   "weight": 20
+  },
+  {
+   "id": "ops",
+   "name": "Troubleshooting, Canvas y buenas prácticas",
+   "weight": 20
+  }
+ ],
+ "notes": "50 preguntas del documento «Braze Developer (L2)»: SDK, REST API, Liquid y Connected Content, datos de usuario y troubleshooting. Las respuestas son las que marca el documento, sin contrastar con la documentación de Braze, y no traen explicación. Las áreas siguen los cinco bloques de 10 preguntas del documento; el formato (50 preguntas, 60 min, 65 %) copia el del Braze Certified Marketer y es orientativo.",
+ "logo": "assets/logos/braze.png",
+ "unofficial": true,
+ "isNew": true,
+ "questions": [
+  {
+   "id": "bd001",
+   "sec": "sdk",
+   "t": "Push",
+   "q": "When implementing the Braze Web SDK, what is the primary purpose of the safariWebsitePushId?",
+   "o": [
+    "To enable push notifications for all Chromium-based browsers.",
+    "To authenticate the API key for web-based requests.",
+    "To support Apple's proprietary push notification service for Safari on macOS.",
+    "To track user sessions specifically within the Safari browser."
+   ],
+   "a": 2,
+   "src": "Braze Developer (L2) · P1"
+  },
+  {
+   "id": "bd002",
+   "sec": "sdk",
+   "t": "SDK",
+   "q": "Which SDK method should be used to manually force the SDK to upload any queued events to Braze immediately?",
+   "o": [
+    "braze.requestImmediateFlush()",
+    "braze.requestImmediateDataFlush()",
+    "braze.submitEvents()",
+    "braze.forceSync()"
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P2"
+  },
+  {
+   "id": "bd003",
+   "sec": "sdk",
+   "t": "REST API",
+   "q": "In an iOS implementation, which file is typically used to configure the Braze SDK's initial settings like the API Key and Endpoint?",
+   "o": [
+    "AppConfiguration.json",
+    "BrazeConfig.plist",
+    "Info.plist",
+    "AppDelegate.swift"
+   ],
+   "a": 2,
+   "src": "Braze Developer (L2) · P3"
+  },
+  {
+   "id": "bd004",
+   "sec": "sdk",
+   "t": "SDK",
+   "q": "What is the default data upload interval for the Braze iOS and Android SDKs when the app is in the foreground?",
+   "o": [
+    "5 seconds",
+    "10 seconds",
+    "30 seconds",
+    "60 seconds"
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P4"
+  },
+  {
+   "id": "bd005",
+   "sec": "sdk",
+   "t": "Identificación de usuarios",
+   "q": "When using the Braze SDK, what is the \"Change User\" method primarily used for?",
+   "o": [
+    "To update a user's first and last name.",
+    "To transition from an anonymous user to an identified user with a unique External ID.",
+    "To merge two different identified user profiles.",
+    "To change the user's subscription status from 'opted_in' to 'unsubscribed'."
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P5"
+  },
+  {
+   "id": "bd006",
+   "sec": "sdk",
+   "t": "Sesiones y MAU",
+   "q": "True or false: Braze automatically tracks \"App Open\" sessions based on the SDK initialization.",
+   "o": [
+    "True",
+    "False"
+   ],
+   "a": 0,
+   "src": "Braze Developer (L2) · P6"
+  },
+  {
+   "id": "bd007",
+   "sec": "sdk",
+   "t": "SDK",
+   "q": "Which feature allows developers to test SDK integration by viewing real-time data packets being sent from a specific device?",
+   "o": [
+    "The API Campaign Log",
+    "The SDK Debugger (within the Braze Dashboard)",
+    "The Postman Collection",
+    "The Event User Log"
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P7"
+  },
+  {
+   "id": "bd008",
+   "sec": "sdk",
+   "t": "Sesiones y MAU",
+   "q": "If you want to disable automatic tracking of specific sessions to save on data points, which SDK configuration would you modify?",
+   "o": [
+    "disableAutomaticSessionTracking",
+    "sessionTimeout",
+    "manualSessionHandling",
+    "stopTracking"
+   ],
+   "a": 2,
+   "src": "Braze Developer (L2) · P8"
+  },
+  {
+   "id": "bd009",
+   "sec": "sdk",
+   "t": "Atributos y eventos",
+   "q": "What is the maximum number of custom attributes that can be sent in a single SDK network request?",
+   "o": [
+    "50",
+    "75",
+    "100",
+    "There is no specific limit per request, but there are size limits for the payload."
+   ],
+   "a": 3,
+   "src": "Braze Developer (L2) · P9"
+  },
+  {
+   "id": "bd010",
+   "sec": "sdk",
+   "t": "Push",
+   "q": "In the context of SDK integration, what is 'Ghost Push'?",
+   "o": [
+    "A push notification that has no text.",
+    "A silent push notification used to trigger background processing without alerting the user.",
+    "A push notification that failed to deliver.",
+    "A notification sent to a deleted user profile."
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P10"
+  },
+  {
+   "id": "bd011",
+   "sec": "api",
+   "t": "REST API",
+   "q": "Which Braze API endpoint is used to trigger a campaign that was set up with \"API Triggered Delivery\"?",
+   "o": [
+    "/users/track",
+    "/campaigns/trigger/send",
+    "/messages/send",
+    "/trigger/campaign/dispatch"
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P11"
+  },
+  {
+   "id": "bd012",
+   "sec": "api",
+   "t": "/users/track",
+   "q": "When using the /users/track endpoint, what is the maximum number of user objects allowed in a single request?",
+   "o": [
+    "50",
+    "75",
+    "100",
+    "250"
+   ],
+   "a": 0,
+   "src": "Braze Developer (L2) · P12"
+  },
+  {
+   "id": "bd013",
+   "sec": "api",
+   "t": "REST API",
+   "q": "What is the purpose of the X-Braze-Api-Key header in API requests?",
+   "o": [
+    "It identifies the specific user receiving the message.",
+    "It authenticates the request as coming from a trusted source with workspace permissions.",
+    "It specifies which SDK version is being used.",
+    "It triggers the encryption of the payload."
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P13"
+  },
+  {
+   "id": "bd014",
+   "sec": "api",
+   "t": "Trigger properties",
+   "q": "In an API Triggered Campaign, what does the trigger_properties object allow you to do?",
+   "o": [
+    "Filter the audience based on user attributes.",
+    "Define custom data that can be used via Liquid in that specific message.",
+    "Set the expiration time for the API request.",
+    "Overwrite the user's global language settings."
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P14"
+  },
+  {
+   "id": "bd015",
+   "sec": "api",
+   "t": "REST API",
+   "q": "Which API endpoint would you use to export a list of all segments currently defined in your Braze workspace?",
+   "o": [
+    "/segments/list",
+    "/export/segments",
+    "/segments/export",
+    "/data/segments"
+   ],
+   "a": 0,
+   "src": "Braze Developer (L2) · P15"
+  },
+  {
+   "id": "bd016",
+   "sec": "api",
+   "t": "REST API",
+   "q": "When using Braze's Catalog feature, how are items typically updated via API?",
+   "o": [
+    "/catalogs/items/update",
+    "/users/track using a special catalog object.",
+    "Synchronous POST requests to the specific Catalog endpoint.",
+    "Catalogs can only be updated via CSV upload."
+   ],
+   "a": 2,
+   "src": "Braze Developer (L2) · P16"
+  },
+  {
+   "id": "bd017",
+   "sec": "api",
+   "t": "REST API",
+   "q": "What happens if an API request returns a 429 status code?",
+   "o": [
+    "The request was successful but nothing was changed.",
+    "The API key is invalid.",
+    "Rate limiting has been triggered; the sender should slow down requests.",
+    "The JSON payload is malformed."
+   ],
+   "a": 2,
+   "src": "Braze Developer (L2) · P17"
+  },
+  {
+   "id": "bd018",
+   "sec": "api",
+   "t": "REST API",
+   "q": "To delete a user profile via API, which identifier is required?",
+   "o": [
+    "Email address",
+    "User Alias",
+    "External ID (or Braze ID)",
+    "Device ID"
+   ],
+   "a": 2,
+   "src": "Braze Developer (L2) · P18"
+  },
+  {
+   "id": "bd019",
+   "sec": "api",
+   "t": "REST API",
+   "q": "What is the primary difference between the /messages/send and /campaigns/trigger/send endpoints?",
+   "o": [
+    "/messages/send is for Canvas only.",
+    "/campaigns/trigger/send requires a pre-configured campaign ID in the dashboard.",
+    "/messages/send does not support Liquid.",
+    "There is no difference; they are aliases."
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P19"
+  },
+  {
+   "id": "bd020",
+   "sec": "api",
+   "t": "/users/track",
+   "q": "Which field in the /users/track request is used to record a purchase?",
+   "o": [
+    "events",
+    "attributes",
+    "purchases",
+    "conversions"
+   ],
+   "a": 2,
+   "src": "Braze Developer (L2) · P20"
+  },
+  {
+   "id": "bd021",
+   "sec": "liquid",
+   "t": "Liquid",
+   "q": "In Liquid, which tag is used to assign a value to a local variable?",
+   "o": [
+    "{% set %}",
+    "{% variable %}",
+    "{% assign %}",
+    "{% capture %}"
+   ],
+   "a": 2,
+   "src": "Braze Developer (L2) · P21"
+  },
+  {
+   "id": "bd022",
+   "sec": "liquid",
+   "t": "Liquid",
+   "q": "What is the correct syntax to display a user's custom attribute named loyalty_points with a default value of 0?",
+   "o": [
+    "{{custom_attribute.${loyalty_points} | default: 0}}",
+    "{{custom_attribute.${loyalty_points} ?: 0}}",
+    "{{${loyalty_points} | 0}}",
+    "{{user.loyalty_points | default: 0}}"
+   ],
+   "a": 0,
+   "src": "Braze Developer (L2) · P22"
+  },
+  {
+   "id": "bd023",
+   "sec": "liquid",
+   "t": "Liquid",
+   "q": "Which Liquid filter would you use to convert a string to all lowercase letters?",
+   "o": [
+    "| lower",
+    "| downcase",
+    "| lowercase",
+    "| format: lower"
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P23"
+  },
+  {
+   "id": "bd024",
+   "sec": "liquid",
+   "t": "Connected Content",
+   "q": "When using \"Connected Content,\" what is the purpose of the :save parameter?",
+   "o": [
+    "To cache the API response for 24 hours.",
+    "To save the API response into a variable for later use in the message.",
+    "To store the result back into the Braze User Profile.",
+    "To prevent the message from sending if the API fails."
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P24"
+  },
+  {
+   "id": "bd025",
+   "sec": "liquid",
+   "t": "Liquid",
+   "q": "How do you reference a \"Trigger Property\" in an API-triggered message using Liquid?",
+   "o": [
+    "{{api_trigger_properties.${property_name}}} (Note: Most recent syntax is api_trigger_properties)",
+    "{{api_property.${property_name}}}",
+    "{{event_properties.${property_name}}}",
+    "{{trigger_event_properties.${property_name}}}"
+   ],
+   "a": 0,
+   "src": "Braze Developer (L2) · P25"
+  },
+  {
+   "id": "bd026",
+   "sec": "liquid",
+   "t": "Connected Content",
+   "q": "What is the default timeout for a Connected Content request?",
+   "o": [
+    "1 second",
+    "2 seconds",
+    "5 seconds",
+    "10 seconds"
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P26"
+  },
+  {
+   "id": "bd027",
+   "sec": "liquid",
+   "t": "Liquid",
+   "q": "Which Liquid tag is used to iterate through an array of items?",
+   "o": [
+    "{% loop %}",
+    "{% for %}",
+    "{% each %}",
+    "{% repeat %}"
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P27"
+  },
+  {
+   "id": "bd028",
+   "sec": "liquid",
+   "t": "Connected Content",
+   "q": "How can you ensure a Connected Content call only happens once, even if you reference the data multiple times in an email?",
+   "o": [
+    "Braze does this automatically.",
+    "Use the {% cache %} tag.",
+    "Assign the result to a variable using :save.",
+    "Set the :retry parameter to 0."
+   ],
+   "a": 2,
+   "src": "Braze Developer (L2) · P28"
+  },
+  {
+   "id": "bd029",
+   "sec": "liquid",
+   "t": "Liquid",
+   "q": "Which filter allows you to format a timestamp into a readable date?",
+   "o": [
+    "| date_format",
+    "| time_zone",
+    "| date",
+    "| timestamp"
+   ],
+   "a": 2,
+   "src": "Braze Developer (L2) · P29"
+  },
+  {
+   "id": "bd030",
+   "sec": "liquid",
+   "t": "Liquid",
+   "q": "If a Liquid variable is null and no default is provided, what does Braze render?",
+   "o": [
+    "The text \"null\"",
+    "An empty string",
+    "An error message",
+    "The raw Liquid code"
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P30"
+  },
+  {
+   "id": "bd031",
+   "sec": "data",
+   "t": "Atributos y eventos",
+   "q": "What is the difference between a \"Custom Attribute\" and a \"Custom Event\"?",
+   "o": [
+    "Attributes are for strings, Events are for numbers.",
+    "Attributes represent state/properties; Events represent actions taken at a point in time.",
+    "Attributes can be used for segmentation; Events cannot.",
+    "Attributes expire after 30 days; Events are permanent."
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P31"
+  },
+  {
+   "id": "bd032",
+   "sec": "data",
+   "t": "Currents",
+   "q": "What is \"Currents\" in the context of Braze?",
+   "o": [
+    "A real-time data streaming service to export Braze event data to external warehouses.",
+    "A tool for managing push notification delivery speeds.",
+    "The name of the Braze UI layout.",
+    "A feature for A/B testing Liquid code."
+   ],
+   "a": 0,
+   "src": "Braze Developer (L2) · P32"
+  },
+  {
+   "id": "bd033",
+   "sec": "data",
+   "t": "Identificación de usuarios",
+   "q": "When an External ID is changed using the changeUser method, what happens to the anonymous user's data?",
+   "o": [
+    "It is immediately deleted.",
+    "It is merged into the new identified user profile.",
+    "It remains on the device but is orphaned from the dashboard.",
+    "It is archived for 7 days then deleted."
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P33"
+  },
+  {
+   "id": "bd034",
+   "sec": "data",
+   "t": "Atributos y eventos",
+   "q": "What is the maximum size allowed for a single user profile's attributes?",
+   "o": [
+    "100KB",
+    "512KB",
+    "1MB",
+    "5MB"
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P34"
+  },
+  {
+   "id": "bd035",
+   "sec": "data",
+   "t": "Atributos y eventos",
+   "q": "Which of the following is NOT a valid data type for a Custom Attribute?",
+   "o": [
+    "Boolean",
+    "Integer",
+    "Array of Objects (Note: Supported in JSON attributes, but historically \"Arrays\" only meant simple strings/numbers in L2 logic).",
+    "Array of Strings"
+   ],
+   "a": 2,
+   "src": "Braze Developer (L2) · P35"
+  },
+  {
+   "id": "bd036",
+   "sec": "data",
+   "t": "Sesiones y MAU",
+   "q": "In Braze, what defines a \"Monthly Active User\" (MAU)?",
+   "o": [
+    "A user who receives a push notification.",
+    "A user who has an active session or is updated via API within a 30-day window.",
+    "A user who opens an email.",
+    "Any user stored in the database."
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P36"
+  },
+  {
+   "id": "bd037",
+   "sec": "data",
+   "t": "Identificación de usuarios",
+   "q": "What is the purpose of a \"User Alias\"?",
+   "o": [
+    "To provide a human-readable name for a user.",
+    "To identify a user using a key other than the External ID (e.g., a legacy ID or 3rd party ID).",
+    "To create a duplicate profile for testing.",
+    "To mask the External ID for security reasons."
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P37"
+  },
+  {
+   "id": "bd038",
+   "sec": "data",
+   "t": "Identificación de usuarios",
+   "q": "How does Braze handle \"Collision\" when two different devices are assigned the same External ID?",
+   "o": [
+    "It creates two separate profiles with the same ID.",
+    "It merges the two device records into a single User Profile.",
+    "It rejects the second device's data.",
+    "It automatically generates a unique suffix for the second ID."
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P38"
+  },
+  {
+   "id": "bd039",
+   "sec": "data",
+   "t": "General",
+   "q": "What is the \"Data Protection\" setting in the dashboard used for?",
+   "o": [
+    "Setting up two-factor authentication.",
+    "Limiting which attributes can be exported via API.",
+    "Preventing specific attributes from being updated via the SDK.",
+    "Managing GDPR/CCPA deletion requests."
+   ],
+   "a": 3,
+   "src": "Braze Developer (L2) · P39"
+  },
+  {
+   "id": "bd040",
+   "sec": "data",
+   "t": "REST API",
+   "q": "Which feature allows you to group multiple API keys and apps together for reporting?",
+   "o": [
+    "Workspaces",
+    "App Groups (Note: Now often called Workspaces, but \"App Group\" is the technical container for keys).",
+    "Clusters",
+    "Teams"
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P40"
+  },
+  {
+   "id": "bd041",
+   "sec": "ops",
+   "t": "Liquid",
+   "q": "You notice that trigger_properties are not rendering in your email. What is the most likely cause?",
+   "o": [
+    "The campaign is not \"API Triggered.\"",
+    "The property name is misspelled in the Liquid code.",
+    "The API request failed to include the properties object.",
+    "All of the above."
+   ],
+   "a": 3,
+   "src": "Braze Developer (L2) · P41"
+  },
+  {
+   "id": "bd042",
+   "sec": "ops",
+   "t": "Connected Content",
+   "q": "Why might a \"Connected Content\" call fail in a production send but work in a test send?",
+   "o": [
+    "Rate limiting on the external endpoint.",
+    "The production IP addresses of Braze are not allow-listed.",
+    "The API response time exceeds the 2-second threshold during peak load.",
+    "All of the above."
+   ],
+   "a": 3,
+   "src": "Braze Developer (L2) · P42"
+  },
+  {
+   "id": "bd043",
+   "sec": "ops",
+   "t": "Push",
+   "q": "A user is not receiving Push Notifications. What is the first thing a developer should check in the User Profile?",
+   "o": [
+    "Their last name attribute.",
+    "The \"Push Enabled\" and \"Push Registered\" flags.",
+    "Their External ID.",
+    "The SDK version."
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P43"
+  },
+  {
+   "id": "bd044",
+   "sec": "ops",
+   "t": "Identificación de usuarios",
+   "q": "What is the best way to handle a user logging out of your app?",
+   "o": [
+    "Call braze.changeUser(null).",
+    "Call braze.stopSDK().",
+    "Call braze.wipeData().",
+    "Clear the local session and call braze.changeUser() with a new anonymous ID if necessary, or simply stop tracking events."
+   ],
+   "a": 3,
+   "src": "Braze Developer (L2) · P44"
+  },
+  {
+   "id": "bd045",
+   "sec": "ops",
+   "t": "Atributos y eventos",
+   "q": "What is the \"Event Property\" limit for segmentation?",
+   "o": [
+    "Only the last 10 properties are stored.",
+    "Properties are only available for segmentation if \"Xite\" is enabled.",
+    "Braze stores the last 30 days of properties for segmentation on specific events.",
+    "Properties cannot be used for segmentation, only for personalization."
+   ],
+   "a": 2,
+   "src": "Braze Developer (L2) · P45"
+  },
+  {
+   "id": "bd046",
+   "sec": "ops",
+   "t": "General",
+   "q": "What does the \"Re-eligibility\" setting in a campaign control?",
+   "o": [
+    "Whether a user can enter a segment again.",
+    "How often a user can receive the same campaign or Canvas step.",
+    "Whether a user can be deleted and recreated.",
+    "The expiration of the API key."
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P46"
+  },
+  {
+   "id": "bd047",
+   "sec": "ops",
+   "t": "Webhooks",
+   "q": "How do you validate that a webhook is actually coming from Braze?",
+   "o": [
+    "By checking the User-Agent header.",
+    "By using the Braze public key to verify the signature (if configured).",
+    "By checking if the IP is from Google Cloud.",
+    "You cannot validate webhooks."
+   ],
+   "a": 1,
+   "src": "Braze Developer (L2) · P47"
+  },
+  {
+   "id": "bd048",
+   "sec": "ops",
+   "t": "Canvas",
+   "q": "In Canvas, what is the purpose of the \"Full Split\" step?",
+   "o": [
+    "To divide the audience into up to 8 paths based on percentages.",
+    "To A/B test a single message.",
+    "To separate users by their device type.",
+    "To pause the Canvas for 24 hours."
+   ],
+   "a": 0,
+   "src": "Braze Developer (L2) · P48"
+  },
+  {
+   "id": "bd049",
+   "sec": "ops",
+   "t": "Canvas",
+   "q": "Which tool would you use to see if a specific User ID was processed by a Canvas?",
+   "o": [
+    "The Canvas Builder.",
+    "Event User Logs.",
+    "\"User Search\" followed by the \"Engagement\" tab.",
+    "The Currents Debugger."
+   ],
+   "a": 2,
+   "src": "Braze Developer (L2) · P49"
+  },
+  {
+   "id": "bd050",
+   "sec": "ops",
+   "t": "Atributos y eventos",
+   "q": "What is the correct way to send a nested JSON object as a Custom Attribute?",
+   "o": [
+    "Nested objects are not supported as attributes.",
+    "Stringify the JSON object and send it as a string attribute.",
+    "Braze supports nested objects directly (up to a certain depth and size).",
+    "Send each nested key as a separate top-level attribute."
+   ],
+   "a": 2,
+   "src": "Braze Developer (L2) · P50"
+  }
+ ]
+}

@@ -45,7 +45,7 @@
    "weight": 6
   }
  ],
- "notes": "Banco de 50 preguntas de un examen real hecho en oct 2025 (capturas fotografiadas). Las respuestas son las marcadas por quien hizo la prueba; en 9 se han corregido por criterio propio o con la documentación de Braze y llevan nota, igual que las que generan duda. Braze no publica pesos por área: los de aquí son el reparto de estas 50 preguntas. Los 60 min salen del cronómetro de las capturas y el 65 % de corte de una fuente de terceros, ambos sin contrastar con Braze.",
+ "notes": "Banco de 51 preguntas: 50 de un examen real hecho en oct 2025 (capturas fotografiadas) y 1 más del documento «Braze Marketer (L2)», que coincide en las otras 39 y da la respuesta correcta de cada una. Donde el documento L2 da otra respuesta (5 preguntas) manda la del L2 y la pregunta lleva nota. En el resto, las respuestas son las marcadas por quien hizo la prueba; en 9 se han corregido por criterio propio o con la documentación de Braze y llevan nota, igual que las que generan duda. Braze no publica pesos por área: los de aquí son el reparto de las 50 preguntas del examen. Los 60 min salen del cronómetro de las capturas y el 65 % de corte de una fuente de terceros, ambos sin contrastar con Braze.",
  "questions": [
   {
    "id": "b001",
@@ -172,11 +172,11 @@
    ],
    "a": [
     0,
-    2
+    3
    ],
-   "e": "Respuesta marcada por quien hizo la prueba: Winning Variant más esperar a los resultados y comparar.",
-   "src": "Examen real · P8 de 50 · oct 2025",
-   "note": "Duda: Intelligent Selection (opción D) también reparte más usuarios a la variante ganadora; la pregunta 9 trata exactamente ese caso."
+   "e": "Winning Variant envía la variante ganadora al resto de la audiencia e Intelligent Selection va desplazando usuarios hacia la que mejor funciona; esperar a que acabe la campaña no aumenta los envíos a la ganadora.",
+   "src": "Examen real · P8 de 50 · oct 2025 · Braze Marketer (L2)",
+   "note": "Según el documento «Braze Marketer (L2)», que da la respuesta correcta de cada pregunta; la selección del examen era A y C (Winning Variant y esperar a que termine la campaña)."
   },
   {
    "id": "b009",
@@ -252,12 +252,12 @@
     "Deep links"
    ],
    "a": [
-    0,
-    2
+    2,
+    3
    ],
-   "e": "Respuesta marcada por quien hizo la prueba: combinaciones de canal y líneas de asunto.",
-   "src": "Examen real · P13 de 50 · oct 2025",
-   "note": "Respuesta tomada de la selección del candidato, sin contrastar."
+   "e": "En una campaña se pueden probar variantes de contenido como la línea de asunto o el deep link; las combinaciones de canal y la cadencia se prueban en Canvas.",
+   "src": "Examen real · P13 de 50 · oct 2025 · Braze Marketer (L2)",
+   "note": "Según el documento «Braze Marketer (L2)», que da la respuesta correcta de cada pregunta; la selección del examen era A y C (combinaciones de canal y líneas de asunto)."
   },
   {
    "id": "b014",
@@ -287,13 +287,13 @@
     "Select an attribution model."
    ],
    "a": [
-    1,
+    0,
     2,
-    3
+    4
    ],
-   "e": "Respuesta marcada por quien hizo la prueba: tag, rango de fechas y activar los eventos personalizados como conversión.",
-   "src": "Examen real · P15 de 50 · oct 2025",
-   "note": "Respuesta tomada de la selección del candidato, sin contrastar."
+   "e": "Para el informe de conversiones hay que elegir el desglose, el rango de fechas y el modelo de atribución.",
+   "src": "Examen real · P15 de 50 · oct 2025 · Braze Marketer (L2)",
+   "note": "Según el documento «Braze Marketer (L2)», que da la respuesta correcta de cada pregunta; la selección del examen era B, C y D (tag, rango de fechas y activar eventos personalizados)."
   },
   {
    "id": "b016",
@@ -575,10 +575,10 @@
     "User device data",
     "Revenue data"
    ],
-   "a": 0,
-   "e": "Respuesta marcada por quien hizo la prueba: datos de sesión.",
-   "src": "Examen real · P33 de 50 · oct 2025",
-   "note": "Respuesta tomada de la selección del candidato, sin contrastar."
+   "a": 3,
+   "e": "Desde la página de inicio se pueden ver datos de ingresos desglosados por segmento.",
+   "src": "Examen real · P33 de 50 · oct 2025 · Braze Marketer (L2)",
+   "note": "Según el documento «Braze Marketer (L2)», que da la respuesta correcta de cada pregunta; la selección del examen era A (datos de sesión)."
   },
   {
    "id": "b034",
@@ -623,12 +623,13 @@
     "A custom event"
    ],
    "a": [
+    0,
     2,
-    3,
-    4
+    3
    ],
-   "e": "Hace falta el SDK para mostrar el in-app, un atributo personalizado que guarde las respuestas y un evento personalizado que marque que completó la encuesta.",
-   "src": "Examen real · P36 de 50 · oct 2025"
+   "e": "Hace falta el SDK para mostrar los in-app, un atributo personalizado para guardar las respuestas y Connected Content para traer las ofertas personalizadas del segundo mensaje.",
+   "src": "Examen real · P36 de 50 · oct 2025 · Braze Marketer (L2)",
+   "note": "Según el documento «Braze Marketer (L2)», que da la respuesta correcta de cada pregunta; la selección del examen era C, D y E (SDK, atributo personalizado y evento personalizado)."
   },
   {
    "id": "b037",
@@ -846,6 +847,22 @@
    "a": 1,
    "e": "El consentimiento debe ser siempre opt-in, y el usuario decide y controla qué mensajes recibe.",
    "src": "Examen real · P50 de 50 · oct 2025"
+  },
+  {
+   "id": "b051",
+   "sec": "ab",
+   "t": "Eventos de conversión",
+   "q": "What is the primary benefit of using conversion events in this early-win back campaign?",
+   "o": [
+    "It allows you to analyze user demographics without linking them to specific actions taken by users",
+    "It tracks the number of times a message is displayed to users, rather than their subsequent actions",
+    "It helps you to track user interactions without measuring any specific outcomes",
+    "It helps you determine which messaging combination effectively drives conversions"
+   ],
+   "a": 3,
+   "e": "Los eventos de conversión miden qué acción hace el usuario después del mensaje, así que permiten ver qué combinación de mensajes provoca más conversiones.",
+   "src": "Braze Marketer (L2) · P16",
+   "note": "En el documento original la pregunta remite a una campaña de recuperación descrita antes, que no viene incluida."
   }
  ],
  "logo": "assets/logos/braze.png",
