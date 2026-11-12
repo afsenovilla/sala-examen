@@ -201,17 +201,28 @@
         '<span class="eyebrow">' + list.length + (list.length === 1 ? ' disponible' : ' disponibles') + ' · ' + totalQ + ' preguntas</span></div>' +
         '<div class="exam-list">' + rows + '</div>' +
       '</div>' +
-      (old.length ? '<div class="section">' +
-        '<div class="section-head"><h2>Material <i>antiguo</i></h2>' +
-        '<span class="eyebrow">' + old.length + ' bancos · ' + oldQ + ' preguntas</span></div>' +
-        '<p class="muted small" style="margin:-6px 0 16px;max-width:62ch">Preguntas de versiones anteriores de los exámenes (2019–2024), recopiladas de los documentos de estudio del equipo. Útiles para repasar conceptos, pero el formato y parte del temario han cambiado: no las tomes como referencia del examen actual.</p>' +
+      (old.length ? '<details class="legacy"' + (oldOpen() ? ' open' : '') + '>' +
+        '<summary class="legacy-head">' +
+          '<div><p class="eyebrow">Archivo · ' + old.length + ' bancos · ' + oldQ + ' preguntas</p>' +
+          '<h2 class="legacy-title">Material <i>antiguo</i></h2></div>' +
+          '<span class="legacy-toggle" aria-hidden="true"></span>' +
+        '</summary>' +
+        '<p class="muted small legacy-lede">Preguntas de versiones anteriores de los exámenes (2019–2024), recopiladas de los documentos de estudio del equipo. Útiles para repasar conceptos, pero el formato y parte del temario han cambiado: no las tomes como referencia del examen actual.</p>' +
         '<div class="exam-list">' + oldRows + '</div>' +
-      '</div>' : '') +
+      '</details>' : '') +
       footerHtml() +
     '</div>';
 
+    var lg = app.querySelector("details.legacy");
+    if (lg) lg.addEventListener("toggle", function () {
+      try { localStorage.setItem("sala.oldOpen", lg.open ? "1" : "0"); } catch (e) {}
+    });
     bindFooter();
     scrollTop();
+  }
+
+  function oldOpen() {
+    try { return localStorage.getItem("sala.oldOpen") === "1"; } catch (e) { return false; }
   }
 
   function fact(value, label) {
